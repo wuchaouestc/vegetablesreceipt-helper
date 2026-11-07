@@ -531,6 +531,9 @@ def _build_checklist(self, parent):
 
     self.pane = tk.PanedWindow(盒, orient='horizontal', bg=主题.边框, sashwidth=4, bd=P(0), relief='flat')
     self.pane.pack(fill='both', expand=True, padx=P(14), pady=(P(6), P(10)))
+    # 核对清单固定占清单区的 2/3，右侧预览占剩下的 1/3 —— 跟着窗口大小走。
+    self._清单区宽 = 0
+    self.pane.bind('<Configure>', (lambda e: self._排核对清单宽度()))
     左 = tk.Frame(self.pane, bg=主题.面)
     self.pane.add(左, minsize=P(360))
     cols = ('no', 'state', 'category', 'code', 'weight', 'unit', 'remark')
@@ -608,6 +611,78 @@ def _build_checklist(self, parent):
     else:
         self.btn_preview.configure(text='显示预览')
     self._刷新筛选按钮()
+    # 首次摆好后再定一次宽度：Configure 未必赶得上窗口刚映射的那一刻。
+    try:
+        self.root.after(80, (lambda: self._排核对清单宽度()))
+    except Exception:
+        pass
+
+
+# ---------- 核对清单宽度：占清单区 2/3，右侧预览占 1/3 ----------
+def _sash位置(self):
+    '''分隔条当前的横向位置（像素）；读不到就返回 None。'''
+    try:
+        return int(self.pane.sash_coord(0)[0])
+    except Exception:
+        return None
+
+
+def _设sash位置(self, 位置):
+    try:
+        self.pane.sash_place(0, int(位置), 0)
+    except Exception:
+        pass
+
+
+def _排核对清单宽度(self, event=None):
+    '''等 Tk 把这一轮布局做完，再去定分隔条的位置。
+
+    Configure 回调触发的时候几何还没算完，这会儿设 sash 会被随后的重排冲掉
+    （实测设完还是老位置），所以推到 idle 之后再说。
+    '''
+    try:
+        旧 = getattr(self, '_排任务', None)
+        if 旧 is not None:
+            self.root.after_cancel(旧)
+        self._排任务 = self.root.after_idle(self._核对清单宽度)
+    except Exception:
+        pass
+
+
+def _核对清单宽度(self, event=None):
+    '''核对清单固定占「清单区」宽度的 2/3，右侧预览占剩下的 1/3。
+
+    只在**宽度真的变了**的时候重算分隔条位置：
+      · 拖动软件窗口 → 跟着变（相对大小）
+      · 用户临时拖分隔条 → 不动（保留手动调整的手感）
+
+    预览被隐藏时右边没有面板，清单自然占满整块区域，不用再算比例。
+    '''
+    pane = getattr(self, 'pane', None)
+    if pane is None:
+        return
+    try:
+        总宽 = pane.winfo_width()
+        if 总宽 < 10:
+            return
+        if getattr(self, '_清单区宽', 0) == 总宽:
+            return
+        self._清单区宽 = 总宽
+        if not getattr(self, 'preview_on', True):
+            return
+        if len(pane.panes()) < 2:
+            return
+        最小左 = P(360)
+        最小右 = P(280)
+        if 总宽 < 最小左 + 最小右:
+            目标 = 总宽 // 2
+        else:
+            目标 = max(最小左, min(int(总宽 * 2 / 3), 总宽 - 最小右))
+        位置 = self._sash位置()
+        if 位置 is None or abs(位置 - 目标) > 1:
+            self._设sash位置(目标)
+    except Exception:
+        pass
 
 
 def _刷新筛选按钮(self):
@@ -646,6 +721,26 @@ App._收图片区 = _收图片区
 App._刷新收起条 = _刷新收起条
 App._刷新筛选按钮 = _刷新筛选按钮
 App._redraw_records = _redraw_records
+App._核对清单宽度 = _核对清单宽度
+App._排核对清单宽度 = _排核对清单宽度
+App._sash位置 = _sash位置
+App._设sash位置 = _设sash位置
+
+
+# 显示/隐藏预览以后，右边有没有面板变了，比例要重新算一次。
+_原_toggle_preview = App.toggle_preview
+
+
+def toggle_preview(self):
+    _原_toggle_preview(self)
+    try:
+        self._清单区宽 = 0
+        self._排核对清单宽度()
+    except Exception:
+        pass
+
+
+App.toggle_preview = toggle_preview
 
 
 # ---------- 窗口标题：和 6.1 保持一致 ----------
