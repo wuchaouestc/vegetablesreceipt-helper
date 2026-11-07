@@ -1,0 +1,208 @@
+{
+  "cache_version": 1,
+  "identity": {
+    "schema_version": 1,
+    "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+    "variant": "original",
+    "preprocessing": "disabled_by_plan",
+    "provider": {
+      "kind": "model",
+      "model": "deepseek-chat",
+      "prompt_hash": "9e3aa568981983582635b765b954c65d349c418ea40d48ac2d8918e6457a9f6c",
+      "adapter_version": 1,
+      "max_tokens": 4096,
+      "purpose": "current_model_capability"
+    }
+  },
+  "response": {
+    "provider": "deepseek",
+    "status": "ok",
+    "blocks": [],
+    "records": [
+      {
+        "category": "马步鱼",
+        "customer_code": "933",
+        "weight": "3",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "马步鱼",
+        "customer_code": "1137",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "马步鱼",
+        "customer_code": "29",
+        "weight": "2",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "马步鱼",
+        "customer_code": "1369",
+        "weight": "4.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "去根香菜",
+        "customer_code": "931",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": "(收)"
+      },
+      {
+        "category": "去根香菜",
+        "customer_code": "21",
+        "weight": "1",
+        "unit": "斤",
+        "remark": "(收)"
+      },
+      {
+        "category": "去根香菜",
+        "customer_code": "21",
+        "weight": "3",
+        "unit": "斤",
+        "remark": "(收)"
+      },
+      {
+        "category": "去根香菜",
+        "customer_code": "1188",
+        "weight": "2",
+        "unit": "斤",
+        "remark": "(收)"
+      },
+      {
+        "category": "南姜",
+        "customer_code": "21",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "南姜",
+        "customer_code": "12",
+        "weight": "1.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "香芹",
+        "customer_code": "21",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "香芹",
+        "customer_code": "1136",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "香芹",
+        "customer_code": "12",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "蒜头",
+        "customer_code": "26",
+        "weight": "3",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "蒜头",
+        "customer_code": "12",
+        "weight": "3",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "九层塔",
+        "customer_code": "14",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "金针菇",
+        "customer_code": "185",
+        "weight": "2.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "沙姜",
+        "customer_code": "28",
+        "weight": "0.7",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "沙姜",
+        "customer_code": "15",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "大葱",
+        "customer_code": "15",
+        "weight": "25",
+        "unit": "斤",
+        "remark": "(加)"
+      },
+      {
+        "category": "大葱",
+        "customer_code": "15",
+        "weight": "8",
+        "unit": "斤",
+        "remark": "(收)"
+      },
+      {
+        "category": "小黄姜",
+        "customer_code": "15",
+        "weight": "15",
+        "unit": "斤",
+        "remark": "(收)"
+      },
+      {
+        "category": "子姜",
+        "customer_code": "1369",
+        "weight": "10",
+        "unit": "斤",
+        "remark": ""
+      }
+    ],
+    "notes": [
+      "第1行品类手写疑似“马步鱼”，编码933后的数量疑似“3斤”，请核对。",
+      "第5行品类手写疑似“去根香菜”，编码931后的备注疑似“(收)”，请核对。",
+      "第9行品类手写疑似“南姜”，编码21后的数量疑似“0.5斤”，请核对。",
+      "第11行品类手写疑似“香芹”，编码21后的数量疑似“0.5斤”，请核对。",
+      "第16行品类手写疑似“九层塔”，编码14后的数量疑似“0.5斤”，请核对。",
+      "第17行品类手写疑似“金针菇”，编码185后的数量疑似“2.5斤”，请核对。",
+      "第20行品类手写疑似“大葱”，编码15后的数量疑似“25斤”，备注疑似“(加)”，请核对。",
+      "第21行品类手写疑似“大葱”，编码15后的数量疑似“8斤”，备注疑似“(收)”，请核对。",
+      "第22行品类手写疑似“小黄姜”，编码15后的数量疑似“15斤”，备注疑似“(收)”，请核对。",
+      "第23行品类手写疑似“子姜”，编码1369后的数量疑似“10斤”，请核对。"
+    ],
+    "error_code": "",
+    "request_id": "d5c53793-03f3-4cd0-961d-f5d1b6183d74",
+    "usage": {
+      "prompt_tokens": 1338,
+      "completion_tokens": 841,
+      "total_tokens": 2179,
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1210
+    },
+    "elapsed_seconds": 3.6501,
+    "model": "deepseek-chat"
+  }
+}

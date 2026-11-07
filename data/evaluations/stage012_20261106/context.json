@@ -1,0 +1,60 @@
+{
+  "python": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "win32",
+  "code_sha256": {
+    "ttsb2.py": "2b802be5ffa989906776ec3a436283d155e4cf7f38e908dc24aaf652f0025171",
+    "app_settings.py": "317fe7ea18cc7f21632a2a1a30403a8044ec655d617433a218d22676db575832",
+    "customer_profiles.py": "31bb9dd6c08996bb71dba043002337778ce4ee7624ee5971c38838232cf8bc54",
+    "打单助手.py": "32bbc9ff0c2aacfc93548701b5b96c3234097af4f69414c69b53b0fce031b968",
+    "_界面补丁/识别补丁.py": "2d7e7ba0d9a19b4c48595c3d57f6162a9599b8a41e38b3513961de3f0b3144a9",
+    "_界面补丁/结构补丁.py": "ff37453c0a68900a91ac603fa6bc017db6b00e8b0aab1cb6328e1fc213781e71",
+    "handwriting/providers.py": "a7aa983460848dc18fb58dec8108c32a0c641b7fe50ba7bde372f063645a7ecf"
+  },
+  "settings": {
+    "版本": 6,
+    "打印机": {
+      "vid": "vid_0471",
+      "pid": "pid_0055",
+      "名称": "打单助手标签PDF",
+      "通道": "driver"
+    },
+    "界面": {
+      "字号档": "大",
+      "显示预览": false,
+      "显示日志": false,
+      "侧边收起": false
+    },
+    "识别": {
+      "仔细模式默认": false,
+      "坐标聚行": true,
+      "聚行容差": 0,
+      "结构增强": "自动",
+      "结构引擎": "自动",
+      "结构服务": "http://127.0.0.1:18765",
+      "结构超时毫秒": 25000,
+      "结构客户": []
+    },
+    "客户": {
+      "上限": 15
+    },
+    "周末模式": {
+      "开启日期": "2026-11-01"
+    },
+    "系统": {
+      "运行模式": "debug"
+    }
+  },
+  "customer_profiles_sha256": "3c5a09b6138290c7ad40b627be66a1d06b9c809a2b0b194c84e55a3ce05a8ca0",
+  "source_images_manifest": "f61c52e421f9c10c50425ee5f88d66759e033455f846ce463c8494c325a77f1a",
+  "enhancement": "deferred_by_user_plan",
+  "production_modified": false,
+  "budget": {
+    "max_requests": 30,
+    "max_seconds": 900,
+    "automatic_retry": false,
+    "model_max_tokens": 4096,
+    "price_status": "unknown_account_tariff",
+    "currency_ceiling": null,
+    "note": "固定调用数量上限，不声称精确人民币费用上限"
+  }
+}

@@ -1,0 +1,1966 @@
+{
+  "schema_version": 1,
+  "meta": {
+    "dataset": "stage012_20261106",
+    "images": 2,
+    "generated_at": "2026-11-06T19:56:20",
+    "heading_confidence_threshold": 95.0
+  },
+  "baseline": {
+    "rows": 40,
+    "field_accuracy": {
+      "category": 0.3,
+      "customer_code": 0.95,
+      "weight": 0.95,
+      "unit": 1.0
+    },
+    "field_errors": {
+      "category": 28,
+      "customer_code": 2,
+      "weight": 2,
+      "unit": 0
+    },
+    "field_error_total": 32,
+    "row_accuracy": 0.3,
+    "row_error_total": 28,
+    "flagged_rows": 0,
+    "flag_rate": 0.0,
+    "unflagged_errors": 28,
+    "unflagged_error_rate": 0.7,
+    "false_alarms": 0,
+    "false_alarm_rate": 0.0,
+    "error_recall": 0.0,
+    "images": [
+      {
+        "image_path": "03d2049e8db0342ab40c23a44d1a50a0.jpg",
+        "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+        "rows": 23,
+        "field_correct": {
+          "category": 9,
+          "customer_code": 22,
+          "weight": 22,
+          "unit": 23
+        },
+        "field_eligible": {
+          "category": 23,
+          "customer_code": 23,
+          "weight": 23,
+          "unit": 23
+        },
+        "field_accuracy": {
+          "category": 0.391304347826087,
+          "customer_code": 0.9565217391304348,
+          "weight": 0.9565217391304348,
+          "unit": 1.0
+        },
+        "field_errors": {
+          "category": 14,
+          "customer_code": 1,
+          "weight": 1,
+          "unit": 0
+        },
+        "row_correct": 9,
+        "row_accuracy": 0.391304347826087,
+        "flagged_rows": 0,
+        "flag_rate": 0.0,
+        "unflagged_errors": 14,
+        "false_alarms": 0,
+        "error_recall": null,
+        "details": [
+          {
+            "row_id": "03d2049e-r001",
+            "prediction_index": 0,
+            "wrong_fields": [
+              "category",
+              "customer_code"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "935",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "933",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r002",
+            "prediction_index": 1,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "1137",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "1137",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r003",
+            "prediction_index": 2,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "29",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "29",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r004",
+            "prediction_index": 3,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "1369",
+              "weight": "4.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "1369",
+              "weight": "4.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r005",
+            "prediction_index": 4,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "931",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "931",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r006",
+            "prediction_index": 5,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "21",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "21",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r007",
+            "prediction_index": 6,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "21",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "21",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r008",
+            "prediction_index": 7,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r009",
+            "prediction_index": 8,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "南姜",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "南姜",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r010",
+            "prediction_index": 9,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "南姜",
+              "customer_code": "12",
+              "weight": "1.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "南姜",
+              "customer_code": "12",
+              "weight": "1.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r011",
+            "prediction_index": 10,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r012",
+            "prediction_index": 11,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "1136",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "1136",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r013",
+            "prediction_index": 12,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "12",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "12",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r014",
+            "prediction_index": 13,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "蒜头",
+              "customer_code": "26",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "蒜头",
+              "customer_code": "26",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r015",
+            "prediction_index": 14,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "蒜头",
+              "customer_code": "12",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "蒜头",
+              "customer_code": "12",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r016",
+            "prediction_index": 15,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "九层塔",
+              "customer_code": "14",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "九层塔",
+              "customer_code": "14",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r017",
+            "prediction_index": 16,
+            "wrong_fields": [
+              "category",
+              "weight"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "鱼腥草",
+              "customer_code": "185",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "金针菇",
+              "customer_code": "185",
+              "weight": "2.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r018",
+            "prediction_index": 17,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "28",
+              "weight": "0.7",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "28",
+              "weight": "0.7",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r019",
+            "prediction_index": 18,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r020",
+            "prediction_index": 19,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "25",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "大葱",
+              "customer_code": "15",
+              "weight": "25",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r021",
+            "prediction_index": 20,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "大葱",
+              "customer_code": "15",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r022",
+            "prediction_index": 21,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r023",
+            "prediction_index": 22,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "子姜",
+              "customer_code": "1369",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "子姜",
+              "customer_code": "1369",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "reasons": []
+          }
+        ]
+      },
+      {
+        "image_path": "b082811f2a9cdae5b4c88dd8f6f08101.jpg",
+        "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+        "rows": 17,
+        "field_correct": {
+          "category": 3,
+          "customer_code": 16,
+          "weight": 16,
+          "unit": 17
+        },
+        "field_eligible": {
+          "category": 17,
+          "customer_code": 17,
+          "weight": 17,
+          "unit": 17
+        },
+        "field_accuracy": {
+          "category": 0.17647058823529413,
+          "customer_code": 0.9411764705882353,
+          "weight": 0.9411764705882353,
+          "unit": 1.0
+        },
+        "field_errors": {
+          "category": 14,
+          "customer_code": 1,
+          "weight": 1,
+          "unit": 0
+        },
+        "row_correct": 3,
+        "row_accuracy": 0.17647058823529413,
+        "flagged_rows": 0,
+        "flag_rate": 0.0,
+        "unflagged_errors": 14,
+        "false_alarms": 0,
+        "error_recall": null,
+        "details": [
+          {
+            "row_id": "b082811f-r001",
+            "prediction_index": 0,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "931",
+              "weight": "12",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马齿苋",
+              "customer_code": "931",
+              "weight": "12",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r002",
+            "prediction_index": 1,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "21",
+              "weight": "20",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马齿苋",
+              "customer_code": "21",
+              "weight": "20",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r003",
+            "prediction_index": 2,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "14",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马齿苋",
+              "customer_code": "14",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r004",
+            "prediction_index": 3,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马齿苋",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r005",
+            "prediction_index": 4,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "21",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "老农",
+              "customer_code": "21",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r006",
+            "prediction_index": 5,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "老农",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r007",
+            "prediction_index": 6,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "29",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "老农",
+              "customer_code": "29",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r008",
+            "prediction_index": 7,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "子姜",
+              "customer_code": "1368",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "王美",
+              "customer_code": "1368",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r009",
+            "prediction_index": 8,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "931",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "931",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r010",
+            "prediction_index": 9,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r011",
+            "prediction_index": 10,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "1361",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "1361",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r012",
+            "prediction_index": 11,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "鱼腥草",
+              "customer_code": "21",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "红腥草",
+              "customer_code": "21",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r013",
+            "prediction_index": 12,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "小黄姜",
+              "customer_code": "23",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "小茴香",
+              "customer_code": "23",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r014",
+            "prediction_index": 13,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "小茴香",
+              "customer_code": "15",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r015",
+            "prediction_index": 14,
+            "wrong_fields": [
+              "category",
+              "customer_code"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "1136",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "136",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r016",
+            "prediction_index": 15,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "竹蔗",
+              "customer_code": "14",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "竹叶",
+              "customer_code": "14",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "b082811f-r017",
+            "prediction_index": 16,
+            "wrong_fields": [
+              "category",
+              "weight"
+            ],
+            "flagged": false,
+            "expected": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "25",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "九层塔",
+              "customer_code": "15",
+              "weight": "2.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          }
+        ]
+      }
+    ]
+  },
+  "assisted": {
+    "rows": 40,
+    "field_accuracy": {
+      "category": 0.525,
+      "customer_code": 0.975,
+      "weight": 0.975,
+      "unit": 1.0
+    },
+    "field_errors": {
+      "category": 19,
+      "customer_code": 1,
+      "weight": 1,
+      "unit": 0
+    },
+    "field_error_total": 21,
+    "row_accuracy": 0.5,
+    "row_error_total": 20,
+    "flagged_rows": 33,
+    "flag_rate": 0.825,
+    "unflagged_errors": 0,
+    "unflagged_error_rate": 0.0,
+    "false_alarms": 13,
+    "false_alarm_rate": 0.325,
+    "error_recall": 1.0,
+    "images": [
+      {
+        "image_path": "03d2049e8db0342ab40c23a44d1a50a0.jpg",
+        "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+        "rows": 23,
+        "field_correct": {
+          "category": 10,
+          "customer_code": 22,
+          "weight": 23,
+          "unit": 23
+        },
+        "field_eligible": {
+          "category": 23,
+          "customer_code": 23,
+          "weight": 23,
+          "unit": 23
+        },
+        "field_accuracy": {
+          "category": 0.43478260869565216,
+          "customer_code": 0.9565217391304348,
+          "weight": 1.0,
+          "unit": 1.0
+        },
+        "field_errors": {
+          "category": 13,
+          "customer_code": 1,
+          "weight": 0,
+          "unit": 0
+        },
+        "row_correct": 10,
+        "row_accuracy": 0.43478260869565216,
+        "flagged_rows": 16,
+        "flag_rate": 0.6956521739130435,
+        "unflagged_errors": 0,
+        "false_alarms": 3,
+        "error_recall": 1.0,
+        "details": [
+          {
+            "row_id": "03d2049e-r001",
+            "prediction_index": 0,
+            "wrong_fields": [
+              "category",
+              "customer_code"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "935",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "933",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r002",
+            "prediction_index": 1,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "1137",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "1137",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r003",
+            "prediction_index": 2,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "29",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "29",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r004",
+            "prediction_index": 3,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "1369",
+              "weight": "4.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马步鱼",
+              "customer_code": "1369",
+              "weight": "4.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "数量小数点位置两路不一致，需人工核对",
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r005",
+            "prediction_index": 4,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "931",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "931",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r006",
+            "prediction_index": 5,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "21",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "21",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r007",
+            "prediction_index": 6,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "21",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "21",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r008",
+            "prediction_index": 7,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "去根香菜",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r009",
+            "prediction_index": 8,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "南姜",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "南姜",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r010",
+            "prediction_index": 9,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "南姜",
+              "customer_code": "12",
+              "weight": "1.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "南姜",
+              "customer_code": "12",
+              "weight": "1.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "数量疑似区间写法，无法确定具体数值"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r011",
+            "prediction_index": 10,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "21",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r012",
+            "prediction_index": 11,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "1136",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "1136",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r013",
+            "prediction_index": 12,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "12",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "12",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r014",
+            "prediction_index": 13,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "蒜头",
+              "customer_code": "26",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "蒜头",
+              "customer_code": "26",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r015",
+            "prediction_index": 14,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "蒜头",
+              "customer_code": "12",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "蒜头",
+              "customer_code": "12",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r016",
+            "prediction_index": 15,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "九层塔",
+              "customer_code": "14",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "九层塔",
+              "customer_code": "14",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r017",
+            "prediction_index": 16,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "鱼腥草",
+              "customer_code": "185",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "鱼腥草",
+              "customer_code": "185",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "数量两路不一致，已按原图行内文字修正",
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r018",
+            "prediction_index": 17,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "28",
+              "weight": "0.7",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "28",
+              "weight": "0.7",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r019",
+            "prediction_index": 18,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": []
+          },
+          {
+            "row_id": "03d2049e-r020",
+            "prediction_index": 19,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "25",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "大葱",
+              "customer_code": "15",
+              "weight": "25",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r021",
+            "prediction_index": 20,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "大葱",
+              "customer_code": "15",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r022",
+            "prediction_index": 21,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "03d2049e-r023",
+            "prediction_index": 22,
+            "wrong_fields": [],
+            "flagged": false,
+            "expected": {
+              "category": "子姜",
+              "customer_code": "1369",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "子姜",
+              "customer_code": "1369",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "reasons": []
+          }
+        ]
+      },
+      {
+        "image_path": "b082811f2a9cdae5b4c88dd8f6f08101.jpg",
+        "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+        "rows": 17,
+        "field_correct": {
+          "category": 11,
+          "customer_code": 17,
+          "weight": 16,
+          "unit": 17
+        },
+        "field_eligible": {
+          "category": 17,
+          "customer_code": 17,
+          "weight": 17,
+          "unit": 17
+        },
+        "field_accuracy": {
+          "category": 0.6470588235294118,
+          "customer_code": 1.0,
+          "weight": 0.9411764705882353,
+          "unit": 1.0
+        },
+        "field_errors": {
+          "category": 6,
+          "customer_code": 0,
+          "weight": 1,
+          "unit": 0
+        },
+        "row_correct": 10,
+        "row_accuracy": 0.5882352941176471,
+        "flagged_rows": 17,
+        "flag_rate": 1.0,
+        "unflagged_errors": 0,
+        "false_alarms": 10,
+        "error_recall": 1.0,
+        "details": [
+          {
+            "row_id": "b082811f-r001",
+            "prediction_index": 0,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "931",
+              "weight": "12",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马蹄肉",
+              "customer_code": "931",
+              "weight": "12",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r002",
+            "prediction_index": 1,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "21",
+              "weight": "20",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马蹄肉",
+              "customer_code": "21",
+              "weight": "20",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r003",
+            "prediction_index": 2,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "14",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马蹄肉",
+              "customer_code": "14",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r004",
+            "prediction_index": 3,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "马蹄肉",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "马蹄肉",
+              "customer_code": "15",
+              "weight": "15",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r005",
+            "prediction_index": 4,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "21",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "老农",
+              "customer_code": "21",
+              "weight": "8",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r006",
+            "prediction_index": 5,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "老农",
+              "customer_code": "1188",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r007",
+            "prediction_index": 6,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "去皮干葱头",
+              "customer_code": "29",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "老农",
+              "customer_code": "29",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r008",
+            "prediction_index": 7,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "子姜",
+              "customer_code": "1368",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "王美",
+              "customer_code": "1368",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r009",
+            "prediction_index": 8,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "931",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "931",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r010",
+            "prediction_index": 9,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "15",
+              "weight": "4",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r011",
+            "prediction_index": 10,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "沙姜",
+              "customer_code": "1361",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "沙姜",
+              "customer_code": "1361",
+              "weight": "0.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r012",
+            "prediction_index": 11,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "鱼腥草",
+              "customer_code": "21",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "鱼腥草",
+              "customer_code": "21",
+              "weight": "5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r013",
+            "prediction_index": 12,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "小黄姜",
+              "customer_code": "23",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "小黄姜",
+              "customer_code": "23",
+              "weight": "2",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r014",
+            "prediction_index": 13,
+            "wrong_fields": [],
+            "flagged": true,
+            "expected": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "小黄姜",
+              "customer_code": "15",
+              "weight": "10",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          },
+          {
+            "row_id": "b082811f-r015",
+            "prediction_index": 14,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "香茅",
+              "customer_code": "1136",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "香芹",
+              "customer_code": "1136",
+              "weight": "1",
+              "unit": "斤"
+            },
+            "reasons": [
+              "编码两路不一致，已按原图行内文字修正",
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r016",
+            "prediction_index": 15,
+            "wrong_fields": [
+              "category"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "竹蔗",
+              "customer_code": "14",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "竹叶",
+              "customer_code": "14",
+              "weight": "3",
+              "unit": "斤"
+            },
+            "reasons": [
+              "品类两路不一致（两路都读不准），需人工核对标题"
+            ]
+          },
+          {
+            "row_id": "b082811f-r017",
+            "prediction_index": 16,
+            "wrong_fields": [
+              "weight"
+            ],
+            "flagged": true,
+            "expected": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "25",
+              "unit": "斤"
+            },
+            "actual": {
+              "category": "独蒜",
+              "customer_code": "15",
+              "weight": "2.5",
+              "unit": "斤"
+            },
+            "reasons": [
+              "数量小数点位置两路不一致，需人工核对",
+              "品类两路不一致，已按原图标题文字修正"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "outcomes": {
+    "fixed_rows": [
+      "03d2049e-r017",
+      "b082811f-r001",
+      "b082811f-r002",
+      "b082811f-r003",
+      "b082811f-r004",
+      "b082811f-r012",
+      "b082811f-r013",
+      "b082811f-r014"
+    ],
+    "broken_rows": [],
+    "false_alarm_rows": [
+      "03d2049e-r010",
+      "03d2049e-r022",
+      "b082811f-r009",
+      "b082811f-r010",
+      "b082811f-r011"
+    ],
+    "flagged_error_rows": [
+      "03d2049e-r001",
+      "03d2049e-r002",
+      "03d2049e-r003",
+      "03d2049e-r004",
+      "03d2049e-r005",
+      "03d2049e-r006",
+      "03d2049e-r007",
+      "03d2049e-r008",
+      "03d2049e-r011",
+      "03d2049e-r012",
+      "03d2049e-r013",
+      "03d2049e-r020",
+      "03d2049e-r021",
+      "b082811f-r005",
+      "b082811f-r006",
+      "b082811f-r007",
+      "b082811f-r008",
+      "b082811f-r015",
+      "b082811f-r016",
+      "b082811f-r017"
+    ],
+    "unflagged_error_rows": []
+  },
+  "gates": {
+    "key_error_reduction": 0.34375,
+    "key_error_reduction_target": 0.2,
+    "key_error_reduction_pass": true,
+    "no_new_unflagged_errors": true,
+    "recall_not_lower": true,
+    "no_broken_rows": true,
+    "baseline_field_error_total": 32,
+    "assisted_field_error_total": 21
+  },
+  "cost": {
+    "OCR 接口": "GeneralAccurateOCR（基线接口，1 次/图）",
+    "模型调用": "1 次/图（沿用现网 deepseek-chat 调用）",
+    "复核请求": "0 次（本次冻结集只跑证据链与裁决）",
+    "离线重放": "是（使用已保存的真实响应，未新增计费请求）"
+  },
+  "scope": "仅覆盖已人工确认的冻结样本；不代表全部单据的普遍准确率；手写辅助通道的改动一律同时标记待核对，不做静默改写。"
+}

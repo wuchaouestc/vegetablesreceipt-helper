@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "category": "示例新品类",
+      "customer_code": "001A",
+      "weight": "0.5",
+      "unit": "袋",
+      "remark": "示例备注，不是真实业务规则",
+      "_id": 1
+    },
+    {
+      "category": "示例新品类",
+      "customer_code": "001A",
+      "weight": "0.5",
+      "unit": "袋",
+      "remark": "示例备注，不是真实业务规则",
+      "_id": 2
+    }
+  ],
+  "suggestions": [],
+  "warnings": [],
+  "revision": "empty-unconfirmed-20261106"
+}

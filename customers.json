@@ -1,0 +1,142 @@
+{
+ "南波旺": {
+  "folder": "南波旺",
+  "doc_type": "printed",
+  "effort": "off",
+  "show_code": false,
+  "code_keep": "full",
+  "remark_groups": "one",
+  "skip_items": [
+   "大肉姜(生姜)",
+   "蒜米"
+  ],
+  "skip_contains": [],
+  "keep_note": true,
+  "extra_note": "这家客户的『客户编码』列里写的是客户名称（如 815/高平/融捷/淀粉/广铁 等），不是编码，不要当作编码处理；最终标签不需要这些信息。『采购数量』列才是要打的斤数。⚠️ 所有品类都照常提取输出（包括『大肉姜(生姜)』和『蒜米』），不要因为任何原因把整段品类跳过不输出 —— 哪些要打印由程序按规则决定。",
+  "category_alias": {},
+  "category_order": [],
+  "sort_categories": false
+ },
+ "中惠": {
+  "folder": "中惠",
+  "doc_type": "printed",
+  "effort": "off",
+  "show_code": true,
+  "code_keep": "full",
+  "remark_groups": "one",
+  "skip_items": [],
+  "skip_contains": [],
+  "keep_note": true,
+  "extra_note": "表头形如『2026-10-09 采购订单 供应商:03.0008 陈金月蒜姜』。客户明细里每条形如『0.5/斤 (1078.4)』，括号里是客户编码。",
+  "category_alias": {},
+  "category_order": [],
+  "sort_categories": false
+ },
+ "金勺子": {
+  "folder": "金勺子",
+  "doc_type": "printed",
+  "effort": "off",
+  "show_code": true,
+  "code_keep": "nochinese",
+  "remark_groups": "split",
+  "skip_items": [
+   "蒜米",
+   "蒜米(蒜米先生)",
+   "蒜米（蒜米先生）"
+  ],
+  "skip_contains": [],
+  "keep_note": true,
+  "extra_note": "表头形如『供应商采购汇总-按物料汇总 / 未发单 2026-10-09 采购订单 供应商:1103 姜蒜（陈金月）』。明细里可能有『分组:xxx』（如『分组:陈凰蔬菜』）和『备注:xxx』两种标注。⚠️『分组:』是分拣用的分组，不是客户备注，整条忽略、绝对不要当 remark 输出。只需提取『备注:』后面的内容作为备注（只要有备注就一定要提取出来，别漏）。⚠️『蒜米』和『蒜头』『手工蒜米』都要照常提取输出（打印时由程序按规则处理），不要因为任何原因把整段品类跳过不输出。",
+  "category_alias": {},
+  "category_order": [],
+  "sort_categories": false
+ },
+ "农和": {
+  "folder": "农和",
+  "doc_type": "handwritten",
+  "effort": "high",
+  "show_code": true,
+  "code_keep": "full",
+  "remark_groups": "one",
+  "skip_items": [],
+  "skip_contains": [],
+  "keep_note": true,
+  "unit_fix": true,
+  "extra_note": "手写单，竖排两三列，每列顶部是品类名（生姜/姜肉/蒜米/沙姜/竹蔗/毛根/子姜/蒜头 等），下方每行是『编码:斤数』，例如『1136:15斤』『1368:10斤』。笔迹潦草，注意形近字；划掉/涂黑的内容直接忽略。⚠️ 每个『编码:斤数』都算一条独立记录（同一个编码出现两次就是两条）。⚠️ 这张单没有『汇总数量』列，不要去找总数，也不要用总数当斤数。⚠️ 单位只有两种：绝大多数是『斤』，个别蒜米会写『包』。手写潦草时容易把『斤』看成『个』——那还是『斤』。⚠️ 小数点一定要照抄：『15:2.5斤』的 weight 是 2.5，不要写成 25，也不要把冒号当成小数点。",
+  "category_alias": {},
+  "category_order": [],
+  "sort_categories": false
+ },
+ "嘉宝": {
+  "folder": "嘉宝",
+  "doc_type": "printed",
+  "effort": "off",
+  "show_code": true,
+  "code_keep": "full",
+  "remark_groups": "one",
+  "skip_items": [],
+  "skip_contains": [],
+  "keep_note": true,
+  "extra_note": "表头形如『10.14 周三 3.30之前到货』，表头上面还有一行 `10.14 周三 3.30之前到货`。列＝单位编码 | 商品名称 | 规格 | 配送单位 | 预订数量 | 备注。『单位编码』就是客户编码（K333/k222/K777）。『预订数量』是要打的斤数，『配送单位』是斤。⚠️『规格』列（如『优』『小圆洋葱』）请放进 remark —— 由程序按规则处理（『优』会被丢掉，其余留前两位）。",
+  "category_alias": {},
+  "category_order": [],
+  "sort_categories": false
+ },
+ "晶美": {
+  "folder": "晶美",
+  "doc_type": "printed",
+  "effort": "off",
+  "show_code": true,
+  "code_keep": "full",
+  "remark_groups": "one",
+  "skip_items": [],
+  "skip_contains": [],
+  "keep_note": true,
+  "extra_note": "列＝编码 | 品类 | 数量 | 单位 | 备注（有时没表头）。客户编码有两套风格：`A23.2`/`B6.1`/`A22.1` 这种，和 `C1-10`/`C1-9` 这种，两套都原样提取。『备注』列请完整提取（如『不要泡过水的』『嫩的粉的』『大块完整新鲜』『大肉姜』『去皮，本地，小的』『大块完整新鲜』）。⚠️ 品类名里带『肉』字的（姜肉 / 红葱头肉 / 老姜肉 / 手工现剥蒜肉 / 马蹄肉）本身就是『去皮』的意思 —— 但这不用你处理，照原样提取，程序会处理。",
+  "category_alias": {},
+  "category_order": [],
+  "sort_categories": false
+ },
+ "粒粒香": {
+  "folder": "粒粒香",
+  "doc_type": "printed",
+  "effort": "off",
+  "show_code": true,
+  "code_keep": "leadcode",
+  "upper_code": true,
+  "remark_groups": "one",
+  "skip_items": [],
+  "skip_contains": [],
+  "keep_note": true,
+  "extra_note": "这家有**三种格式**，都要认：\n①『采购计划』：表头形如『采购计划 - 2026-10-14 / 供应商：陈金月姜蒜』；列＝行 | 鲜肉类/分类 | 计划 | 详情 | 实采 | 单价 | 总价；还有分类行『姜蒜类』『干调类』（这两行不是商品，不要输出）。『详情』列形如『(C19欢聚时代每日优选) 2斤____』，括号里『C19 + 名称』整体就是客户，后面的数字+斤是斤数，下划线忽略。\n②『按 C区 分组的领货清单』：橙底分组标题形如『C区13号水务局』，下面是 品类 | 数量 | 单位 三列。\n③『按 Cx 学校分组的清单』：分组标题形如『C3五中附属初级中学』『C2.五中东晓学校』。\n⚠️ 分组的标题就是客户，请把**整条标题**放进 customer_code（如『C区13号水务局』『C3五中附属初级中学』『C6五中滨江怡趣校区』）。",
+  "category_alias": {
+   "生姜": {
+    "生姜": "",
+    "大肉姜(生姜)": "",
+    "新生姜": "",
+    "大生姜": "大"
+   },
+   "姜肉": {
+    "老姜肉": "",
+    "去皮生姜": "",
+    "生姜(去皮)": "",
+    "生姜去皮": "",
+    "去皮姜肉": ""
+   },
+   "蒜米": {
+    "蒜米": "",
+    "蒜肉": "",
+    "蒜米(蒜米先生)": "",
+    "蒜米(蒜肉)": "",
+    "山东蒜米": ""
+   },
+   "马蹄肉": {
+    "马蹄（去皮）": "",
+    "去皮马蹄": "",
+    "马蹄肉": ""
+   }
+  },
+  "category_order": [],
+  "sort_categories": true
+ }
+}

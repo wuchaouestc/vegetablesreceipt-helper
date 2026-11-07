@@ -1,0 +1,664 @@
+{
+  "schema_version": 1,
+  "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+  "image_path": "03d2049e8db0342ab40c23a44d1a50a0.jpg",
+  "source_group": "notebook_batch_01_unresolved",
+  "split": "unassigned",
+  "review_status": "draft_visual",
+  "reviewer": "AI visual inspection via view_image; not human-confirmed",
+  "doc_type": "handwritten_multicolumn",
+  "difficulties": [
+    "multicolumn",
+    "cursive_handwriting",
+    "faint_background",
+    "decimal_points"
+  ],
+  "records": [
+    {
+      "row_id": "03d2049e-r001",
+      "category": null,
+      "customer_code": "935",
+      "weight": "3",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        55,
+        185,
+        215,
+        250
+      ],
+      "header_bbox": [
+        75,
+        125,
+        239,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r002",
+      "category": null,
+      "customer_code": "1137",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        35,
+        250,
+        220,
+        315
+      ],
+      "header_bbox": [
+        75,
+        125,
+        239,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r003",
+      "category": null,
+      "customer_code": "29",
+      "weight": "2",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        25,
+        310,
+        205,
+        377
+      ],
+      "header_bbox": [
+        75,
+        125,
+        239,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r004",
+      "category": null,
+      "customer_code": "1369",
+      "weight": "4.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        10,
+        375,
+        220,
+        447
+      ],
+      "header_bbox": [
+        75,
+        125,
+        239,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "weight: 末位5与单位相连，4.5待人工复核"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r005",
+      "category": null,
+      "customer_code": "931",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        235,
+        178,
+        570,
+        240
+      ],
+      "header_bbox": [
+        310,
+        125,
+        565,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r006",
+      "category": null,
+      "customer_code": "21",
+      "weight": "1",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        313,
+        237,
+        540,
+        293
+      ],
+      "header_bbox": [
+        310,
+        125,
+        565,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r007",
+      "category": null,
+      "customer_code": "21",
+      "weight": "3",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        305,
+        291,
+        542,
+        350
+      ],
+      "header_bbox": [
+        310,
+        125,
+        565,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r008",
+      "category": null,
+      "customer_code": "1188",
+      "weight": "2",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        282,
+        351,
+        537,
+        412
+      ],
+      "header_bbox": [
+        310,
+        125,
+        565,
+        185
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r009",
+      "category": null,
+      "customer_code": "21",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        65,
+        810,
+        215,
+        875
+      ],
+      "header_bbox": [
+        81,
+        755,
+        180,
+        814
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r010",
+      "category": null,
+      "customer_code": "12",
+      "weight": "1.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        47,
+        870,
+        219,
+        940
+      ],
+      "header_bbox": [
+        81,
+        755,
+        180,
+        814
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r011",
+      "category": null,
+      "customer_code": "21",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        253,
+        809,
+        394,
+        875
+      ],
+      "header_bbox": [
+        270,
+        750,
+        371,
+        812
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r012",
+      "category": null,
+      "customer_code": "1136",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        238,
+        874,
+        402,
+        931
+      ],
+      "header_bbox": [
+        270,
+        750,
+        371,
+        812
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r013",
+      "category": null,
+      "customer_code": "12",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        241,
+        927,
+        401,
+        982
+      ],
+      "header_bbox": [
+        270,
+        750,
+        371,
+        812
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r014",
+      "category": null,
+      "customer_code": "26",
+      "weight": "3",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        447,
+        798,
+        587,
+        873
+      ],
+      "header_bbox": [
+        450,
+        737,
+        576,
+        800
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r015",
+      "category": null,
+      "customer_code": "12",
+      "weight": "3",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        443,
+        866,
+        588,
+        943
+      ],
+      "header_bbox": [
+        450,
+        737,
+        576,
+        800
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r016",
+      "category": "九层塔",
+      "customer_code": "14",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        37,
+        1286,
+        219,
+        1360
+      ],
+      "header_bbox": [
+        61,
+        1205,
+        209,
+        1283
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r017",
+      "category": null,
+      "customer_code": "185",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        239,
+        1285,
+        419,
+        1373
+      ],
+      "header_bbox": [
+        261,
+        1200,
+        410,
+        1276
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r018",
+      "category": "沙姜",
+      "customer_code": "28",
+      "weight": "0.7",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        457,
+        1255,
+        629,
+        1347
+      ],
+      "header_bbox": [
+        475,
+        1172,
+        590,
+        1249
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r019",
+      "category": "沙姜",
+      "customer_code": "15",
+      "weight": "0.5",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        454,
+        1344,
+        635,
+        1421
+      ],
+      "header_bbox": [
+        475,
+        1172,
+        590,
+        1249
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r020",
+      "category": null,
+      "customer_code": "15",
+      "weight": "25",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        26,
+        1590,
+        280,
+        1672
+      ],
+      "header_bbox": [
+        43,
+        1515,
+        203,
+        1597
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r021",
+      "category": null,
+      "customer_code": "15",
+      "weight": "8",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        25,
+        1665,
+        276,
+        1732
+      ],
+      "header_bbox": [
+        43,
+        1515,
+        203,
+        1597
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "category: 标题草写不能可靠完整辨认",
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r022",
+      "category": "小黄姜",
+      "customer_code": "15",
+      "weight": "15",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        287,
+        1571,
+        499,
+        1647
+      ],
+      "header_bbox": [
+        304,
+        1490,
+        442,
+        1569
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [
+        "remark: 有括号手写备注，不能可靠辨认"
+      ],
+      "review_status": "draft_visual"
+    },
+    {
+      "row_id": "03d2049e-r023",
+      "category": "子姜",
+      "customer_code": "1369",
+      "weight": "10",
+      "unit": "斤",
+      "remark": null,
+      "bbox": [
+        500,
+        1571,
+        662,
+        1677
+      ],
+      "header_bbox": [
+        524,
+        1491,
+        623,
+        1568
+      ],
+      "field_source": {
+        "category": "visible_heading",
+        "unit": "row_handwritten_glyph"
+      },
+      "uncertain": [],
+      "review_status": "draft_visual"
+    }
+  ],
+  "regions": [],
+  "complete": false,
+  "notes": "疏排多栏；左边局部残笔，纸面偏灰、折痕与背面透字；数量含 0.5/0.7，括号备注草写。"
+}

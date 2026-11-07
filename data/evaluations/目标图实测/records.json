@@ -1,0 +1,3439 @@
+{
+  "schema_version": 1,
+  "task_id": "目标图实测",
+  "status": "needs_review",
+  "image_path": "D:\\项目开发\\打单助手\\打单助手V6.x_源码\\data\\手写素材\\0a07371a8f56afba76dcb5de02f9b015.jpg",
+  "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+  "mode": "assisted",
+  "notes": [
+    "OCR 取到 21 个文字块（含完整坐标框）",
+    "部分手写文字识别存在不确定性，如'马兄弟的'、'老赵干苦力'、'小虫草'、'小蓝美'等名称可能不完全准确。",
+    "部分数字和单位（如'个'、'长'、'小'）字迹潦草，可能存在识别误差。",
+    "图片左侧边缘有部分被截断的文字，无法完整识别。",
+    "模型按标题分组返回了 6 组明细，已展开成 11 行逐行明细",
+    "原图有 1 处文字没对上任何明细，可能是漏行或不是明细，请核对原图"
+  ],
+  "budget": {
+    "requests": 4,
+    "max_requests": 8,
+    "elapsed_seconds": 6.234,
+    "max_seconds": 300,
+    "reserved_cost": 0.0,
+    "spent_cost": 0.0,
+    "max_cost": null,
+    "by_kind": {
+      "ocr": 1,
+      "model": 1,
+      "review": 2
+    },
+    "quota_used": {
+      "enhancement_variants": 1,
+      "review_regions": 2
+    },
+    "quotas": {
+      "enhancement_variants": 1,
+      "review_regions": 2
+    },
+    "stopped_reason": ""
+  },
+  "evidence": {
+    "page": {
+      "rows": [
+        {
+          "row_id": "row-0001",
+          "record_index": 0,
+          "matched": true,
+          "bbox": [
+            121.0,
+            250.0,
+            311.0,
+            341.0
+          ],
+          "column": 1,
+          "entry": {
+            "code": "1368",
+            "quantity": "10",
+            "unit": "斤",
+            "text": "1368:10斤",
+            "bbox": [
+              121.0,
+              250.0,
+              311.0,
+              341.0
+            ],
+            "block_index": 4,
+            "source": "ocr",
+            "confidence": 94.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "马兄帝肉",
+            "bbox": [
+              190.0,
+              211.0,
+              369.0,
+              272.0
+            ],
+            "polygon": [
+              [
+                193.0,
+                211.0
+              ],
+              [
+                369.0,
+                218.0
+              ],
+              [
+                367.0,
+                272.0
+              ],
+              [
+                190.0,
+                265.0
+              ]
+            ],
+            "confidence": 88.0,
+            "source": "ocr",
+            "index": 2
+          },
+          "heading_score": 0.4879,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "马兄弟的",
+                "source": "model",
+                "confidence": null,
+                "evidence": "马兄弟的",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "马兄帝肉",
+                "source": "ocr_heading",
+                "confidence": 88.0,
+                "evidence": "马兄帝肉",
+                "bbox": [
+                  190.0,
+                  211.0,
+                  369.0,
+                  272.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "1368",
+                "source": "model",
+                "confidence": null,
+                "evidence": "1368",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "1368",
+                "source": "ocr_row",
+                "confidence": 94.0,
+                "evidence": "1368:10斤",
+                "bbox": [
+                  121.0,
+                  250.0,
+                  311.0,
+                  341.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "10",
+                "source": "model",
+                "confidence": null,
+                "evidence": "10",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "10",
+                "source": "ocr_row",
+                "confidence": 94.0,
+                "evidence": "1368:10斤",
+                "bbox": [
+                  121.0,
+                  250.0,
+                  311.0,
+                  341.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "unit",
+                "value": "斤",
+                "source": "ocr_row",
+                "confidence": 94.0,
+                "evidence": "1368:10斤",
+                "bbox": [
+                  121.0,
+                  250.0,
+                  311.0,
+                  341.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "category",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "category",
+              "action": "keep",
+              "value": "马兄弟的",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            }
+          ],
+          "reasons": [
+            "品类两路不一致（两路都读不准），需人工核对标题",
+            "词典外品类：马兄弟的",
+            "词典外编码：1368"
+          ],
+          "observations": [
+            "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+          ]
+        },
+        {
+          "row_id": "row-0002",
+          "record_index": 1,
+          "matched": true,
+          "bbox": [
+            116.0,
+            315.0,
+            275.0,
+            392.0
+          ],
+          "column": 1,
+          "entry": {
+            "code": "27",
+            "quantity": "2",
+            "unit": "斤",
+            "text": "27:2斤",
+            "bbox": [
+              116.0,
+              315.0,
+              275.0,
+              392.0
+            ],
+            "block_index": 7,
+            "source": "ocr",
+            "confidence": 84.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "马兄帝肉",
+            "bbox": [
+              190.0,
+              211.0,
+              369.0,
+              272.0
+            ],
+            "polygon": [
+              [
+                193.0,
+                211.0
+              ],
+              [
+                369.0,
+                218.0
+              ],
+              [
+                367.0,
+                272.0
+              ],
+              [
+                190.0,
+                265.0
+              ]
+            ],
+            "confidence": 88.0,
+            "source": "ocr",
+            "index": 2
+          },
+          "heading_score": 0.336,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "马兄弟的",
+                "source": "model",
+                "confidence": null,
+                "evidence": "马兄弟的",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "马兄帝肉",
+                "source": "ocr_heading",
+                "confidence": 88.0,
+                "evidence": "马兄帝肉",
+                "bbox": [
+                  190.0,
+                  211.0,
+                  369.0,
+                  272.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "27",
+                "source": "model",
+                "confidence": null,
+                "evidence": "27",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "27",
+                "source": "ocr_row",
+                "confidence": 84.0,
+                "evidence": "27:2斤",
+                "bbox": [
+                  116.0,
+                  315.0,
+                  275.0,
+                  392.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "24",
+                "source": "model",
+                "confidence": null,
+                "evidence": "24",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "2",
+                "source": "ocr_row",
+                "confidence": 84.0,
+                "evidence": "27:2斤",
+                "bbox": [
+                  116.0,
+                  315.0,
+                  275.0,
+                  392.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "斤",
+                "source": "ocr_row",
+                "confidence": 84.0,
+                "evidence": "27:2斤",
+                "bbox": [
+                  116.0,
+                  315.0,
+                  275.0,
+                  392.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "weight",
+              "reason": "数量两路不一致，已按原图行内文字修正"
+            },
+            {
+              "field": "category",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "weight",
+              "action": "replace",
+              "value": "2",
+              "reason": "数量两路不一致，已按原图行内文字修正"
+            },
+            {
+              "field": "category",
+              "action": "keep",
+              "value": "马兄弟的",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            }
+          ],
+          "reasons": [
+            "数量两路不一致，已按原图行内文字修正",
+            "品类两路不一致（两路都读不准），需人工核对标题",
+            "词典外品类：马兄弟的",
+            "词典外编码：27"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0003",
+          "record_index": 2,
+          "matched": true,
+          "bbox": [
+            459.0,
+            253.0,
+            619.0,
+            306.0
+          ],
+          "column": 3,
+          "entry": {
+            "code": "933",
+            "quantity": "2",
+            "unit": "斤",
+            "text": "933:2斤",
+            "bbox": [
+              459.0,
+              253.0,
+              619.0,
+              306.0
+            ],
+            "block_index": 5,
+            "source": "ocr",
+            "confidence": 99.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "左皮干芒头",
+            "bbox": [
+              476.0,
+              212.0,
+              698.0,
+              258.0
+            ],
+            "polygon": [
+              [
+                476.0,
+                212.0
+              ],
+              [
+                698.0,
+                212.0
+              ],
+              [
+                698.0,
+                258.0
+              ],
+              [
+                476.0,
+                258.0
+              ]
+            ],
+            "confidence": 75.0,
+            "source": "ocr",
+            "index": 3
+          },
+          "heading_score": 0.5983,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "老赵干苦力",
+                "source": "model",
+                "confidence": null,
+                "evidence": "老赵干苦力",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "左皮干芒头",
+                "source": "ocr_heading",
+                "confidence": 75.0,
+                "evidence": "左皮干芒头",
+                "bbox": [
+                  476.0,
+                  212.0,
+                  698.0,
+                  258.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "933",
+                "source": "model",
+                "confidence": null,
+                "evidence": "933",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "933",
+                "source": "ocr_row",
+                "confidence": 99.0,
+                "evidence": "933:2斤",
+                "bbox": [
+                  459.0,
+                  253.0,
+                  619.0,
+                  306.0
+                ],
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "933",
+                "source": "review",
+                "confidence": null,
+                "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+                "bbox": [
+                  402.0,
+                  200.0,
+                  721.0,
+                  510.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "2",
+                "source": "model",
+                "confidence": null,
+                "evidence": "2",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "2",
+                "source": "ocr_row",
+                "confidence": 99.0,
+                "evidence": "933:2斤",
+                "bbox": [
+                  459.0,
+                  253.0,
+                  619.0,
+                  306.0
+                ],
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "24",
+                "source": "review",
+                "confidence": null,
+                "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+                "bbox": [
+                  402.0,
+                  200.0,
+                  721.0,
+                  510.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "unit",
+                "value": "斤",
+                "source": "ocr_row",
+                "confidence": 99.0,
+                "evidence": "933:2斤",
+                "bbox": [
+                  459.0,
+                  253.0,
+                  619.0,
+                  306.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "category",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            },
+            {
+              "field": "customer_code",
+              "reason": "局部复核与原图行内文字一致，编码已采信"
+            },
+            {
+              "field": "weight",
+              "reason": "局部复核与两路都不一致，数量仍需人工核对"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "category",
+              "action": "keep",
+              "value": "老赵干苦力",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            },
+            {
+              "field": "customer_code",
+              "action": "replace",
+              "value": "933",
+              "reason": "局部复核与原图行内文字一致，编码已采信"
+            },
+            {
+              "field": "weight",
+              "action": "keep",
+              "value": "2",
+              "reason": "局部复核与两路都不一致，数量仍需人工核对"
+            }
+          ],
+          "reasons": [
+            "品类两路不一致（两路都读不准），需人工核对标题",
+            "词典外品类：老赵干苦力",
+            "词典外编码：933",
+            "局部复核与原图行内文字一致，编码已采信",
+            "局部复核与两路都不一致，数量仍需人工核对"
+          ],
+          "observations": [
+            "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+          ]
+        },
+        {
+          "row_id": "row-0004",
+          "record_index": 3,
+          "matched": true,
+          "bbox": [
+            456.0,
+            301.0,
+            627.5,
+            366.0
+          ],
+          "column": 3,
+          "entry": {
+            "code": "931",
+            "quantity": "10",
+            "unit": "个",
+            "text": "931:10个",
+            "bbox": [
+              456.0,
+              301.0,
+              627.5,
+              366.0
+            ],
+            "block_index": 8,
+            "source": "ocr",
+            "confidence": 98.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "左皮干芒头",
+            "bbox": [
+              476.0,
+              212.0,
+              698.0,
+              258.0
+            ],
+            "polygon": [
+              [
+                476.0,
+                212.0
+              ],
+              [
+                698.0,
+                212.0
+              ],
+              [
+                698.0,
+                258.0
+              ],
+              [
+                476.0,
+                258.0
+              ]
+            ],
+            "confidence": 75.0,
+            "source": "ocr",
+            "index": 3
+          },
+          "heading_score": 0.626,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "老赵干苦力",
+                "source": "model",
+                "confidence": null,
+                "evidence": "老赵干苦力",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "左皮干芒头",
+                "source": "ocr_heading",
+                "confidence": 75.0,
+                "evidence": "左皮干芒头",
+                "bbox": [
+                  476.0,
+                  212.0,
+                  698.0,
+                  258.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "931",
+                "source": "model",
+                "confidence": null,
+                "evidence": "931",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "931",
+                "source": "ocr_row",
+                "confidence": 98.0,
+                "evidence": "931:10个",
+                "bbox": [
+                  456.0,
+                  301.0,
+                  627.5,
+                  366.0
+                ],
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "931",
+                "source": "review",
+                "confidence": null,
+                "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+                "bbox": [
+                  402.0,
+                  200.0,
+                  721.0,
+                  510.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "10",
+                "source": "model",
+                "confidence": null,
+                "evidence": "10",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "10",
+                "source": "ocr_row",
+                "confidence": 98.0,
+                "evidence": "931:10个",
+                "bbox": [
+                  456.0,
+                  301.0,
+                  627.5,
+                  366.0
+                ],
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "104",
+                "source": "review",
+                "confidence": null,
+                "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+                "bbox": [
+                  402.0,
+                  200.0,
+                  721.0,
+                  510.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "ocr_row",
+                "confidence": 98.0,
+                "evidence": "931:10个",
+                "bbox": [
+                  456.0,
+                  301.0,
+                  627.5,
+                  366.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "category",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            },
+            {
+              "field": "customer_code",
+              "reason": "局部复核与原图行内文字一致，编码已采信"
+            },
+            {
+              "field": "weight",
+              "reason": "局部复核与两路都不一致，数量仍需人工核对"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "category",
+              "action": "keep",
+              "value": "老赵干苦力",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            },
+            {
+              "field": "customer_code",
+              "action": "replace",
+              "value": "931",
+              "reason": "局部复核与原图行内文字一致，编码已采信"
+            },
+            {
+              "field": "weight",
+              "action": "keep",
+              "value": "10",
+              "reason": "局部复核与两路都不一致，数量仍需人工核对"
+            }
+          ],
+          "reasons": [
+            "品类两路不一致（两路都读不准），需人工核对标题",
+            "词典外品类：老赵干苦力",
+            "词典外编码：931",
+            "局部复核与原图行内文字一致，编码已采信",
+            "局部复核与两路都不一致，数量仍需人工核对"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0005",
+          "record_index": 4,
+          "matched": false,
+          "bbox": null,
+          "column": null,
+          "entry": null,
+          "heading": null,
+          "heading_score": 0.0,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "老赵干苦力",
+                "source": "model",
+                "confidence": null,
+                "evidence": "老赵干苦力",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "15",
+                "source": "model",
+                "confidence": null,
+                "evidence": "15",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "54",
+                "source": "model",
+                "confidence": null,
+                "evidence": "54",
+                "bbox": null,
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [],
+          "decisions": [],
+          "reasons": [
+            "缺少同行证据：原图这一行没找到可对应的文字"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0006",
+          "record_index": 5,
+          "matched": true,
+          "bbox": [
+            414.0,
+            407.0,
+            620.5,
+            498.0
+          ],
+          "column": 3,
+          "entry": {
+            "code": "1188",
+            "quantity": "2",
+            "unit": "斤",
+            "text": "1188:2斤",
+            "bbox": [
+              414.0,
+              407.0,
+              620.5,
+              498.0
+            ],
+            "block_index": 10,
+            "source": "ocr",
+            "confidence": 82.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "左皮干芒头",
+            "bbox": [
+              476.0,
+              212.0,
+              698.0,
+              258.0
+            ],
+            "polygon": [
+              [
+                476.0,
+                212.0
+              ],
+              [
+                698.0,
+                212.0
+              ],
+              [
+                698.0,
+                258.0
+              ],
+              [
+                476.0,
+                258.0
+              ]
+            ],
+            "confidence": 75.0,
+            "source": "ocr",
+            "index": 3
+          },
+          "heading_score": 0.5088,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "老赵干苦力",
+                "source": "model",
+                "confidence": null,
+                "evidence": "老赵干苦力",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "左皮干芒头",
+                "source": "ocr_heading",
+                "confidence": 75.0,
+                "evidence": "左皮干芒头",
+                "bbox": [
+                  476.0,
+                  212.0,
+                  698.0,
+                  258.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "1188",
+                "source": "model",
+                "confidence": null,
+                "evidence": "1188",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "1188",
+                "source": "ocr_row",
+                "confidence": 82.0,
+                "evidence": "1188:2斤",
+                "bbox": [
+                  414.0,
+                  407.0,
+                  620.5,
+                  498.0
+                ],
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "1188",
+                "source": "review",
+                "confidence": null,
+                "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+                "bbox": [
+                  402.0,
+                  200.0,
+                  721.0,
+                  510.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "2",
+                "source": "model",
+                "confidence": null,
+                "evidence": "2",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "2",
+                "source": "ocr_row",
+                "confidence": 82.0,
+                "evidence": "1188:2斤",
+                "bbox": [
+                  414.0,
+                  407.0,
+                  620.5,
+                  498.0
+                ],
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "24",
+                "source": "review",
+                "confidence": null,
+                "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+                "bbox": [
+                  402.0,
+                  200.0,
+                  721.0,
+                  510.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "unit",
+                "value": "斤",
+                "source": "ocr_row",
+                "confidence": 82.0,
+                "evidence": "1188:2斤",
+                "bbox": [
+                  414.0,
+                  407.0,
+                  620.5,
+                  498.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "category",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            },
+            {
+              "field": "customer_code",
+              "reason": "局部复核与原图行内文字一致，编码已采信"
+            },
+            {
+              "field": "weight",
+              "reason": "局部复核与两路都不一致，数量仍需人工核对"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "category",
+              "action": "keep",
+              "value": "老赵干苦力",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            },
+            {
+              "field": "customer_code",
+              "action": "replace",
+              "value": "1188",
+              "reason": "局部复核与原图行内文字一致，编码已采信"
+            },
+            {
+              "field": "weight",
+              "action": "keep",
+              "value": "2",
+              "reason": "局部复核与两路都不一致，数量仍需人工核对"
+            }
+          ],
+          "reasons": [
+            "品类两路不一致（两路都读不准），需人工核对标题",
+            "词典外品类：老赵干苦力",
+            "词典外编码：1188",
+            "局部复核与原图行内文字一致，编码已采信",
+            "局部复核与两路都不一致，数量仍需人工核对"
+          ],
+          "observations": [
+            "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+          ]
+        },
+        {
+          "row_id": "row-0007",
+          "record_index": 6,
+          "matched": false,
+          "bbox": null,
+          "column": null,
+          "entry": null,
+          "heading": null,
+          "heading_score": 0.0,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "沙美",
+                "source": "model",
+                "confidence": null,
+                "evidence": "沙美",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "1366",
+                "source": "model",
+                "confidence": null,
+                "evidence": "1366",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "1",
+                "source": "model",
+                "confidence": null,
+                "evidence": "1",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [],
+          "decisions": [],
+          "reasons": [
+            "缺少同行证据：原图这一行没找到可对应的文字"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0008",
+          "record_index": 7,
+          "matched": false,
+          "bbox": null,
+          "column": null,
+          "entry": null,
+          "heading": null,
+          "heading_score": 0.0,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "沙美",
+                "source": "model",
+                "confidence": null,
+                "evidence": "沙美",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "935",
+                "source": "model",
+                "confidence": null,
+                "evidence": "935",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "1.5",
+                "source": "model",
+                "confidence": null,
+                "evidence": "1.5",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [],
+          "decisions": [],
+          "reasons": [
+            "缺少同行证据：原图这一行没找到可对应的文字"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0009",
+          "record_index": 8,
+          "matched": false,
+          "bbox": null,
+          "column": null,
+          "entry": null,
+          "heading": null,
+          "heading_score": 0.0,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "芋头",
+                "source": "model",
+                "confidence": null,
+                "evidence": "芋头",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "1366",
+                "source": "model",
+                "confidence": null,
+                "evidence": "1366",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "3",
+                "source": "model",
+                "confidence": null,
+                "evidence": "3",
+                "bbox": null,
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [],
+          "decisions": [],
+          "reasons": [
+            "缺少同行证据：原图这一行没找到可对应的文字"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0010",
+          "record_index": 9,
+          "matched": true,
+          "bbox": [
+            565.0,
+            984.0,
+            715.6666666666666,
+            1066.0
+          ],
+          "column": 3,
+          "entry": {
+            "code": "15",
+            "quantity": "25",
+            "unit": "个",
+            "text": "15:25个",
+            "bbox": [
+              565.0,
+              984.0,
+              715.6666666666666,
+              1066.0
+            ],
+            "block_index": 17,
+            "source": "ocr",
+            "confidence": 83.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "力虫蒜",
+            "bbox": [
+              570.0,
+              902.0,
+              733.0,
+              993.0
+            ],
+            "polygon": [
+              [
+                570.0,
+                910.0
+              ],
+              [
+                729.0,
+                902.0
+              ],
+              [
+                733.0,
+                985.0
+              ],
+              [
+                574.0,
+                993.0
+              ]
+            ],
+            "confidence": 94.0,
+            "source": "ocr",
+            "index": 14
+          },
+          "heading_score": 0.8671,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "小虫草",
+                "source": "model",
+                "confidence": null,
+                "evidence": "小虫草",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "力虫蒜",
+                "source": "ocr_heading",
+                "confidence": 94.0,
+                "evidence": "力虫蒜",
+                "bbox": [
+                  570.0,
+                  902.0,
+                  733.0,
+                  993.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "15",
+                "source": "model",
+                "confidence": null,
+                "evidence": "15",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "15",
+                "source": "ocr_row",
+                "confidence": 83.0,
+                "evidence": "15:25个",
+                "bbox": [
+                  565.0,
+                  984.0,
+                  715.6666666666666,
+                  1066.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "25",
+                "source": "model",
+                "confidence": null,
+                "evidence": "25",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "25",
+                "source": "ocr_row",
+                "confidence": 83.0,
+                "evidence": "15:25个",
+                "bbox": [
+                  565.0,
+                  984.0,
+                  715.6666666666666,
+                  1066.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "ocr_row",
+                "confidence": 83.0,
+                "evidence": "15:25个",
+                "bbox": [
+                  565.0,
+                  984.0,
+                  715.6666666666666,
+                  1066.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "category",
+              "reason": "品类两路不一致，已按原图标题文字修正"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "category",
+              "action": "replace",
+              "value": "力虫蒜",
+              "reason": "品类两路不一致，已按原图标题文字修正"
+            }
+          ],
+          "reasons": [
+            "品类两路不一致，已按原图标题文字修正",
+            "词典外品类：小虫草",
+            "词典外编码：15"
+          ],
+          "observations": []
+        },
+        {
+          "row_id": "row-0011",
+          "record_index": 10,
+          "matched": true,
+          "bbox": [
+            84.0,
+            1670.0,
+            297.42857142857144,
+            1784.0
+          ],
+          "column": 1,
+          "entry": {
+            "code": "15",
+            "quantity": "15",
+            "unit": "个",
+            "text": "15:15个",
+            "bbox": [
+              84.0,
+              1670.0,
+              297.42857142857144,
+              1784.0
+            ],
+            "block_index": 20,
+            "source": "ocr",
+            "confidence": 86.0,
+            "ambiguous": ""
+          },
+          "heading": {
+            "text": "小茴姜",
+            "bbox": [
+              86.0,
+              1582.0,
+              248.0,
+              1696.0
+            ],
+            "polygon": [
+              [
+                86.0,
+                1591.0
+              ],
+              [
+                242.0,
+                1582.0
+              ],
+              [
+                248.0,
+                1687.0
+              ],
+              [
+                93.0,
+                1696.0
+              ]
+            ],
+            "confidence": 78.0,
+            "source": "ocr",
+            "index": 19
+          },
+          "heading_score": 0.759,
+          "candidates": {
+            "category": [
+              {
+                "field": "category",
+                "value": "小蓝美",
+                "source": "model",
+                "confidence": null,
+                "evidence": "小蓝美",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "category",
+                "value": "小茴姜",
+                "source": "ocr_heading",
+                "confidence": 78.0,
+                "evidence": "小茴姜",
+                "bbox": [
+                  86.0,
+                  1582.0,
+                  248.0,
+                  1696.0
+                ],
+                "detail": {}
+              }
+            ],
+            "customer_code": [
+              {
+                "field": "customer_code",
+                "value": "15",
+                "source": "model",
+                "confidence": null,
+                "evidence": "15",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "customer_code",
+                "value": "15",
+                "source": "ocr_row",
+                "confidence": 86.0,
+                "evidence": "15:15个",
+                "bbox": [
+                  84.0,
+                  1670.0,
+                  297.42857142857144,
+                  1784.0
+                ],
+                "detail": {}
+              }
+            ],
+            "weight": [
+              {
+                "field": "weight",
+                "value": "15",
+                "source": "model",
+                "confidence": null,
+                "evidence": "15",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "weight",
+                "value": "15",
+                "source": "ocr_row",
+                "confidence": 86.0,
+                "evidence": "15:15个",
+                "bbox": [
+                  84.0,
+                  1670.0,
+                  297.42857142857144,
+                  1784.0
+                ],
+                "detail": {}
+              }
+            ],
+            "unit": [
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "model",
+                "confidence": null,
+                "evidence": "个",
+                "bbox": null,
+                "detail": {}
+              },
+              {
+                "field": "unit",
+                "value": "个",
+                "source": "ocr_row",
+                "confidence": 86.0,
+                "evidence": "15:15个",
+                "bbox": [
+                  84.0,
+                  1670.0,
+                  297.42857142857144,
+                  1784.0
+                ],
+                "detail": {}
+              }
+            ]
+          },
+          "conflicts": [
+            {
+              "field": "category",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            }
+          ],
+          "decisions": [
+            {
+              "field": "category",
+              "action": "keep",
+              "value": "小蓝美",
+              "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+            }
+          ],
+          "reasons": [
+            "品类两路不一致（两路都读不准），需人工核对标题",
+            "词典外品类：小蓝美",
+            "词典外编码：15"
+          ],
+          "observations": []
+        }
+      ],
+      "unmatched_entries": [
+        {
+          "code": "1136",
+          "quantity": "3",
+          "unit": "个",
+          "text": "1136:3个",
+          "bbox": [
+            312.0,
+            1000.0,
+            472.0,
+            1115.0
+          ],
+          "block_index": 16,
+          "source": "ocr",
+          "confidence": 97.0,
+          "ambiguous": ""
+        }
+      ],
+      "notes": [
+        "原图有 1 处文字没对上任何明细，可能是漏行或不是明细，请核对原图"
+      ]
+    },
+    "layout": {
+      "rows": 21,
+      "headings": 9,
+      "entries": 8
+    }
+  },
+  "regions": [
+    {
+      "bbox": [
+        402.0,
+        200.0,
+        721.0,
+        510.0
+      ],
+      "row_ids": [
+        "row-0003",
+        "row-0004",
+        "row-0006"
+      ],
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：1188",
+        "词典外编码：931",
+        "词典外编码：933"
+      ],
+      "heading_bbox": [
+        476.0,
+        212.0,
+        698.0,
+        258.0
+      ],
+      "crop_path": "D:\\项目开发\\打单助手\\打单助手V6.x_源码\\data\\evaluations\\目标图实测\\复核\\region-01.png"
+    },
+    {
+      "bbox": [
+        104.0,
+        199.0,
+        381.0,
+        404.0
+      ],
+      "row_ids": [
+        "row-0001",
+        "row-0002"
+      ],
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "数量两路不一致，已按原图行内文字修正",
+        "词典外品类：马兄弟的",
+        "词典外编码：1368",
+        "词典外编码：27"
+      ],
+      "heading_bbox": [
+        190.0,
+        211.0,
+        369.0,
+        272.0
+      ],
+      "crop_path": "D:\\项目开发\\打单助手\\打单助手V6.x_源码\\data\\evaluations\\目标图实测\\复核\\region-02.png"
+    }
+  ],
+  "records": [
+    {
+      "customer_code": "1368",
+      "weight": "10",
+      "unit": "个",
+      "category": "马兄弟的",
+      "_record_index": 0,
+      "_model_heading": "马兄弟的",
+      "remark": "",
+      "_uncertain": true,
+      "_review_reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：马兄弟的",
+        "词典外编码：1368"
+      ],
+      "_observations": [
+        "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+      ],
+      "_evidence": {
+        "row_id": "row-0001",
+        "matched": true,
+        "bbox": [
+          121.0,
+          250.0,
+          311.0,
+          341.0
+        ],
+        "heading_bbox": [
+          190.0,
+          211.0,
+          369.0,
+          272.0
+        ],
+        "heading_text": "马兄帝肉",
+        "entry_text": "1368:10斤",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "马兄弟的",
+              "source": "model",
+              "confidence": null,
+              "evidence": "马兄弟的",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "马兄帝肉",
+              "source": "ocr_heading",
+              "confidence": 88.0,
+              "evidence": "马兄帝肉",
+              "bbox": [
+                190.0,
+                211.0,
+                369.0,
+                272.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "1368",
+              "source": "model",
+              "confidence": null,
+              "evidence": "1368",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "1368",
+              "source": "ocr_row",
+              "confidence": 94.0,
+              "evidence": "1368:10斤",
+              "bbox": [
+                121.0,
+                250.0,
+                311.0,
+                341.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "10",
+              "source": "model",
+              "confidence": null,
+              "evidence": "10",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "10",
+              "source": "ocr_row",
+              "confidence": 94.0,
+              "evidence": "1368:10斤",
+              "bbox": [
+                121.0,
+                250.0,
+                311.0,
+                341.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "unit",
+              "value": "斤",
+              "source": "ocr_row",
+              "confidence": 94.0,
+              "evidence": "1368:10斤",
+              "bbox": [
+                121.0,
+                250.0,
+                311.0,
+                341.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "category",
+            "action": "keep",
+            "value": "马兄弟的",
+            "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+          }
+        ]
+      }
+    },
+    {
+      "customer_code": "27",
+      "weight": "2",
+      "unit": "",
+      "category": "马兄弟的",
+      "_record_index": 1,
+      "_model_heading": "马兄弟的",
+      "remark": "",
+      "_uncertain": true,
+      "_review_reasons": [
+        "数量两路不一致，已按原图行内文字修正",
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：马兄弟的",
+        "词典外编码：27"
+      ],
+      "_evidence": {
+        "row_id": "row-0002",
+        "matched": true,
+        "bbox": [
+          116.0,
+          315.0,
+          275.0,
+          392.0
+        ],
+        "heading_bbox": [
+          190.0,
+          211.0,
+          369.0,
+          272.0
+        ],
+        "heading_text": "马兄帝肉",
+        "entry_text": "27:2斤",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "马兄弟的",
+              "source": "model",
+              "confidence": null,
+              "evidence": "马兄弟的",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "马兄帝肉",
+              "source": "ocr_heading",
+              "confidence": 88.0,
+              "evidence": "马兄帝肉",
+              "bbox": [
+                190.0,
+                211.0,
+                369.0,
+                272.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "27",
+              "source": "model",
+              "confidence": null,
+              "evidence": "27",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "27",
+              "source": "ocr_row",
+              "confidence": 84.0,
+              "evidence": "27:2斤",
+              "bbox": [
+                116.0,
+                315.0,
+                275.0,
+                392.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "24",
+              "source": "model",
+              "confidence": null,
+              "evidence": "24",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "2",
+              "source": "ocr_row",
+              "confidence": 84.0,
+              "evidence": "27:2斤",
+              "bbox": [
+                116.0,
+                315.0,
+                275.0,
+                392.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "斤",
+              "source": "ocr_row",
+              "confidence": 84.0,
+              "evidence": "27:2斤",
+              "bbox": [
+                116.0,
+                315.0,
+                275.0,
+                392.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "weight",
+            "action": "replace",
+            "value": "2",
+            "reason": "数量两路不一致，已按原图行内文字修正"
+          },
+          {
+            "field": "category",
+            "action": "keep",
+            "value": "马兄弟的",
+            "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+          }
+        ]
+      }
+    },
+    {
+      "remark": "长",
+      "customer_code": "933",
+      "weight": "2",
+      "unit": "个",
+      "category": "老赵干苦力",
+      "_record_index": 2,
+      "_model_heading": "老赵干苦力",
+      "_uncertain": true,
+      "_review_reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：933",
+        "局部复核与原图行内文字一致，编码已采信",
+        "局部复核与两路都不一致，数量仍需人工核对"
+      ],
+      "_observations": [
+        "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+      ],
+      "_evidence": {
+        "row_id": "row-0003",
+        "matched": true,
+        "bbox": [
+          459.0,
+          253.0,
+          619.0,
+          306.0
+        ],
+        "heading_bbox": [
+          476.0,
+          212.0,
+          698.0,
+          258.0
+        ],
+        "heading_text": "左皮干芒头",
+        "entry_text": "933:2斤",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "老赵干苦力",
+              "source": "model",
+              "confidence": null,
+              "evidence": "老赵干苦力",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "左皮干芒头",
+              "source": "ocr_heading",
+              "confidence": 75.0,
+              "evidence": "左皮干芒头",
+              "bbox": [
+                476.0,
+                212.0,
+                698.0,
+                258.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "933",
+              "source": "model",
+              "confidence": null,
+              "evidence": "933",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "933",
+              "source": "ocr_row",
+              "confidence": 99.0,
+              "evidence": "933:2斤",
+              "bbox": [
+                459.0,
+                253.0,
+                619.0,
+                306.0
+              ],
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "933",
+              "source": "review",
+              "confidence": null,
+              "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+              "bbox": [
+                402.0,
+                200.0,
+                721.0,
+                510.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "2",
+              "source": "model",
+              "confidence": null,
+              "evidence": "2",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "2",
+              "source": "ocr_row",
+              "confidence": 99.0,
+              "evidence": "933:2斤",
+              "bbox": [
+                459.0,
+                253.0,
+                619.0,
+                306.0
+              ],
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "24",
+              "source": "review",
+              "confidence": null,
+              "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+              "bbox": [
+                402.0,
+                200.0,
+                721.0,
+                510.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "unit",
+              "value": "斤",
+              "source": "ocr_row",
+              "confidence": 99.0,
+              "evidence": "933:2斤",
+              "bbox": [
+                459.0,
+                253.0,
+                619.0,
+                306.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "category",
+            "action": "keep",
+            "value": "老赵干苦力",
+            "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+          },
+          {
+            "field": "customer_code",
+            "action": "replace",
+            "value": "933",
+            "reason": "局部复核与原图行内文字一致，编码已采信"
+          },
+          {
+            "field": "weight",
+            "action": "keep",
+            "value": "2",
+            "reason": "局部复核与两路都不一致，数量仍需人工核对"
+          }
+        ]
+      }
+    },
+    {
+      "remark": "长",
+      "customer_code": "931",
+      "weight": "10",
+      "unit": "个",
+      "category": "老赵干苦力",
+      "_record_index": 3,
+      "_model_heading": "老赵干苦力",
+      "_uncertain": true,
+      "_review_reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：931",
+        "局部复核与原图行内文字一致，编码已采信",
+        "局部复核与两路都不一致，数量仍需人工核对"
+      ],
+      "_evidence": {
+        "row_id": "row-0004",
+        "matched": true,
+        "bbox": [
+          456.0,
+          301.0,
+          627.5,
+          366.0
+        ],
+        "heading_bbox": [
+          476.0,
+          212.0,
+          698.0,
+          258.0
+        ],
+        "heading_text": "左皮干芒头",
+        "entry_text": "931:10个",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "老赵干苦力",
+              "source": "model",
+              "confidence": null,
+              "evidence": "老赵干苦力",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "左皮干芒头",
+              "source": "ocr_heading",
+              "confidence": 75.0,
+              "evidence": "左皮干芒头",
+              "bbox": [
+                476.0,
+                212.0,
+                698.0,
+                258.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "931",
+              "source": "model",
+              "confidence": null,
+              "evidence": "931",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "931",
+              "source": "ocr_row",
+              "confidence": 98.0,
+              "evidence": "931:10个",
+              "bbox": [
+                456.0,
+                301.0,
+                627.5,
+                366.0
+              ],
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "931",
+              "source": "review",
+              "confidence": null,
+              "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+              "bbox": [
+                402.0,
+                200.0,
+                721.0,
+                510.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "10",
+              "source": "model",
+              "confidence": null,
+              "evidence": "10",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "10",
+              "source": "ocr_row",
+              "confidence": 98.0,
+              "evidence": "931:10个",
+              "bbox": [
+                456.0,
+                301.0,
+                627.5,
+                366.0
+              ],
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "104",
+              "source": "review",
+              "confidence": null,
+              "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+              "bbox": [
+                402.0,
+                200.0,
+                721.0,
+                510.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "ocr_row",
+              "confidence": 98.0,
+              "evidence": "931:10个",
+              "bbox": [
+                456.0,
+                301.0,
+                627.5,
+                366.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "category",
+            "action": "keep",
+            "value": "老赵干苦力",
+            "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+          },
+          {
+            "field": "customer_code",
+            "action": "replace",
+            "value": "931",
+            "reason": "局部复核与原图行内文字一致，编码已采信"
+          },
+          {
+            "field": "weight",
+            "action": "keep",
+            "value": "10",
+            "reason": "局部复核与两路都不一致，数量仍需人工核对"
+          }
+        ]
+      }
+    },
+    {
+      "remark": "长",
+      "customer_code": "15",
+      "weight": "54",
+      "unit": "",
+      "category": "老赵干苦力",
+      "_record_index": 4,
+      "_model_heading": "老赵干苦力",
+      "_uncertain": true,
+      "_review_reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "_evidence": {
+        "row_id": "row-0005",
+        "matched": false,
+        "bbox": null,
+        "heading_bbox": null,
+        "heading_text": null,
+        "entry_text": null,
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "老赵干苦力",
+              "source": "model",
+              "confidence": null,
+              "evidence": "老赵干苦力",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "15",
+              "source": "model",
+              "confidence": null,
+              "evidence": "15",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "54",
+              "source": "model",
+              "confidence": null,
+              "evidence": "54",
+              "bbox": null,
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": []
+      }
+    },
+    {
+      "remark": "长",
+      "customer_code": "1188",
+      "weight": "2",
+      "unit": "个",
+      "category": "老赵干苦力",
+      "_record_index": 5,
+      "_model_heading": "老赵干苦力",
+      "_uncertain": true,
+      "_review_reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：1188",
+        "局部复核与原图行内文字一致，编码已采信",
+        "局部复核与两路都不一致，数量仍需人工核对"
+      ],
+      "_observations": [
+        "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+      ],
+      "_evidence": {
+        "row_id": "row-0006",
+        "matched": true,
+        "bbox": [
+          414.0,
+          407.0,
+          620.5,
+          498.0
+        ],
+        "heading_bbox": [
+          476.0,
+          212.0,
+          698.0,
+          258.0
+        ],
+        "heading_text": "左皮干芒头",
+        "entry_text": "1188:2斤",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "老赵干苦力",
+              "source": "model",
+              "confidence": null,
+              "evidence": "老赵干苦力",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "左皮干芒头",
+              "source": "ocr_heading",
+              "confidence": 75.0,
+              "evidence": "左皮干芒头",
+              "bbox": [
+                476.0,
+                212.0,
+                698.0,
+                258.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "1188",
+              "source": "model",
+              "confidence": null,
+              "evidence": "1188",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "1188",
+              "source": "ocr_row",
+              "confidence": 82.0,
+              "evidence": "1188:2斤",
+              "bbox": [
+                414.0,
+                407.0,
+                620.5,
+                498.0
+              ],
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "1188",
+              "source": "review",
+              "confidence": null,
+              "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+              "bbox": [
+                402.0,
+                200.0,
+                721.0,
+                510.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "2",
+              "source": "model",
+              "confidence": null,
+              "evidence": "2",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "2",
+              "source": "ocr_row",
+              "confidence": 82.0,
+              "evidence": "1188:2斤",
+              "bbox": [
+                414.0,
+                407.0,
+                620.5,
+                498.0
+              ],
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "24",
+              "source": "review",
+              "confidence": null,
+              "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo",
+              "bbox": [
+                402.0,
+                200.0,
+                721.0,
+                510.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "unit",
+              "value": "斤",
+              "source": "ocr_row",
+              "confidence": 82.0,
+              "evidence": "1188:2斤",
+              "bbox": [
+                414.0,
+                407.0,
+                620.5,
+                498.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "category",
+            "action": "keep",
+            "value": "老赵干苦力",
+            "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+          },
+          {
+            "field": "customer_code",
+            "action": "replace",
+            "value": "1188",
+            "reason": "局部复核与原图行内文字一致，编码已采信"
+          },
+          {
+            "field": "weight",
+            "action": "keep",
+            "value": "2",
+            "reason": "局部复核与两路都不一致，数量仍需人工核对"
+          }
+        ]
+      }
+    },
+    {
+      "customer_code": "1366",
+      "weight": "1",
+      "unit": "个",
+      "category": "沙美",
+      "_record_index": 6,
+      "_model_heading": "沙美",
+      "remark": "",
+      "_uncertain": true,
+      "_review_reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "_evidence": {
+        "row_id": "row-0007",
+        "matched": false,
+        "bbox": null,
+        "heading_bbox": null,
+        "heading_text": null,
+        "entry_text": null,
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "沙美",
+              "source": "model",
+              "confidence": null,
+              "evidence": "沙美",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "1366",
+              "source": "model",
+              "confidence": null,
+              "evidence": "1366",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "1",
+              "source": "model",
+              "confidence": null,
+              "evidence": "1",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": []
+      }
+    },
+    {
+      "customer_code": "935",
+      "weight": "1.5",
+      "unit": "个",
+      "category": "沙美",
+      "_record_index": 7,
+      "_model_heading": "沙美",
+      "remark": "",
+      "_uncertain": true,
+      "_review_reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "_evidence": {
+        "row_id": "row-0008",
+        "matched": false,
+        "bbox": null,
+        "heading_bbox": null,
+        "heading_text": null,
+        "entry_text": null,
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "沙美",
+              "source": "model",
+              "confidence": null,
+              "evidence": "沙美",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "935",
+              "source": "model",
+              "confidence": null,
+              "evidence": "935",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "1.5",
+              "source": "model",
+              "confidence": null,
+              "evidence": "1.5",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": []
+      }
+    },
+    {
+      "customer_code": "1366",
+      "weight": "3",
+      "unit": "个",
+      "category": "芋头",
+      "_record_index": 8,
+      "_model_heading": "芋头",
+      "remark": "",
+      "_uncertain": true,
+      "_review_reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "_evidence": {
+        "row_id": "row-0009",
+        "matched": false,
+        "bbox": null,
+        "heading_bbox": null,
+        "heading_text": null,
+        "entry_text": null,
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "芋头",
+              "source": "model",
+              "confidence": null,
+              "evidence": "芋头",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "1366",
+              "source": "model",
+              "confidence": null,
+              "evidence": "1366",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "3",
+              "source": "model",
+              "confidence": null,
+              "evidence": "3",
+              "bbox": null,
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": []
+      }
+    },
+    {
+      "remark": "小",
+      "customer_code": "15",
+      "weight": "25",
+      "unit": "个",
+      "category": "力虫蒜",
+      "_record_index": 9,
+      "_model_heading": "小虫草",
+      "_uncertain": true,
+      "_review_reasons": [
+        "品类两路不一致，已按原图标题文字修正",
+        "词典外品类：小虫草",
+        "词典外编码：15"
+      ],
+      "_evidence": {
+        "row_id": "row-0010",
+        "matched": true,
+        "bbox": [
+          565.0,
+          984.0,
+          715.6666666666666,
+          1066.0
+        ],
+        "heading_bbox": [
+          570.0,
+          902.0,
+          733.0,
+          993.0
+        ],
+        "heading_text": "力虫蒜",
+        "entry_text": "15:25个",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "小虫草",
+              "source": "model",
+              "confidence": null,
+              "evidence": "小虫草",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "力虫蒜",
+              "source": "ocr_heading",
+              "confidence": 94.0,
+              "evidence": "力虫蒜",
+              "bbox": [
+                570.0,
+                902.0,
+                733.0,
+                993.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "15",
+              "source": "model",
+              "confidence": null,
+              "evidence": "15",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "15",
+              "source": "ocr_row",
+              "confidence": 83.0,
+              "evidence": "15:25个",
+              "bbox": [
+                565.0,
+                984.0,
+                715.6666666666666,
+                1066.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "25",
+              "source": "model",
+              "confidence": null,
+              "evidence": "25",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "25",
+              "source": "ocr_row",
+              "confidence": 83.0,
+              "evidence": "15:25个",
+              "bbox": [
+                565.0,
+                984.0,
+                715.6666666666666,
+                1066.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "ocr_row",
+              "confidence": 83.0,
+              "evidence": "15:25个",
+              "bbox": [
+                565.0,
+                984.0,
+                715.6666666666666,
+                1066.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "category",
+            "action": "replace",
+            "value": "力虫蒜",
+            "reason": "品类两路不一致，已按原图标题文字修正"
+          }
+        ]
+      }
+    },
+    {
+      "remark": "小",
+      "customer_code": "15",
+      "weight": "15",
+      "unit": "个",
+      "category": "小蓝美",
+      "_record_index": 10,
+      "_model_heading": "小蓝美",
+      "_uncertain": true,
+      "_review_reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：小蓝美",
+        "词典外编码：15"
+      ],
+      "_evidence": {
+        "row_id": "row-0011",
+        "matched": true,
+        "bbox": [
+          84.0,
+          1670.0,
+          297.42857142857144,
+          1784.0
+        ],
+        "heading_bbox": [
+          86.0,
+          1582.0,
+          248.0,
+          1696.0
+        ],
+        "heading_text": "小茴姜",
+        "entry_text": "15:15个",
+        "candidates": {
+          "category": [
+            {
+              "field": "category",
+              "value": "小蓝美",
+              "source": "model",
+              "confidence": null,
+              "evidence": "小蓝美",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "category",
+              "value": "小茴姜",
+              "source": "ocr_heading",
+              "confidence": 78.0,
+              "evidence": "小茴姜",
+              "bbox": [
+                86.0,
+                1582.0,
+                248.0,
+                1696.0
+              ],
+              "detail": {}
+            }
+          ],
+          "customer_code": [
+            {
+              "field": "customer_code",
+              "value": "15",
+              "source": "model",
+              "confidence": null,
+              "evidence": "15",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "customer_code",
+              "value": "15",
+              "source": "ocr_row",
+              "confidence": 86.0,
+              "evidence": "15:15个",
+              "bbox": [
+                84.0,
+                1670.0,
+                297.42857142857144,
+                1784.0
+              ],
+              "detail": {}
+            }
+          ],
+          "weight": [
+            {
+              "field": "weight",
+              "value": "15",
+              "source": "model",
+              "confidence": null,
+              "evidence": "15",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "weight",
+              "value": "15",
+              "source": "ocr_row",
+              "confidence": 86.0,
+              "evidence": "15:15个",
+              "bbox": [
+                84.0,
+                1670.0,
+                297.42857142857144,
+                1784.0
+              ],
+              "detail": {}
+            }
+          ],
+          "unit": [
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "model",
+              "confidence": null,
+              "evidence": "个",
+              "bbox": null,
+              "detail": {}
+            },
+            {
+              "field": "unit",
+              "value": "个",
+              "source": "ocr_row",
+              "confidence": 86.0,
+              "evidence": "15:15个",
+              "bbox": [
+                84.0,
+                1670.0,
+                297.42857142857144,
+                1784.0
+              ],
+              "detail": {}
+            }
+          ]
+        },
+        "decisions": [
+          {
+            "field": "category",
+            "action": "keep",
+            "value": "小蓝美",
+            "reason": "品类两路不一致（两路都读不准），需人工核对标题"
+          }
+        ]
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "text": "800",
+      "x": 898.0,
+      "y": 0.0,
+      "bbox": [
+        898.0,
+        0.0,
+        984.0,
+        120.0
+      ],
+      "confidence": 94.0
+    },
+    {
+      "text": "长",
+      "x": 0.0,
+      "y": 226.0,
+      "bbox": [
+        0.0,
+        226.0,
+        64.0,
+        270.0
+      ],
+      "confidence": 99.0
+    },
+    {
+      "text": "马兄帝肉",
+      "x": 190.0,
+      "y": 211.0,
+      "bbox": [
+        190.0,
+        211.0,
+        369.0,
+        272.0
+      ],
+      "confidence": 88.0
+    },
+    {
+      "text": "左皮干芒头",
+      "x": 476.0,
+      "y": 212.0,
+      "bbox": [
+        476.0,
+        212.0,
+        698.0,
+        258.0
+      ],
+      "confidence": 75.0
+    },
+    {
+      "text": "1368:10斤",
+      "x": 121.0,
+      "y": 250.0,
+      "bbox": [
+        121.0,
+        250.0,
+        311.0,
+        341.0
+      ],
+      "confidence": 94.0
+    },
+    {
+      "text": "933:2斤(长)",
+      "x": 459.0,
+      "y": 253.0,
+      "bbox": [
+        459.0,
+        253.0,
+        699.0,
+        306.0
+      ],
+      "confidence": 99.0
+    },
+    {
+      "text": "斤",
+      "x": 0.0,
+      "y": 278.0,
+      "bbox": [
+        0.0,
+        278.0,
+        18.0,
+        388.0
+      ],
+      "confidence": 93.0
+    },
+    {
+      "text": "27:2斤",
+      "x": 116.0,
+      "y": 315.0,
+      "bbox": [
+        116.0,
+        315.0,
+        275.0,
+        392.0
+      ],
+      "confidence": 84.0
+    },
+    {
+      "text": "931:10个(长)",
+      "x": 456.0,
+      "y": 301.0,
+      "bbox": [
+        456.0,
+        301.0,
+        701.0,
+        366.0
+      ],
+      "confidence": 98.0
+    },
+    {
+      "text": "15:54(",
+      "x": 439.0,
+      "y": 346.0,
+      "bbox": [
+        439.0,
+        346.0,
+        698.0,
+        436.0
+      ],
+      "confidence": 90.0
+    },
+    {
+      "text": "1188:2斤(长)",
+      "x": 414.0,
+      "y": 407.0,
+      "bbox": [
+        414.0,
+        407.0,
+        709.0,
+        498.0
+      ],
+      "confidence": 82.0
+    },
+    {
+      "text": "王",
+      "x": 0.0,
+      "y": 576.0,
+      "bbox": [
+        0.0,
+        576.0,
+        32.0,
+        668.0
+      ],
+      "confidence": 61.0
+    },
+    {
+      "text": "沙姜",
+      "x": 122.0,
+      "y": 926.0,
+      "bbox": [
+        122.0,
+        926.0,
+        241.0,
+        1015.0
+      ],
+      "confidence": 91.0
+    },
+    {
+      "text": "蒜头",
+      "x": 339.0,
+      "y": 923.0,
+      "bbox": [
+        339.0,
+        923.0,
+        488.0,
+        1010.0
+      ],
+      "confidence": 100.0
+    },
+    {
+      "text": "力虫蒜",
+      "x": 570.0,
+      "y": 902.0,
+      "bbox": [
+        570.0,
+        902.0,
+        733.0,
+        993.0
+      ],
+      "confidence": 94.0
+    },
+    {
+      "text": "1366.1个",
+      "x": 92.0,
+      "y": 1005.0,
+      "bbox": [
+        92.0,
+        1005.0,
+        253.0,
+        1092.0
+      ],
+      "confidence": 96.0
+    },
+    {
+      "text": "1136:3个",
+      "x": 312.0,
+      "y": 1000.0,
+      "bbox": [
+        312.0,
+        1000.0,
+        472.0,
+        1115.0
+      ],
+      "confidence": 97.0
+    },
+    {
+      "text": "15:25个(切)",
+      "x": 565.0,
+      "y": 984.0,
+      "bbox": [
+        565.0,
+        984.0,
+        791.0,
+        1066.0
+      ],
+      "confidence": 83.0
+    },
+    {
+      "text": "9351.5个",
+      "x": 84.0,
+      "y": 1083.0,
+      "bbox": [
+        84.0,
+        1083.0,
+        264.0,
+        1177.0
+      ],
+      "confidence": 95.0
+    },
+    {
+      "text": "小茴姜",
+      "x": 86.0,
+      "y": 1582.0,
+      "bbox": [
+        86.0,
+        1582.0,
+        248.0,
+        1696.0
+      ],
+      "confidence": 78.0
+    },
+    {
+      "text": "15:15个出",
+      "x": 84.0,
+      "y": 1670.0,
+      "bbox": [
+        84.0,
+        1670.0,
+        333.0,
+        1784.0
+      ],
+      "confidence": 86.0
+    }
+  ]
+}

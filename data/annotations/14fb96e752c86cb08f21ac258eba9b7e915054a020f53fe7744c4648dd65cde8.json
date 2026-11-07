@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+  "image_path": "屏幕截图 2026-10-18 221419.png",
+  "source_group": "notebook_batch_01_unresolved",
+  "split": "unassigned",
+  "review_status": "draft_visual",
+  "reviewer": "AI visual inspection via view_image; not human-confirmed",
+  "doc_type": "handwritten_crop",
+  "difficulties": [
+    "very_low_resolution",
+    "partial_document",
+    "cursive_handwriting"
+  ],
+  "records": [],
+  "regions": [],
+  "complete": false,
+  "notes": "101×41局部截图，仅一个标题与一行；与 b64ecc 顶部右栏字形/内容对应，不能作为独立全页测试样本。"
+}

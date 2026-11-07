@@ -1,0 +1,41 @@
+# ===== 虚拟环境 =====
+.venv/
+_ppstructure/.venv/
+
+# ===== Python 缓存 =====
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# ===== 构建产物 =====
+build/
+dist/
+
+# ===== 工具/调试目录 =====
+.setup/
+.workbuddy/
+
+# ===== 日志 =====
+*.log
+log/
+
+# ===== 运行时缓存/输出 =====
+ocr_cache/
+output/
+清理归档/
+
+# ===== 历史导入单据图片（运行时用户数据）=====
+导入/
+
+# ===== 结构服务模型缓存 =====
+_ppstructure/cache/
+
+# ===== 备份/临时文件 =====
+*.bak
+*.bak-*
+*.tmp
+*.before-runtime-mode.bak
+
+# ===== 本地真实密钥（不要提交）=====
+config_local.py

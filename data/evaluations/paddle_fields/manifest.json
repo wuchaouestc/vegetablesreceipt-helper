@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-07T13:32:14",
+  "test_dir": "D:\\项目开发\\打单助手\\打单助手V6.x_源码\\导入\\2026-10-18",
+  "files": [
+    {
+      "name": "28edb2041dcd878493461f9a9ad2c8d6.png",
+      "relative": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "file_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "bytes": 35794,
+      "width": 1146,
+      "height": 392,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "de838df93051b0da7e38679cdb96035e"
+    },
+    {
+      "name": "39dea8d0587cf279039baf0d10a165b0.png",
+      "relative": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "file_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "bytes": 14518,
+      "width": 376,
+      "height": 309,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "75ba882bff208f3e65ef30e76d6f3038"
+    },
+    {
+      "name": "449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "relative": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "file_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "bytes": 23604,
+      "width": 1017,
+      "height": 710,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "2a39463fae12b4fa1c229a0d1e18d4cc"
+    },
+    {
+      "name": "465256d8aa5257c588ab2f2b2bd6aca8.png",
+      "relative": "导入\\2026-10-18\\465256d8aa5257c588ab2f2b2bd6aca8.png",
+      "file_sha256": "26596fc971c21b71f3683058a377a8150c7dfde851641d5b401a84233b242041",
+      "bytes": 1156,
+      "width": 523,
+      "height": 53,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "12d2be8569beb829ee25203d72538d93"
+    },
+    {
+      "name": "87da125c93d9ede229b162e047b69884.jpg",
+      "relative": "导入\\2026-10-18\\87da125c93d9ede229b162e047b69884.jpg",
+      "file_sha256": "267e319e0da4f5297276d0e59add8743419889ce574f4c87c8c87b57ca257a8c",
+      "bytes": 687624,
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "3ae534571ea18bad3cd155279f5c72bd"
+    },
+    {
+      "name": "973ee4126b196ec54c45347ee9b57fde.png",
+      "relative": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "file_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "bytes": 15162,
+      "width": 588,
+      "height": 601,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "3572302bf1a55886eb8930e51ae083da"
+    },
+    {
+      "name": "993a6772c00fda78e6a20d5cf92e1dba.png",
+      "relative": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "file_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "bytes": 60395,
+      "width": 1399,
+      "height": 616,
+      "mode": "RGBA",
+      "exif_orientation": 1,
+      "pixel_hash": "72f850bc975f575f39ab8cbe2032f8f0"
+    },
+    {
+      "name": "9acb16f965fd2011d5feb5db2bd225db.png",
+      "relative": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "file_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "bytes": 10649,
+      "width": 588,
+      "height": 401,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "1e55afcbf3be0b89f80d95bd273f3800"
+    },
+    {
+      "name": "b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "relative": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "file_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "bytes": 32266,
+      "width": 1396,
+      "height": 343,
+      "mode": "RGBA",
+      "exif_orientation": 1,
+      "pixel_hash": "c43a34fb8ebae594f9e68932ea79f999"
+    },
+    {
+      "name": "b64eccbfc81cc646d4563b325ddb05a1.jpg",
+      "relative": "导入\\2026-10-18\\b64eccbfc81cc646d4563b325ddb05a1.jpg",
+      "file_sha256": "99bf160ca788b72deb73972b014f74d9db4509bd0b4f1771f5c551f4b727d7b2",
+      "bytes": 574127,
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "0f30f2a76d25c53a11d407b2fb690ae7"
+    },
+    {
+      "name": "d628de69d4d538312867584dc473225f.png",
+      "relative": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "file_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "bytes": 70355,
+      "width": 1314,
+      "height": 642,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "e8f9d6e8351996a95bc84a6a4843187e"
+    },
+    {
+      "name": "e92ab0f8325c7189388eaf6018477284.png",
+      "relative": "导入\\2026-10-18\\e92ab0f8325c7189388eaf6018477284.png",
+      "file_sha256": "3569693d6c8116aa95e851016e5a2622f9e064a58fb7dcb7c6ded6cca0264d02",
+      "bytes": 4286,
+      "width": 983,
+      "height": 114,
+      "mode": "RGB",
+      "exif_orientation": 1,
+      "pixel_hash": "40a1629f24052de34975f35c2b47c962"
+    },
+    {
+      "name": "屏幕截图 2026-10-18 221419.png",
+      "relative": "导入\\2026-10-18\\屏幕截图 2026-10-18 221419.png",
+      "file_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+      "bytes": 5847,
+      "width": 101,
+      "height": 41,
+      "mode": "RGBA",
+      "exif_orientation": 1,
+      "pixel_hash": "4346e7b4f4e68eb93d00dd982b290fba"
+    }
+  ]
+}

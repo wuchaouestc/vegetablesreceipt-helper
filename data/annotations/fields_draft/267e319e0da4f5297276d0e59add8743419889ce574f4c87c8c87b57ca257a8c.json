@@ -1,0 +1,1849 @@
+{
+  "schema_version": 1,
+  "image_sha256": "267e319e0da4f5297276d0e59add8743419889ce574f4c87c8c87b57ca257a8c",
+  "image_path": "导入\\2026-10-18\\87da125c93d9ede229b162e047b69884.jpg",
+  "review_status": "draft_fields",
+  "source_group": null,
+  "split": "debug",
+  "fields": [
+    {
+      "region_id": "cat-0",
+      "field": "category",
+      "bbox": [
+        346.0,
+        132.0,
+        462.0,
+        204.0
+      ],
+      "transcript": "生姜",
+      "normalized_value": "生姜",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "cat-1",
+      "field": "category",
+      "bbox": [
+        636.0,
+        131.0,
+        765.0,
+        208.0
+      ],
+      "transcript": "善肉",
+      "normalized_value": "善肉",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "cat-2",
+      "field": "category",
+      "bbox": [
+        883.0,
+        135.0,
+        1010.0,
+        206.0
+      ],
+      "transcript": "蒜米",
+      "normalized_value": "蒜米",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-3",
+      "field": "unit",
+      "bbox": [
+        854.0,
+        193.0,
+        1003.0,
+        274.0
+      ],
+      "transcript": "1366:3个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-4",
+      "field": "unit",
+      "bbox": [
+        608.0,
+        198.0,
+        761.0,
+        277.0
+      ],
+      "transcript": "1366:3个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-5",
+      "field": "unit",
+      "bbox": [
+        345.0,
+        202.0,
+        481.0,
+        276.0
+      ],
+      "transcript": "185:1个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-6",
+      "field": "unit",
+      "bbox": [
+        853.0,
+        261.0,
+        997.0,
+        334.0
+      ],
+      "transcript": "1365:2个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-7",
+      "field": "unit",
+      "bbox": [
+        609.0,
+        269.0,
+        776.0,
+        346.0
+      ],
+      "transcript": "1365:1.5斤",
+      "normalized_value": "斤",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-8",
+      "field": "unit",
+      "bbox": [
+        338.0,
+        276.0,
+        488.0,
+        350.0
+      ],
+      "transcript": "1136:2个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-9",
+      "field": "unit",
+      "bbox": [
+        854.0,
+        324.0,
+        1017.0,
+        402.0
+      ],
+      "transcript": "1368:10斤",
+      "normalized_value": "斤",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-10",
+      "field": "unit",
+      "bbox": [
+        606.0,
+        327.0,
+        760.0,
+        408.0
+      ],
+      "transcript": "1368:10个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-11",
+      "field": "unit",
+      "bbox": [
+        337.0,
+        347.0,
+        508.0,
+        431.0
+      ],
+      "transcript": "1188:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-12",
+      "field": "unit",
+      "bbox": [
+        855.0,
+        391.0,
+        1008.75,
+        464.0
+      ],
+      "transcript": "933:4个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-13",
+      "field": "unit",
+      "bbox": [
+        610.0,
+        393.0,
+        750.0,
+        467.0
+      ],
+      "transcript": "933:6个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-14",
+      "field": "unit",
+      "bbox": [
+        332.0,
+        417.0,
+        495.0,
+        499.0
+      ],
+      "transcript": "1188:5个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-15",
+      "field": "unit",
+      "bbox": [
+        855.0,
+        450.0,
+        1004.0,
+        523.0
+      ],
+      "transcript": "931:5个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-16",
+      "field": "unit",
+      "bbox": [
+        611.0,
+        453.0,
+        740.0,
+        521.0
+      ],
+      "transcript": "931:5个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-17",
+      "field": "unit",
+      "bbox": [
+        330.0,
+        491.0,
+        486.0,
+        582.0
+      ],
+      "transcript": "1362:2个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-18",
+      "field": "unit",
+      "bbox": [
+        607.0,
+        511.0,
+        750.0,
+        580.0
+      ],
+      "transcript": "1368:10个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-19",
+      "field": "unit",
+      "bbox": [
+        857.0,
+        512.0,
+        1002.0,
+        584.0
+      ],
+      "transcript": "1368:10个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-20",
+      "field": "unit",
+      "bbox": [
+        324.0,
+        560.0,
+        472.0,
+        650.0
+      ],
+      "transcript": "70:1个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-21",
+      "field": "unit",
+      "bbox": [
+        607.0,
+        571.0,
+        746.0,
+        638.0
+      ],
+      "transcript": "1368:3个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-22",
+      "field": "unit",
+      "bbox": [
+        858.0,
+        573.0,
+        1001.0,
+        647.0
+      ],
+      "transcript": "1368:3个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-23",
+      "field": "unit",
+      "bbox": [
+        602.0,
+        632.0,
+        734.0,
+        694.0
+      ],
+      "transcript": "935:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-24",
+      "field": "unit",
+      "bbox": [
+        602.0,
+        694.0,
+        748.0,
+        768.0
+      ],
+      "transcript": "1381:4个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-25",
+      "field": "unit",
+      "bbox": [
+        853.0,
+        694.0,
+        994.0,
+        767.0
+      ],
+      "transcript": "1381:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-26",
+      "field": "unit",
+      "bbox": [
+        598.0,
+        759.0,
+        744.0,
+        824.0
+      ],
+      "transcript": "1381:4个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-27",
+      "field": "unit",
+      "bbox": [
+        602.0,
+        820.0,
+        764.0,
+        894.0
+      ],
+      "transcript": "1381:2个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-28",
+      "field": "unit",
+      "bbox": [
+        844.0,
+        825.0,
+        997.0,
+        908.0
+      ],
+      "transcript": "21:20个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-29",
+      "field": "unit",
+      "bbox": [
+        599.0,
+        886.0,
+        753.0,
+        967.0
+      ],
+      "transcript": "21:15个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-30",
+      "field": "unit",
+      "bbox": [
+        843.0,
+        907.0,
+        970.0,
+        989.0
+      ],
+      "transcript": "22:1个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-31",
+      "field": "unit",
+      "bbox": [
+        827.0,
+        976.0,
+        979.0,
+        1067.0
+      ],
+      "transcript": "1137:1包",
+      "normalized_value": "包",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-32",
+      "field": "unit",
+      "bbox": [
+        574.0,
+        1015.0,
+        738.0,
+        1115.0
+      ],
+      "transcript": "1137:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-33",
+      "field": "unit",
+      "bbox": [
+        823.0,
+        1057.0,
+        974.0,
+        1136.0
+      ],
+      "transcript": "1133:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-34",
+      "field": "unit",
+      "bbox": [
+        573.0,
+        1104.0,
+        731.0,
+        1188.0
+      ],
+      "transcript": "1133:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-35",
+      "field": "unit",
+      "bbox": [
+        830.0,
+        1130.0,
+        988.0,
+        1212.0
+      ],
+      "transcript": "277:8个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-36",
+      "field": "unit",
+      "bbox": [
+        569.0,
+        1181.0,
+        730.0,
+        1250.0
+      ],
+      "transcript": "277:7个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-37",
+      "field": "unit",
+      "bbox": [
+        830.0,
+        1203.0,
+        1003.0,
+        1280.0
+      ],
+      "transcript": "278:5个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-38",
+      "field": "unit",
+      "bbox": [
+        566.0,
+        1248.0,
+        746.0,
+        1326.0
+      ],
+      "transcript": "278:5个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-39",
+      "field": "unit",
+      "bbox": [
+        838.0,
+        1273.0,
+        1023.0,
+        1370.0
+      ],
+      "transcript": "1188:3个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-40",
+      "field": "unit",
+      "bbox": [
+        577.0,
+        1315.0,
+        719.0,
+        1379.0
+      ],
+      "transcript": "48:52",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-41",
+      "field": "unit",
+      "bbox": [
+        834.0,
+        1353.0,
+        1014.0,
+        1438.0
+      ],
+      "transcript": "1188:8个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-42",
+      "field": "unit",
+      "bbox": [
+        570.0,
+        1379.0,
+        716.0,
+        1454.0
+      ],
+      "transcript": "14:34",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-43",
+      "field": "unit",
+      "bbox": [
+        838.0,
+        1429.0,
+        1006.0,
+        1504.0
+      ],
+      "transcript": "48:2包",
+      "normalized_value": "包",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-44",
+      "field": "unit",
+      "bbox": [
+        563.0,
+        1449.0,
+        716.0,
+        1527.0
+      ],
+      "transcript": "12:5个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-45",
+      "field": "unit",
+      "bbox": [
+        840.0,
+        1500.0,
+        976.0,
+        1580.0
+      ],
+      "transcript": "14:2个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-46",
+      "field": "unit",
+      "bbox": [
+        551.0,
+        1517.0,
+        718.0,
+        1603.0
+      ],
+      "transcript": "29:2个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-47",
+      "field": "unit",
+      "bbox": [
+        833.0,
+        1568.0,
+        956.0,
+        1643.0
+      ],
+      "transcript": "12:32",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-48",
+      "field": "unit",
+      "bbox": [
+        518.0,
+        1602.0,
+        692.0,
+        1676.0
+      ],
+      "transcript": "1369:3个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-49",
+      "field": "unit",
+      "bbox": [
+        817.0,
+        1630.0,
+        949.0,
+        1713.0
+      ],
+      "transcript": "29:24",
+      "normalized_value": "",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-50",
+      "field": "unit",
+      "bbox": [
+        805.0,
+        1698.0,
+        985.0,
+        1774.0
+      ],
+      "transcript": "1369:4个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    },
+    {
+      "region_id": "unit-51",
+      "field": "unit",
+      "bbox": [
+        800.0,
+        1768.0,
+        976.0,
+        1842.0
+      ],
+      "transcript": "1361:4个",
+      "normalized_value": "个",
+      "visibility": "visible",
+      "source": "auto_draft"
+    }
+  ],
+  "regions": [
+    {
+      "region_id": "cat-0",
+      "field": "category",
+      "bbox": [
+        342.0,
+        128.0,
+        466.0,
+        208.0
+      ],
+      "source_bbox": [
+        346.0,
+        132.0,
+        462.0,
+        204.0
+      ],
+      "match_kind": "heading",
+      "row_ids": [],
+      "heading_bbox": [
+        346.0,
+        132.0,
+        462.0,
+        204.0
+      ],
+      "code": "",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "cat-1",
+      "field": "category",
+      "bbox": [
+        632.0,
+        127.0,
+        769.0,
+        212.0
+      ],
+      "source_bbox": [
+        636.0,
+        131.0,
+        765.0,
+        208.0
+      ],
+      "match_kind": "heading",
+      "row_ids": [],
+      "heading_bbox": [
+        636.0,
+        131.0,
+        765.0,
+        208.0
+      ],
+      "code": "",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "cat-2",
+      "field": "category",
+      "bbox": [
+        879.0,
+        131.0,
+        1014.0,
+        210.0
+      ],
+      "source_bbox": [
+        883.0,
+        135.0,
+        1010.0,
+        206.0
+      ],
+      "match_kind": "heading",
+      "row_ids": [],
+      "heading_bbox": [
+        883.0,
+        135.0,
+        1010.0,
+        206.0
+      ],
+      "code": "",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-3",
+      "field": "unit",
+      "bbox": [
+        852.0,
+        191.0,
+        1005.0,
+        276.0
+      ],
+      "source_bbox": [
+        854.0,
+        193.0,
+        1003.0,
+        274.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1366",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-4",
+      "field": "unit",
+      "bbox": [
+        606.0,
+        196.0,
+        763.0,
+        279.0
+      ],
+      "source_bbox": [
+        608.0,
+        198.0,
+        761.0,
+        277.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1366",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-5",
+      "field": "unit",
+      "bbox": [
+        343.0,
+        200.0,
+        483.0,
+        278.0
+      ],
+      "source_bbox": [
+        345.0,
+        202.0,
+        481.0,
+        276.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "185",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-6",
+      "field": "unit",
+      "bbox": [
+        851.0,
+        259.0,
+        999.0,
+        336.0
+      ],
+      "source_bbox": [
+        853.0,
+        261.0,
+        997.0,
+        334.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1365",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-7",
+      "field": "unit",
+      "bbox": [
+        607.0,
+        267.0,
+        778.0,
+        348.0
+      ],
+      "source_bbox": [
+        609.0,
+        269.0,
+        776.0,
+        346.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1365",
+      "expected_unit": "斤"
+    },
+    {
+      "region_id": "unit-8",
+      "field": "unit",
+      "bbox": [
+        336.0,
+        274.0,
+        490.0,
+        352.0
+      ],
+      "source_bbox": [
+        338.0,
+        276.0,
+        488.0,
+        350.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1136",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-9",
+      "field": "unit",
+      "bbox": [
+        852.0,
+        322.0,
+        1019.0,
+        404.0
+      ],
+      "source_bbox": [
+        854.0,
+        324.0,
+        1017.0,
+        402.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1368",
+      "expected_unit": "斤"
+    },
+    {
+      "region_id": "unit-10",
+      "field": "unit",
+      "bbox": [
+        604.0,
+        325.0,
+        762.0,
+        410.0
+      ],
+      "source_bbox": [
+        606.0,
+        327.0,
+        760.0,
+        408.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1368",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-11",
+      "field": "unit",
+      "bbox": [
+        335.0,
+        345.0,
+        510.0,
+        433.0
+      ],
+      "source_bbox": [
+        337.0,
+        347.0,
+        508.0,
+        431.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1188",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-12",
+      "field": "unit",
+      "bbox": [
+        853.0,
+        389.0,
+        1010.75,
+        466.0
+      ],
+      "source_bbox": [
+        855.0,
+        391.0,
+        1008.75,
+        464.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "933",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-13",
+      "field": "unit",
+      "bbox": [
+        608.0,
+        391.0,
+        752.0,
+        469.0
+      ],
+      "source_bbox": [
+        610.0,
+        393.0,
+        750.0,
+        467.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "933",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-14",
+      "field": "unit",
+      "bbox": [
+        330.0,
+        415.0,
+        497.0,
+        501.0
+      ],
+      "source_bbox": [
+        332.0,
+        417.0,
+        495.0,
+        499.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1188",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-15",
+      "field": "unit",
+      "bbox": [
+        853.0,
+        448.0,
+        1006.0,
+        525.0
+      ],
+      "source_bbox": [
+        855.0,
+        450.0,
+        1004.0,
+        523.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "931",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-16",
+      "field": "unit",
+      "bbox": [
+        609.0,
+        451.0,
+        742.0,
+        523.0
+      ],
+      "source_bbox": [
+        611.0,
+        453.0,
+        740.0,
+        521.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "931",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-17",
+      "field": "unit",
+      "bbox": [
+        328.0,
+        489.0,
+        488.0,
+        584.0
+      ],
+      "source_bbox": [
+        330.0,
+        491.0,
+        486.0,
+        582.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1362",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-18",
+      "field": "unit",
+      "bbox": [
+        605.0,
+        509.0,
+        752.0,
+        582.0
+      ],
+      "source_bbox": [
+        607.0,
+        511.0,
+        750.0,
+        580.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1368",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-19",
+      "field": "unit",
+      "bbox": [
+        855.0,
+        510.0,
+        1004.0,
+        586.0
+      ],
+      "source_bbox": [
+        857.0,
+        512.0,
+        1002.0,
+        584.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1368",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-20",
+      "field": "unit",
+      "bbox": [
+        322.0,
+        558.0,
+        474.0,
+        652.0
+      ],
+      "source_bbox": [
+        324.0,
+        560.0,
+        472.0,
+        650.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "70",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-21",
+      "field": "unit",
+      "bbox": [
+        605.0,
+        569.0,
+        748.0,
+        640.0
+      ],
+      "source_bbox": [
+        607.0,
+        571.0,
+        746.0,
+        638.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1368",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-22",
+      "field": "unit",
+      "bbox": [
+        856.0,
+        571.0,
+        1003.0,
+        649.0
+      ],
+      "source_bbox": [
+        858.0,
+        573.0,
+        1001.0,
+        647.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1368",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-23",
+      "field": "unit",
+      "bbox": [
+        600.0,
+        630.0,
+        736.0,
+        696.0
+      ],
+      "source_bbox": [
+        602.0,
+        632.0,
+        734.0,
+        694.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "935",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-24",
+      "field": "unit",
+      "bbox": [
+        600.0,
+        692.0,
+        750.0,
+        770.0
+      ],
+      "source_bbox": [
+        602.0,
+        694.0,
+        748.0,
+        768.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1381",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-25",
+      "field": "unit",
+      "bbox": [
+        851.0,
+        692.0,
+        996.0,
+        769.0
+      ],
+      "source_bbox": [
+        853.0,
+        694.0,
+        994.0,
+        767.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1381",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-26",
+      "field": "unit",
+      "bbox": [
+        596.0,
+        757.0,
+        746.0,
+        826.0
+      ],
+      "source_bbox": [
+        598.0,
+        759.0,
+        744.0,
+        824.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1381",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-27",
+      "field": "unit",
+      "bbox": [
+        600.0,
+        818.0,
+        766.0,
+        896.0
+      ],
+      "source_bbox": [
+        602.0,
+        820.0,
+        764.0,
+        894.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1381",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-28",
+      "field": "unit",
+      "bbox": [
+        842.0,
+        823.0,
+        999.0,
+        910.0
+      ],
+      "source_bbox": [
+        844.0,
+        825.0,
+        997.0,
+        908.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "21",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-29",
+      "field": "unit",
+      "bbox": [
+        597.0,
+        884.0,
+        755.0,
+        969.0
+      ],
+      "source_bbox": [
+        599.0,
+        886.0,
+        753.0,
+        967.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "21",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-30",
+      "field": "unit",
+      "bbox": [
+        841.0,
+        905.0,
+        972.0,
+        991.0
+      ],
+      "source_bbox": [
+        843.0,
+        907.0,
+        970.0,
+        989.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "22",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-31",
+      "field": "unit",
+      "bbox": [
+        825.0,
+        974.0,
+        981.0,
+        1069.0
+      ],
+      "source_bbox": [
+        827.0,
+        976.0,
+        979.0,
+        1067.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1137",
+      "expected_unit": "包"
+    },
+    {
+      "region_id": "unit-32",
+      "field": "unit",
+      "bbox": [
+        572.0,
+        1013.0,
+        740.0,
+        1117.0
+      ],
+      "source_bbox": [
+        574.0,
+        1015.0,
+        738.0,
+        1115.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1137",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-33",
+      "field": "unit",
+      "bbox": [
+        821.0,
+        1055.0,
+        976.0,
+        1138.0
+      ],
+      "source_bbox": [
+        823.0,
+        1057.0,
+        974.0,
+        1136.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1133",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-34",
+      "field": "unit",
+      "bbox": [
+        571.0,
+        1102.0,
+        733.0,
+        1190.0
+      ],
+      "source_bbox": [
+        573.0,
+        1104.0,
+        731.0,
+        1188.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1133",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-35",
+      "field": "unit",
+      "bbox": [
+        828.0,
+        1128.0,
+        990.0,
+        1214.0
+      ],
+      "source_bbox": [
+        830.0,
+        1130.0,
+        988.0,
+        1212.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "277",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-36",
+      "field": "unit",
+      "bbox": [
+        567.0,
+        1179.0,
+        732.0,
+        1252.0
+      ],
+      "source_bbox": [
+        569.0,
+        1181.0,
+        730.0,
+        1250.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "277",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-37",
+      "field": "unit",
+      "bbox": [
+        828.0,
+        1201.0,
+        1005.0,
+        1282.0
+      ],
+      "source_bbox": [
+        830.0,
+        1203.0,
+        1003.0,
+        1280.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "278",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-38",
+      "field": "unit",
+      "bbox": [
+        564.0,
+        1246.0,
+        748.0,
+        1328.0
+      ],
+      "source_bbox": [
+        566.0,
+        1248.0,
+        746.0,
+        1326.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "278",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-39",
+      "field": "unit",
+      "bbox": [
+        836.0,
+        1271.0,
+        1025.0,
+        1372.0
+      ],
+      "source_bbox": [
+        838.0,
+        1273.0,
+        1023.0,
+        1370.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1188",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-40",
+      "field": "unit",
+      "bbox": [
+        575.0,
+        1313.0,
+        721.0,
+        1381.0
+      ],
+      "source_bbox": [
+        577.0,
+        1315.0,
+        719.0,
+        1379.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "48",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-41",
+      "field": "unit",
+      "bbox": [
+        832.0,
+        1351.0,
+        1016.0,
+        1440.0
+      ],
+      "source_bbox": [
+        834.0,
+        1353.0,
+        1014.0,
+        1438.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1188",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-42",
+      "field": "unit",
+      "bbox": [
+        568.0,
+        1377.0,
+        718.0,
+        1456.0
+      ],
+      "source_bbox": [
+        570.0,
+        1379.0,
+        716.0,
+        1454.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "14",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-43",
+      "field": "unit",
+      "bbox": [
+        836.0,
+        1427.0,
+        1008.0,
+        1506.0
+      ],
+      "source_bbox": [
+        838.0,
+        1429.0,
+        1006.0,
+        1504.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "48",
+      "expected_unit": "包"
+    },
+    {
+      "region_id": "unit-44",
+      "field": "unit",
+      "bbox": [
+        561.0,
+        1447.0,
+        718.0,
+        1529.0
+      ],
+      "source_bbox": [
+        563.0,
+        1449.0,
+        716.0,
+        1527.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "12",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-45",
+      "field": "unit",
+      "bbox": [
+        838.0,
+        1498.0,
+        978.0,
+        1582.0
+      ],
+      "source_bbox": [
+        840.0,
+        1500.0,
+        976.0,
+        1580.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "14",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-46",
+      "field": "unit",
+      "bbox": [
+        549.0,
+        1515.0,
+        720.0,
+        1605.0
+      ],
+      "source_bbox": [
+        551.0,
+        1517.0,
+        718.0,
+        1603.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "29",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-47",
+      "field": "unit",
+      "bbox": [
+        831.0,
+        1566.0,
+        958.0,
+        1645.0
+      ],
+      "source_bbox": [
+        833.0,
+        1568.0,
+        956.0,
+        1643.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "12",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-48",
+      "field": "unit",
+      "bbox": [
+        516.0,
+        1600.0,
+        694.0,
+        1678.0
+      ],
+      "source_bbox": [
+        518.0,
+        1602.0,
+        692.0,
+        1676.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1369",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-49",
+      "field": "unit",
+      "bbox": [
+        815.0,
+        1628.0,
+        951.0,
+        1715.0
+      ],
+      "source_bbox": [
+        817.0,
+        1630.0,
+        949.0,
+        1713.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "29",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-50",
+      "field": "unit",
+      "bbox": [
+        803.0,
+        1696.0,
+        987.0,
+        1776.0
+      ],
+      "source_bbox": [
+        805.0,
+        1698.0,
+        985.0,
+        1774.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1369",
+      "expected_unit": "个"
+    },
+    {
+      "region_id": "unit-51",
+      "field": "unit",
+      "bbox": [
+        798.0,
+        1766.0,
+        978.0,
+        1844.0
+      ],
+      "source_bbox": [
+        800.0,
+        1768.0,
+        976.0,
+        1842.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "1361",
+      "expected_unit": "个"
+    }
+  ],
+  "heading_count": 3,
+  "entry_count": 49
+}

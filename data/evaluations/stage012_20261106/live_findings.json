@@ -1,0 +1,107 @@
+{
+  "groups": {
+    "GeneralAccurateOCR": {
+      "requests": 13,
+      "ok": 13,
+      "errors": [],
+      "median_seconds": 0.943,
+      "min_seconds": 0.2823,
+      "max_seconds": 1.743,
+      "text_blocks": 486,
+      "records": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "GeneralHandwritingOCR": {
+      "requests": 13,
+      "ok": 13,
+      "errors": [],
+      "median_seconds": 1.208,
+      "min_seconds": 0.2596,
+      "max_seconds": 1.7676,
+      "text_blocks": 485,
+      "records": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "deepseek-chat": {
+      "requests": 2,
+      "ok": 2,
+      "errors": [],
+      "median_seconds": 3.332,
+      "min_seconds": 3.0135,
+      "max_seconds": 3.6501,
+      "text_blocks": 0,
+      "records": [
+        23,
+        17
+      ],
+      "usage": {
+        "prompt_tokens": 2676,
+        "completion_tokens": 1435,
+        "total_tokens": 4111
+      }
+    },
+    "deepseek-reasoner": {
+      "requests": 1,
+      "ok": 0,
+      "errors": [
+        "incomplete_response"
+      ],
+      "median_seconds": 25.938,
+      "min_seconds": 25.9379,
+      "max_seconds": 25.9379,
+      "text_blocks": 0,
+      "records": [
+        0
+      ],
+      "usage": {
+        "prompt_tokens": 1363,
+        "completion_tokens": 4096,
+        "total_tokens": 5459
+      }
+    }
+  },
+  "requests": 29,
+  "human_confirmed_accuracy": null,
+  "remaining_calls": 1,
+  "notes": [
+    "OCR成功是接收测试，不等于字段正确。",
+    "reasoner在4096输出token限制下截断，不等于生产无限制请求必然失败。",
+    "人工确认未完成，禁止将视觉草稿记作业务准确率。"
+  ]
+}

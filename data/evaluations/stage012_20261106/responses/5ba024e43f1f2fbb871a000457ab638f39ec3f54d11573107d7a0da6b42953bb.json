@@ -1,0 +1,77 @@
+{
+  "request": {
+    "schema_version": 1,
+    "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+    "variant": "original",
+    "preprocessing": "disabled_by_plan",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    }
+  },
+  "response": {
+    "provider": "tencent",
+    "status": "ok",
+    "blocks": [
+      {
+        "text": "垃圾中共使",
+        "x": 15.0,
+        "y": 1.0,
+        "polygon": [
+          {
+            "X": 15.0,
+            "Y": 1.0
+          },
+          {
+            "X": 100.0,
+            "Y": 15.0
+          },
+          {
+            "X": 98.0,
+            "Y": 40.0
+          },
+          {
+            "X": 11.0,
+            "Y": 26.0
+          }
+        ],
+        "confidence": 66.0
+      },
+      {
+        "text": "931:0.5个长",
+        "x": 12.0,
+        "y": 27.0,
+        "polygon": [
+          {
+            "X": 12.0,
+            "Y": 27.0
+          },
+          {
+            "X": 93.0,
+            "Y": 27.0
+          },
+          {
+            "X": 93.0,
+            "Y": 40.0
+          },
+          {
+            "X": 12.0,
+            "Y": 40.0
+          }
+        ],
+        "confidence": 95.0
+      }
+    ],
+    "records": [],
+    "notes": [],
+    "error_code": "",
+    "request_id": "28a0d5d3-7d1b-4e2e-a1d7-55fcae986831",
+    "usage": {},
+    "elapsed_seconds": 0.2823,
+    "action": "GeneralAccurateOCR"
+  },
+  "cache_hit": false,
+  "network_calls": 1
+}

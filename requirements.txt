@@ -1,0 +1,4 @@
+Pillow>=10.0,<13.0
+tkinterdnd2>=0.4,<0.7
+pywin32>=306; sys_platform == "win32"
+PyInstaller>=6.0,<7.0

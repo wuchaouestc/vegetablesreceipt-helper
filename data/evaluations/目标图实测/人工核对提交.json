@@ -1,0 +1,1221 @@
+{
+  "schema_version": 1,
+  "kind": "handwriting-review",
+  "task_id": "目标图实测",
+  "reviewer": "吴超",
+  "customer": null,
+  "image_path": "0a07371a8f56afba76dcb5de02f9b015.jpg",
+  "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+  "image_root": "D:\\项目开发\\打单助手\\打单助手V6.x_源码\\data\\手写素材",
+  "notes": [
+    "OCR 取到 21 个文字块（含完整坐标框）",
+    "部分手写文字识别存在不确定性，如'马兄弟的'、'老赵干苦力'、'小虫草'、'小蓝美'等名称可能不完全准确。",
+    "部分数字和单位（如'个'、'长'、'小'）字迹潦草，可能存在识别误差。",
+    "图片左侧边缘有部分被截断的文字，无法完整识别。",
+    "模型按标题分组返回了 6 组明细，已展开成 11 行逐行明细",
+    "原图有 1 处文字没对上任何明细，可能是漏行或不是明细，请核对原图"
+  ],
+  "rows": [
+    {
+      "row_id": "row-0001",
+      "record_index": 0,
+      "ai": {
+        "category": "马兄弟的",
+        "customer_code": "1368",
+        "weight": "10",
+        "unit": "个",
+        "remark": ""
+      },
+      "final": {
+        "category": "马蹄肉",
+        "customer_code": "1368",
+        "weight": "10",
+        "unit": "斤",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": [
+        121,
+        250,
+        311,
+        341
+      ],
+      "heading_bbox": [
+        190,
+        211,
+        369,
+        272
+      ],
+      "heading_text": "马兄帝肉",
+      "entry_text": "1368:10斤",
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：马兄弟的",
+        "词典外编码：1368"
+      ],
+      "observations": [
+        "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+      ],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "马兄弟的",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "马兄弟的"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "马兄帝肉",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 88,
+          "evidence": "马兄帝肉"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1368",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "1368"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1368",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 94,
+          "evidence": "1368:10斤"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "斤",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 94,
+          "evidence": "1368:10斤"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "10",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "10"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "10",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 94,
+          "evidence": "1368:10斤"
+        }
+      ],
+      "suggestion": "不能确定：品类 有 马兄弟的、马兄帝肉 几种读法；单位 有 个、斤 几种读法，请对照原图人工判断",
+      "similar": [],
+      "removed": false
+    },
+    {
+      "row_id": "row-0002",
+      "record_index": 1,
+      "ai": {
+        "category": "马兄弟的",
+        "customer_code": "27",
+        "weight": "2",
+        "unit": "",
+        "remark": ""
+      },
+      "final": {
+        "category": "马蹄肉",
+        "customer_code": "27",
+        "weight": "2",
+        "unit": "斤",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": [
+        116,
+        315,
+        275,
+        392
+      ],
+      "heading_bbox": [
+        190,
+        211,
+        369,
+        272
+      ],
+      "heading_text": "马兄帝肉",
+      "entry_text": "27:2斤",
+      "reasons": [
+        "数量两路不一致，已按原图行内文字修正",
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：马兄弟的",
+        "词典外编码：27"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "马兄弟的",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "马兄弟的"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "马兄帝肉",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 88,
+          "evidence": "马兄帝肉"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "27",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "27"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "27",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 84,
+          "evidence": "27:2斤"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "斤",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 84,
+          "evidence": "27:2斤"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "24",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "24"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "2",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 84,
+          "evidence": "27:2斤"
+        }
+      ],
+      "suggestion": "建议改成「2」（数量两路不一致，已按原图行内文字修正）",
+      "similar": []
+    },
+    {
+      "row_id": "row-0003",
+      "record_index": 2,
+      "ai": {
+        "category": "老赵干苦力",
+        "customer_code": "933",
+        "weight": "2",
+        "unit": "个",
+        "remark": "长"
+      },
+      "final": {
+        "category": "去皮干葱头",
+        "customer_code": "933",
+        "weight": "2",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "status": "doubt",
+      "bbox": [
+        459,
+        253,
+        619,
+        306
+      ],
+      "heading_bbox": [
+        476,
+        212,
+        698,
+        258
+      ],
+      "heading_text": "左皮干芒头",
+      "entry_text": "933:2斤",
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：933",
+        "局部复核与原图行内文字一致，编码已采信",
+        "局部复核与两路都不一致，数量仍需人工核对"
+      ],
+      "observations": [
+        "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+      ],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "老赵干苦力",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "老赵干苦力"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "左皮干芒头",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 75,
+          "evidence": "左皮干芒头"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "933",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "933"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "933",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 99,
+          "evidence": "933:2斤"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "933",
+          "source": "review",
+          "source_label": "局部复核",
+          "confidence": null,
+          "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "斤",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 99,
+          "evidence": "933:2斤"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "2",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "2"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "2",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 99,
+          "evidence": "933:2斤"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "24",
+          "source": "review",
+          "source_label": "局部复核",
+          "confidence": null,
+          "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo"
+        }
+      ],
+      "suggestion": "建议改成「933」（局部复核与原图行内文字一致，编码已采信）",
+      "similar": []
+    },
+    {
+      "row_id": "row-0004",
+      "record_index": 3,
+      "ai": {
+        "category": "老赵干苦力",
+        "customer_code": "931",
+        "weight": "10",
+        "unit": "个",
+        "remark": "长"
+      },
+      "final": {
+        "category": "去皮干葱头",
+        "customer_code": "931",
+        "weight": "10",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "status": "doubt",
+      "bbox": [
+        456,
+        301,
+        627.5,
+        366
+      ],
+      "heading_bbox": [
+        476,
+        212,
+        698,
+        258
+      ],
+      "heading_text": "左皮干芒头",
+      "entry_text": "931:10个",
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：931",
+        "局部复核与原图行内文字一致，编码已采信",
+        "局部复核与两路都不一致，数量仍需人工核对"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "老赵干苦力",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "老赵干苦力"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "左皮干芒头",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 75,
+          "evidence": "左皮干芒头"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "931",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "931"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "931",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 98,
+          "evidence": "931:10个"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "931",
+          "source": "review",
+          "source_label": "局部复核",
+          "confidence": null,
+          "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 98,
+          "evidence": "931:10个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "10",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "10"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "10",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 98,
+          "evidence": "931:10个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "104",
+          "source": "review",
+          "source_label": "局部复核",
+          "confidence": null,
+          "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo"
+        }
+      ],
+      "suggestion": "建议改成「931」（局部复核与原图行内文字一致，编码已采信）",
+      "similar": []
+    },
+    {
+      "row_id": "row-0005",
+      "record_index": 4,
+      "ai": {
+        "category": "老赵干苦力",
+        "customer_code": "15",
+        "weight": "54",
+        "unit": "",
+        "remark": "长"
+      },
+      "final": {
+        "category": "去皮干葱头",
+        "customer_code": "15",
+        "weight": "5",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "status": "doubt",
+      "bbox": null,
+      "heading_bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "老赵干苦力",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "老赵干苦力"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "15",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "15"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "54",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "54"
+        }
+      ],
+      "suggestion": "两路一致，没有需要改动的地方",
+      "similar": []
+    },
+    {
+      "row_id": "row-0006",
+      "record_index": 5,
+      "ai": {
+        "category": "老赵干苦力",
+        "customer_code": "1188",
+        "weight": "2",
+        "unit": "个",
+        "remark": "长"
+      },
+      "final": {
+        "category": "去皮干葱头",
+        "customer_code": "1188",
+        "weight": "2",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "status": "doubt",
+      "bbox": [
+        414,
+        407,
+        620.5,
+        498
+      ],
+      "heading_bbox": [
+        476,
+        212,
+        698,
+        258
+      ],
+      "heading_text": "左皮干芒头",
+      "entry_text": "1188:2斤",
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：老赵干苦力",
+        "词典外编码：1188",
+        "局部复核与原图行内文字一致，编码已采信",
+        "局部复核与两路都不一致，数量仍需人工核对"
+      ],
+      "observations": [
+        "单位字形两路不一致（斤/个等易混字），不作裁决依据"
+      ],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "老赵干苦力",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "老赵干苦力"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "左皮干芒头",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 75,
+          "evidence": "左皮干芒头"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1188",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "1188"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1188",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 82,
+          "evidence": "1188:2斤"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1188",
+          "source": "review",
+          "source_label": "局部复核",
+          "confidence": null,
+          "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "斤",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 82,
+          "evidence": "1188:2斤"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "2",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "2"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "2",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 82,
+          "evidence": "1188:2斤"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "24",
+          "source": "review",
+          "source_label": "局部复核",
+          "confidence": null,
+          "evidence": "{\"records\":[{\"category\":\"\",\"customer_code\":\"933\",\"weight\":\"24\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"customer_code\":\"931\",\"weight\":\"104\",\"unit\":\"\",\"remark\":\"括号内文字无法辨认\"},{\"category\":\"\",\"custo"
+        }
+      ],
+      "suggestion": "建议改成「1188」（局部复核与原图行内文字一致，编码已采信）",
+      "similar": []
+    },
+    {
+      "row_id": "row-0007",
+      "record_index": 6,
+      "ai": {
+        "category": "沙美",
+        "customer_code": "1366",
+        "weight": "1",
+        "unit": "个",
+        "remark": ""
+      },
+      "final": {
+        "category": "沙姜",
+        "customer_code": "1366",
+        "weight": "1",
+        "unit": "斤",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": null,
+      "heading_bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "沙美",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "沙美"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1366",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "1366"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "1",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "1"
+        }
+      ],
+      "suggestion": "两路一致，没有需要改动的地方",
+      "similar": []
+    },
+    {
+      "row_id": "row-0008",
+      "record_index": 7,
+      "ai": {
+        "category": "沙美",
+        "customer_code": "935",
+        "weight": "1.5",
+        "unit": "个",
+        "remark": ""
+      },
+      "final": {
+        "category": "沙姜",
+        "customer_code": "935",
+        "weight": "1.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": null,
+      "heading_bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "沙美",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "沙美"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "935",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "935"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "1.5",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "1.5"
+        }
+      ],
+      "suggestion": "两路一致，没有需要改动的地方",
+      "similar": []
+    },
+    {
+      "row_id": "row-0009",
+      "record_index": 8,
+      "ai": {
+        "category": "芋头",
+        "customer_code": "1366",
+        "weight": "3",
+        "unit": "个",
+        "remark": ""
+      },
+      "final": {
+        "category": "蒜头",
+        "customer_code": "1366",
+        "weight": "3",
+        "unit": "斤",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": null,
+      "heading_bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "reasons": [
+        "缺少同行证据：原图这一行没找到可对应的文字"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "芋头",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "芋头"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "1366",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "1366"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "3",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "3"
+        }
+      ],
+      "suggestion": "两路一致，没有需要改动的地方",
+      "similar": []
+    },
+    {
+      "row_id": "row-0010",
+      "record_index": 9,
+      "ai": {
+        "category": "力虫蒜",
+        "customer_code": "15",
+        "weight": "25",
+        "unit": "个",
+        "remark": "小"
+      },
+      "final": {
+        "category": "独蒜",
+        "customer_code": "15",
+        "weight": "25",
+        "unit": "斤",
+        "remark": "加工"
+      },
+      "status": "doubt",
+      "bbox": [
+        565,
+        984,
+        715.6666666666666,
+        1066
+      ],
+      "heading_bbox": [
+        570,
+        902,
+        733,
+        993
+      ],
+      "heading_text": "力虫蒜",
+      "entry_text": "15:25个",
+      "reasons": [
+        "品类两路不一致，已按原图标题文字修正",
+        "词典外品类：小虫草",
+        "词典外编码：15"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "小虫草",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "小虫草"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "力虫蒜",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 94,
+          "evidence": "力虫蒜"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "15",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "15"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "15",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 83,
+          "evidence": "15:25个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 83,
+          "evidence": "15:25个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "25",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "25"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "25",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 83,
+          "evidence": "15:25个"
+        }
+      ],
+      "suggestion": "建议改成「力虫蒜」（品类两路不一致，已按原图标题文字修正）",
+      "similar": []
+    },
+    {
+      "row_id": "row-0011",
+      "record_index": 10,
+      "ai": {
+        "category": "小蓝美",
+        "customer_code": "15",
+        "weight": "15",
+        "unit": "个",
+        "remark": "小"
+      },
+      "final": {
+        "category": "小黄姜",
+        "customer_code": "15",
+        "weight": "15",
+        "unit": "斤",
+        "remark": "加工"
+      },
+      "status": "doubt",
+      "bbox": [
+        84,
+        1670,
+        297.42857142857144,
+        1784
+      ],
+      "heading_bbox": [
+        86,
+        1582,
+        248,
+        1696
+      ],
+      "heading_text": "小茴姜",
+      "entry_text": "15:15个",
+      "reasons": [
+        "品类两路不一致（两路都读不准），需人工核对标题",
+        "词典外品类：小蓝美",
+        "词典外编码：15"
+      ],
+      "observations": [],
+      "candidates": [
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "小蓝美",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "小蓝美"
+        },
+        {
+          "field": "category",
+          "label": "品类",
+          "value": "小茴姜",
+          "source": "ocr_heading",
+          "source_label": "原图标题",
+          "confidence": 78,
+          "evidence": "小茴姜"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "15",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "15"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "value": "15",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 86,
+          "evidence": "15:15个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "个"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "value": "个",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 86,
+          "evidence": "15:15个"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "15",
+          "source": "model",
+          "source_label": "模型",
+          "confidence": null,
+          "evidence": "15"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "value": "15",
+          "source": "ocr_row",
+          "source_label": "原图行内文字",
+          "confidence": 86,
+          "evidence": "15:15个"
+        }
+      ],
+      "suggestion": "不能确定：品类 有 小蓝美、小茴姜 几种读法，请对照原图人工判断",
+      "similar": []
+    },
+    {
+      "row_id": "人工-1",
+      "ai": {
+        "category": "",
+        "customer_code": "",
+        "weight": "",
+        "unit": "",
+        "remark": ""
+      },
+      "final": {
+        "category": "没有这行，删除",
+        "customer_code": "1136",
+        "weight": "3",
+        "unit": "个",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": [
+        312,
+        1000,
+        472,
+        1115
+      ],
+      "heading_text": null,
+      "entry_text": "1136:3个",
+      "reasons": [],
+      "observations": [],
+      "candidates": [],
+      "removed": false
+    },
+    {
+      "row_id": "人工-2",
+      "ai": {
+        "category": "",
+        "customer_code": "",
+        "weight": "",
+        "unit": "",
+        "remark": ""
+      },
+      "final": {
+        "category": "没有这行，删除",
+        "customer_code": "1136",
+        "weight": "3",
+        "unit": "个",
+        "remark": ""
+      },
+      "status": "doubt",
+      "bbox": [
+        312,
+        1000,
+        472,
+        1115
+      ],
+      "heading_text": null,
+      "entry_text": "1136:3个",
+      "reasons": [],
+      "observations": [],
+      "candidates": [],
+      "removed": false
+    }
+  ],
+  "unmatched": [
+    {
+      "id": "unmatched-1",
+      "text": "1136:3个",
+      "bbox": [
+        312,
+        1000,
+        472,
+        1115
+      ],
+      "code": "1136",
+      "quantity": "3",
+      "unit": "个"
+    }
+  ],
+  "created_at": "2026-11-06T21:07:58",
+  "crop_ready": true,
+  "confirmed_at": "2026-11-06T13:21:33.397Z"
+}

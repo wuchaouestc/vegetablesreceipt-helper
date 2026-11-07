@@ -1,0 +1,1182 @@
+{
+  "schema_version": 1,
+  "human_attestation": true,
+  "reviewer": "吴超",
+  "confirmed_at": "2026-11-06T18:17:02.155278+08:00",
+  "confirmation_time_source": "导入时间；原草稿没有记录实际点击确认的时间",
+  "confirmation_basis": "用户在本聊天明确表示“人工复核页面我已经复核”，随后提交此文件并要求计算；文件两图complete均为true。",
+  "source_filename": "手写人工复核草稿.json",
+  "source_sha256": "b70a28e3943ef97f72e767f1f7bf2d7266beaf60c13a4ff877bac8eef49649f1",
+  "results_fingerprint": "47aa50ca70b3f3bdc9e9f5b799d1ac2e2425d7403be2e503ad01b7eceb4b8c9b",
+  "annotations": [
+    {
+      "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+      "image_path": "03d2049e8db0342ab40c23a44d1a50a0.jpg",
+      "review_status": "confirmed",
+      "complete": true,
+      "records": [
+        {
+          "row_id": "03d2049e-r001",
+          "category": "马蹄肉",
+          "customer_code": "935",
+          "weight": "3",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            55,
+            185,
+            215,
+            250
+          ],
+          "header_bbox": [
+            75,
+            125,
+            239,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 0
+        },
+        {
+          "row_id": "03d2049e-r002",
+          "category": "马蹄肉",
+          "customer_code": "1137",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            35,
+            250,
+            220,
+            315
+          ],
+          "header_bbox": [
+            75,
+            125,
+            239,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 1
+        },
+        {
+          "row_id": "03d2049e-r003",
+          "category": "马蹄肉",
+          "customer_code": "29",
+          "weight": "2",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            25,
+            310,
+            205,
+            377
+          ],
+          "header_bbox": [
+            75,
+            125,
+            239,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 2
+        },
+        {
+          "row_id": "03d2049e-r004",
+          "category": "马蹄肉",
+          "customer_code": "1369",
+          "weight": "4.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            10,
+            375,
+            220,
+            447
+          ],
+          "header_bbox": [
+            75,
+            125,
+            239,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "weight: 末位5与单位相连，4.5待人工复核"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 3
+        },
+        {
+          "row_id": "03d2049e-r005",
+          "category": "去皮干葱头",
+          "customer_code": "931",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            235,
+            178,
+            570,
+            240
+          ],
+          "header_bbox": [
+            310,
+            125,
+            565,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 4
+        },
+        {
+          "row_id": "03d2049e-r006",
+          "category": "去皮干葱头",
+          "customer_code": "21",
+          "weight": "1",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            313,
+            237,
+            540,
+            293
+          ],
+          "header_bbox": [
+            310,
+            125,
+            565,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 5
+        },
+        {
+          "row_id": "03d2049e-r007",
+          "category": "去皮干葱头",
+          "customer_code": "21",
+          "weight": "3",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            305,
+            291,
+            542,
+            350
+          ],
+          "header_bbox": [
+            310,
+            125,
+            565,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 6
+        },
+        {
+          "row_id": "03d2049e-r008",
+          "category": "去皮干葱头",
+          "customer_code": "1188",
+          "weight": "2",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            282,
+            351,
+            537,
+            412
+          ],
+          "header_bbox": [
+            310,
+            125,
+            565,
+            185
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 7
+        },
+        {
+          "row_id": "03d2049e-r009",
+          "category": "南姜",
+          "customer_code": "21",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            65,
+            810,
+            215,
+            875
+          ],
+          "header_bbox": [
+            81,
+            755,
+            180,
+            814
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 8
+        },
+        {
+          "row_id": "03d2049e-r010",
+          "category": "南姜",
+          "customer_code": "12",
+          "weight": "1.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            47,
+            870,
+            219,
+            940
+          ],
+          "header_bbox": [
+            81,
+            755,
+            180,
+            814
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 9
+        },
+        {
+          "row_id": "03d2049e-r011",
+          "category": "香茅",
+          "customer_code": "21",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            253,
+            809,
+            394,
+            875
+          ],
+          "header_bbox": [
+            270,
+            750,
+            371,
+            812
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 10
+        },
+        {
+          "row_id": "03d2049e-r012",
+          "category": "香茅",
+          "customer_code": "1136",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            238,
+            874,
+            402,
+            931
+          ],
+          "header_bbox": [
+            270,
+            750,
+            371,
+            812
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 11
+        },
+        {
+          "row_id": "03d2049e-r013",
+          "category": "香茅",
+          "customer_code": "12",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            241,
+            927,
+            401,
+            982
+          ],
+          "header_bbox": [
+            270,
+            750,
+            371,
+            812
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 12
+        },
+        {
+          "row_id": "03d2049e-r014",
+          "category": "蒜头",
+          "customer_code": "26",
+          "weight": "3",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            447,
+            798,
+            587,
+            873
+          ],
+          "header_bbox": [
+            450,
+            737,
+            576,
+            800
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 13
+        },
+        {
+          "row_id": "03d2049e-r015",
+          "category": "蒜头",
+          "customer_code": "12",
+          "weight": "3",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            443,
+            866,
+            588,
+            943
+          ],
+          "header_bbox": [
+            450,
+            737,
+            576,
+            800
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 14
+        },
+        {
+          "row_id": "03d2049e-r016",
+          "category": "九层塔",
+          "customer_code": "14",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            37,
+            1286,
+            219,
+            1360
+          ],
+          "header_bbox": [
+            61,
+            1205,
+            209,
+            1283
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 15
+        },
+        {
+          "row_id": "03d2049e-r017",
+          "category": "鱼腥草",
+          "customer_code": "185",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            239,
+            1285,
+            419,
+            1373
+          ],
+          "header_bbox": [
+            261,
+            1200,
+            410,
+            1276
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 16
+        },
+        {
+          "row_id": "03d2049e-r018",
+          "category": "沙姜",
+          "customer_code": "28",
+          "weight": "0.7",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            457,
+            1255,
+            629,
+            1347
+          ],
+          "header_bbox": [
+            475,
+            1172,
+            590,
+            1249
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 17
+        },
+        {
+          "row_id": "03d2049e-r019",
+          "category": "沙姜",
+          "customer_code": "15",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            454,
+            1344,
+            635,
+            1421
+          ],
+          "header_bbox": [
+            475,
+            1172,
+            590,
+            1249
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 18
+        },
+        {
+          "row_id": "03d2049e-r020",
+          "category": "独蒜",
+          "customer_code": "15",
+          "weight": "25",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            26,
+            1590,
+            280,
+            1672
+          ],
+          "header_bbox": [
+            43,
+            1515,
+            203,
+            1597
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 19
+        },
+        {
+          "row_id": "03d2049e-r021",
+          "category": "独蒜",
+          "customer_code": "15",
+          "weight": "8",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            25,
+            1665,
+            276,
+            1732
+          ],
+          "header_bbox": [
+            43,
+            1515,
+            203,
+            1597
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 20
+        },
+        {
+          "row_id": "03d2049e-r022",
+          "category": "小黄姜",
+          "customer_code": "15",
+          "weight": "15",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            287,
+            1571,
+            499,
+            1647
+          ],
+          "header_bbox": [
+            304,
+            1490,
+            442,
+            1569
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 21
+        },
+        {
+          "row_id": "03d2049e-r023",
+          "category": "子姜",
+          "customer_code": "1369",
+          "weight": "10",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            500,
+            1571,
+            662,
+            1677
+          ],
+          "header_bbox": [
+            524,
+            1491,
+            623,
+            1568
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 22
+        }
+      ]
+    },
+    {
+      "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+      "image_path": "b082811f2a9cdae5b4c88dd8f6f08101.jpg",
+      "review_status": "confirmed",
+      "complete": true,
+      "records": [
+        {
+          "row_id": "b082811f-r001",
+          "category": "马蹄肉",
+          "customer_code": "931",
+          "weight": "12",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            37,
+            310,
+            212,
+            366
+          ],
+          "header_bbox": [
+            57,
+            252,
+            260,
+            311
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 0
+        },
+        {
+          "row_id": "b082811f-r002",
+          "category": "马蹄肉",
+          "customer_code": "21",
+          "weight": "20",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            33,
+            361,
+            212,
+            415
+          ],
+          "header_bbox": [
+            57,
+            252,
+            260,
+            311
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 1
+        },
+        {
+          "row_id": "b082811f-r003",
+          "category": "马蹄肉",
+          "customer_code": "14",
+          "weight": "4",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            15,
+            409,
+            211,
+            479
+          ],
+          "header_bbox": [
+            57,
+            252,
+            260,
+            311
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 2
+        },
+        {
+          "row_id": "b082811f-r004",
+          "category": "马蹄肉",
+          "customer_code": "15",
+          "weight": "15",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            14,
+            480,
+            214,
+            546
+          ],
+          "header_bbox": [
+            57,
+            252,
+            260,
+            311
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 3
+        },
+        {
+          "row_id": "b082811f-r005",
+          "category": "去皮干葱头",
+          "customer_code": "21",
+          "weight": "8",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            296,
+            303,
+            535,
+            356
+          ],
+          "header_bbox": [
+            325,
+            239,
+            565,
+            300
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 4
+        },
+        {
+          "row_id": "b082811f-r006",
+          "category": "去皮干葱头",
+          "customer_code": "1188",
+          "weight": "2",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            262,
+            356,
+            538,
+            409
+          ],
+          "header_bbox": [
+            325,
+            239,
+            565,
+            300
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 5
+        },
+        {
+          "row_id": "b082811f-r007",
+          "category": "去皮干葱头",
+          "customer_code": "29",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            264,
+            402,
+            538,
+            464
+          ],
+          "header_bbox": [
+            325,
+            239,
+            565,
+            300
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 6
+        },
+        {
+          "row_id": "b082811f-r008",
+          "category": "子姜",
+          "customer_code": "1368",
+          "weight": "5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            73,
+            903,
+            244,
+            980
+          ],
+          "header_bbox": [
+            103,
+            836,
+            198,
+            902
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 7
+        },
+        {
+          "row_id": "b082811f-r009",
+          "category": "沙姜",
+          "customer_code": "931",
+          "weight": "1",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            264,
+            890,
+            411,
+            967
+          ],
+          "header_bbox": [
+            283,
+            820,
+            386,
+            888
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 8
+        },
+        {
+          "row_id": "b082811f-r010",
+          "category": "沙姜",
+          "customer_code": "15",
+          "weight": "4",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            261,
+            963,
+            412,
+            1029
+          ],
+          "header_bbox": [
+            283,
+            820,
+            386,
+            888
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 9
+        },
+        {
+          "row_id": "b082811f-r011",
+          "category": "沙姜",
+          "customer_code": "1361",
+          "weight": "0.5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            244,
+            1027,
+            433,
+            1113
+          ],
+          "header_bbox": [
+            283,
+            820,
+            386,
+            888
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 10
+        },
+        {
+          "row_id": "b082811f-r012",
+          "category": "鱼腥草",
+          "customer_code": "21",
+          "weight": "5",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            441,
+            887,
+            577,
+            966
+          ],
+          "header_bbox": [
+            448,
+            805,
+            599,
+            881
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 11
+        },
+        {
+          "row_id": "b082811f-r013",
+          "category": "小黄姜",
+          "customer_code": "23",
+          "weight": "2",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            68,
+            1437,
+            239,
+            1514
+          ],
+          "header_bbox": [
+            84,
+            1344,
+            231,
+            1429
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [],
+          "review_status": "confirmed",
+          "prediction_index": 12
+        },
+        {
+          "row_id": "b082811f-r014",
+          "category": "小黄姜",
+          "customer_code": "15",
+          "weight": "10",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            57,
+            1508,
+            289,
+            1583
+          ],
+          "header_bbox": [
+            84,
+            1344,
+            231,
+            1429
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 13
+        },
+        {
+          "row_id": "b082811f-r015",
+          "category": "香茅",
+          "customer_code": "1136",
+          "weight": "1",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            268,
+            1387,
+            428,
+            1467
+          ],
+          "header_bbox": [
+            285,
+            1315,
+            390,
+            1384
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 14
+        },
+        {
+          "row_id": "b082811f-r016",
+          "category": "竹蔗",
+          "customer_code": "14",
+          "weight": "3",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            453,
+            1374,
+            635,
+            1459
+          ],
+          "header_bbox": [
+            480,
+            1286,
+            632,
+            1373
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 15
+        },
+        {
+          "row_id": "b082811f-r017",
+          "category": "独蒜",
+          "customer_code": "15",
+          "weight": "25",
+          "unit": "斤",
+          "remark": null,
+          "bbox": [
+            75,
+            1711,
+            318,
+            1788
+          ],
+          "header_bbox": [
+            96,
+            1622,
+            264,
+            1708
+          ],
+          "field_source": {
+            "category": "visible_heading",
+            "unit": "row_handwritten_glyph"
+          },
+          "uncertain": [
+            "category: 标题草写不能可靠完整辨认",
+            "remark: 有括号手写备注，不能可靠辨认"
+          ],
+          "review_status": "confirmed",
+          "prediction_index": 16
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>手写单据业务人工复核</title>
+<style>body{font:15px system-ui;margin:24px;color:#192735}h1{font-size:26px}input{font:inherit;padding:7px;box-sizing:border-box}button,select{font:inherit;padding:8px;cursor:pointer}table{border-collapse:collapse;width:100%}td,th{border:1px solid #d3dbe4;padding:7px;text-align:left;vertical-align:top}td input{width:100%;min-width:70px}td:first-child{min-width:100px}.hint{padding:15px;background:#fff3d4}.grid{display:grid;grid-template-columns:minmax(300px,40%) 1fr;gap:20px}img{width:100%;height:auto}pre{white-space:pre-wrap}.photo{position:sticky;top:10px;align-self:start}.section{margin:32px 0;border-top:2px solid #ced8e3;padding-top:15px}.toolbar{background:#eff5fb;padding:16px}.msg{color:#a42a18}details{margin:15px 0}a{color:#195eab} @media(max-width:1000px){.grid{display:block}.photo{position:static;max-width:500px}}</style></head><body>
+<h1>业务人工复核：原图、标准答案与真实模型结果</h1>
+<p class="hint">这里的预填值是 AI 草稿，不是人工标准答案。请先对照原图修正品类、编码、数量、单位，补充漏行、删除并非真实明细的行，再确认完整性。模型结果仅供最后建立位置对应，不能当作标准答案抄回。此次只评分有模型结果的 2 张图，不代表全部 13 张。</p>
+<div class="toolbar">复核人：<input id="reviewer" placeholder="姓名或业务复核标识"> <button onclick="saveDraft()">保存复核草稿</button> <input type="file" id="load" accept=".json"> <button onclick="exportConfirmed()">导出人工确认结果</button><p id="message" class="msg"></p></div>
+<div id="sections"></div>
+<script id="payload" type="application/json">__PAYLOAD__</script>
+<script>
+'use strict';
+const state=JSON.parse(document.getElementById('payload').textContent), fields=['category','customer_code','weight','unit','remark'];
+const names=['品类','编码','数量','单位','备注'];
+function elem(tag,text){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;}
+function message(t){document.getElementById('message').textContent=t;}
+function render(){const root=document.getElementById('sections');root.replaceChildren();state.images.forEach((image,ii)=>{
+ const section=elem('section');section.className='section';section.append(elem('h2',image.image_path));
+ const grid=elem('div');grid.className='grid';const photo=elem('div');photo.className='photo';const link=elem('a');link.href=image.uri;link.target='_blank';link.rel='noopener';const img=elem('img');img.src=image.uri;img.alt=image.image_path;link.append(img);photo.append(link,elem('p','点击原图放大。草稿框为目测区域，核对以原图为准。'));grid.append(photo);
+ const panel=elem('div');const table=elem('table');const head=elem('tr');['行ID',...names,'模型对应行','操作'].forEach(n=>head.append(elem('th',n)));table.append(head);
+ image.records.forEach((row,ri)=>{const tr=elem('tr');tr.append(elem('td',row.row_id));fields.forEach(key=>{const td=elem('td'),input=elem('input');input.value=row[key]??'';input.oninput=()=>{row[key]=input.value;image.complete=false;};td.append(input);tr.append(td);});
+ const td=elem('td'), select=elem('select');select.append(new Option('未对应/模型漏识别',''));image.predictions.forEach((p,i)=>select.append(new Option(String(i+1),String(i))));select.value=row.prediction_index===null||row.prediction_index===undefined?'':String(row.prediction_index);select.onchange=()=>row.prediction_index=select.value===''?null:Number(select.value);td.append(select);tr.append(td);
+ const del=elem('button','删除此行');del.onclick=()=>{if(confirm('确认该行不是单据真实明细？')){image.records.splice(ri,1);image.complete=false;render();}};const d=elem('td');d.append(del);tr.append(d);table.append(tr);});panel.append(table);
+ const add=elem('button','补充遗漏明细');add.onclick=()=>{image.records.push({row_id:'human-'+ii+'-'+Date.now(),category:'',customer_code:'',weight:'',unit:'',remark:'',prediction_index:null});image.complete=false;render();};panel.append(add);
+ const label=elem('label');const check=elem('input');check.type='checkbox';check.checked=Boolean(image.complete);check.onchange=()=>image.complete=check.checked;label.append(check,document.createTextNode('我已逐图核对：全部可见明细、关键字段和模型行位置对应均已确认'));panel.append(elem('p'),label);
+ const details=elem('details');details.append(elem('summary','查看真实模型结果及两种OCR对照（先核标准答案，再选对应行号）'));
+ image.predictions.forEach((p,i)=>details.append(elem('pre',String(i+1)+'. '+JSON.stringify(p,null,2))));details.append(elem('p','模型提示：'+JSON.stringify(image.model_notes)));
+ image.ocr_rows.forEach(r=>details.append(elem('pre',r.row_id+'\n高精度：'+r.accurate+'\n旧手写：'+r.handwriting)));panel.append(details);grid.append(panel);section.append(grid);root.append(section);
+});}
+function download(value,name){const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json;charset=utf-8'});const a=elem('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
+function saveDraft(){download({kind:'handwriting-review-draft',results_fingerprint:state.results_fingerprint,reviewer:document.getElementById('reviewer').value,images:state.images},'手写人工复核草稿.json');message('已导出草稿；浏览器刷新不会自动保存，请保管下载文件。');}
+document.getElementById('load').onchange=async event=>{try{const data=JSON.parse(await event.target.files[0].text());if(data.kind!=='handwriting-review-draft'||data.results_fingerprint!==state.results_fingerprint)throw Error('不是本批实测的草稿');if(!Array.isArray(data.images)||data.images.length!==state.images.length)throw Error('图片数量不匹配');data.images.forEach((v,i)=>{if(v.image_sha256!==state.images[i].image_sha256||!Array.isArray(v.records))throw Error('图片不匹配');});data.images.forEach((v,i)=>{state.images[i].records=v.records;state.images[i].complete=false;});document.getElementById('reviewer').value=data.reviewer||'';render();message('草稿已载入，请重新核实完整性并勾选确认。');}catch(error){message('加载失败：'+error.message);}};
+function exportConfirmed(){const reviewer=document.getElementById('reviewer').value.trim();if(!reviewer)return message('请填写复核人。');for(const image of state.images){if(!image.complete)return message('请先完成每张图片的业务人工核对并勾选。');const used=new Set();for(const row of image.records){if(fields.slice(0,4).some(k=>typeof row[k]!=='string'||!row[k].trim()))return message('关键字段仍有空白，不能当作完整标准答案。');if(row.prediction_index!==null&&row.prediction_index!==undefined){if(used.has(row.prediction_index))return message('同一模型行不能映射到多条标准明细。');used.add(row.prediction_index);}}}
+ const payload={schema_version:1,human_attestation:true,reviewer,confirmed_at:new Date().toISOString(),results_fingerprint:state.results_fingerprint,annotations:state.images.map(image=>({image_sha256:image.image_sha256,image_path:image.image_path,review_status:'confirmed',complete:true,records:image.records.map(r=>({...r,prediction_index:r.prediction_index??null}))}))};download(payload,'手写业务人工确认.json');message('已导出确认文件。请告知保存路径，随后运行评分工具；本页不会自动上传任何数据。');}
+render();
+</script></body></html>

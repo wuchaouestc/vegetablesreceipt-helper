@@ -1,0 +1,6 @@
+# PP-Structure sidecar 依赖
+# 不装也能用：sidecar 会退回纯几何引擎（Pillow 由 paddlepaddle 带入，或单独 pip install pillow）
+paddlepaddle>=3.0
+paddleocr>=3.0
+# PP-StructureV3 需要 PaddleX 的 ocr 扩展，单独装 paddleocr 不够
+paddlex[ocr]>=3.7

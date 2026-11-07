@@ -1,0 +1,52 @@
+{
+  "cache_version": 1,
+  "identity": {
+    "schema_version": 1,
+    "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+    "variant": "original",
+    "preprocessing": "disabled_by_plan",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    }
+  },
+  "response": {
+    "provider": "tencent",
+    "status": "ok",
+    "blocks": [
+      {
+        "text": "天",
+        "x": 9.0,
+        "y": 13.0,
+        "polygon": [
+          {
+            "X": 9.0,
+            "Y": 13.0
+          },
+          {
+            "X": 96.0,
+            "Y": 9.0
+          },
+          {
+            "X": 97.0,
+            "Y": 40.0
+          },
+          {
+            "X": 10.0,
+            "Y": 44.0
+          }
+        ],
+        "confidence": 56.0
+      }
+    ],
+    "records": [],
+    "notes": [],
+    "error_code": "",
+    "request_id": "543b5e25-ef36-4d8c-92a8-53004d28f0a9",
+    "usage": {},
+    "elapsed_seconds": 0.2596,
+    "action": "GeneralHandwritingOCR"
+  }
+}

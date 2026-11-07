@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "revision": "r20261107-133355",
+  "entries": [
+    {
+      "id": "uni-5da98a0d2728",
+      "field": "unit",
+      "canonical": "斤",
+      "aliases": [
+        "个"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-232e8d532850",
+      "field": "category",
+      "canonical": "马蹄肉",
+      "aliases": [
+        "马兄弟的"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-44cf6a9286bb",
+      "field": "customer_code",
+      "canonical": "1368",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-7b5aeec26b28",
+      "field": "customer_code",
+      "canonical": "27",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-663ce40f7f65",
+      "field": "category",
+      "canonical": "去皮干葱头",
+      "aliases": [
+        "老赵干苦力"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-13f7d6621ec0",
+      "field": "customer_code",
+      "canonical": "933",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "rem-156b9230d303",
+      "field": "remark",
+      "canonical": "长",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-a71068194a84",
+      "field": "customer_code",
+      "canonical": "931",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-715f65266ee4",
+      "field": "customer_code",
+      "canonical": "15",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-2f3292d2223e",
+      "field": "customer_code",
+      "canonical": "1188",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-017056ecdf67",
+      "field": "category",
+      "canonical": "沙姜",
+      "aliases": [
+        "沙美"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-8de5f007ea88",
+      "field": "customer_code",
+      "canonical": "1366",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-d6ae0b504ce4",
+      "field": "customer_code",
+      "canonical": "935",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-46dc5792261d",
+      "field": "category",
+      "canonical": "蒜头",
+      "aliases": [
+        "芋头"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-822d223e8f14",
+      "field": "category",
+      "canonical": "独蒜",
+      "aliases": [
+        "力虫蒜"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "rem-f60d860953a8",
+      "field": "remark",
+      "canonical": "加工",
+      "aliases": [
+        "小"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-9bf7e239a67d",
+      "field": "category",
+      "canonical": "小黄姜",
+      "aliases": [
+        "小蓝美"
+      ],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "uni-715bfa11ab79",
+      "field": "unit",
+      "canonical": "个",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-aafe511af469",
+      "field": "category",
+      "canonical": "没有这行，删除",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cus-ba7ebfa6e326",
+      "field": "customer_code",
+      "canonical": "1136",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-06T13:21:33.397Z",
+      "enabled": true
+    },
+    {
+      "id": "cat-1c32b389d332",
+      "field": "category",
+      "canonical": "生姜",
+      "aliases": [],
+      "scope": {
+        "customers": [
+          "农和"
+        ]
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-07T13:33:55",
+      "enabled": true
+    }
+  ]
+}

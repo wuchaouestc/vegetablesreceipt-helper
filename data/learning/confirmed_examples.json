@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "revision": "e20261107-174333",
+  "examples": [
+    {
+      "id": "bafa4d669393-row-0001",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0001",
+      "bbox": [
+        121,
+        250,
+        311,
+        341
+      ],
+      "heading_text": "马兄帝肉",
+      "entry_text": "1368:10斤",
+      "values": {
+        "category": "马蹄肉",
+        "customer_code": "1368",
+        "weight": "10",
+        "unit": "斤",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "马兄弟的",
+        "customer_code": "1368",
+        "weight": "10",
+        "unit": "个",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "马兄弟的",
+          "to": "马蹄肉"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0002",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0002",
+      "bbox": [
+        116,
+        315,
+        275,
+        392
+      ],
+      "heading_text": "马兄帝肉",
+      "entry_text": "27:2斤",
+      "values": {
+        "category": "马蹄肉",
+        "customer_code": "27",
+        "weight": "2",
+        "unit": "斤",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "马兄弟的",
+        "customer_code": "27",
+        "weight": "2",
+        "unit": "",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "马兄弟的",
+          "to": "马蹄肉"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0003",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0003",
+      "bbox": [
+        459,
+        253,
+        619,
+        306
+      ],
+      "heading_text": "左皮干芒头",
+      "entry_text": "933:2斤",
+      "values": {
+        "category": "去皮干葱头",
+        "customer_code": "933",
+        "weight": "2",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "ai_values": {
+        "category": "老赵干苦力",
+        "customer_code": "933",
+        "weight": "2",
+        "unit": "个",
+        "remark": "长"
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "老赵干苦力",
+          "to": "去皮干葱头"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0004",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0004",
+      "bbox": [
+        456,
+        301,
+        627.5,
+        366
+      ],
+      "heading_text": "左皮干芒头",
+      "entry_text": "931:10个",
+      "values": {
+        "category": "去皮干葱头",
+        "customer_code": "931",
+        "weight": "10",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "ai_values": {
+        "category": "老赵干苦力",
+        "customer_code": "931",
+        "weight": "10",
+        "unit": "个",
+        "remark": "长"
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "老赵干苦力",
+          "to": "去皮干葱头"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0005",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0005",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "去皮干葱头",
+        "customer_code": "15",
+        "weight": "5",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "ai_values": {
+        "category": "老赵干苦力",
+        "customer_code": "15",
+        "weight": "54",
+        "unit": "",
+        "remark": "长"
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "老赵干苦力",
+          "to": "去皮干葱头"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "from": "54",
+          "to": "5"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0006",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0006",
+      "bbox": [
+        414,
+        407,
+        620.5,
+        498
+      ],
+      "heading_text": "左皮干芒头",
+      "entry_text": "1188:2斤",
+      "values": {
+        "category": "去皮干葱头",
+        "customer_code": "1188",
+        "weight": "2",
+        "unit": "斤",
+        "remark": "长"
+      },
+      "ai_values": {
+        "category": "老赵干苦力",
+        "customer_code": "1188",
+        "weight": "2",
+        "unit": "个",
+        "remark": "长"
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "老赵干苦力",
+          "to": "去皮干葱头"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0007",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0007",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "沙姜",
+        "customer_code": "1366",
+        "weight": "1",
+        "unit": "斤",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "沙美",
+        "customer_code": "1366",
+        "weight": "1",
+        "unit": "个",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "沙美",
+          "to": "沙姜"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0008",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0008",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "沙姜",
+        "customer_code": "935",
+        "weight": "1.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "沙美",
+        "customer_code": "935",
+        "weight": "1.5",
+        "unit": "个",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "沙美",
+          "to": "沙姜"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0009",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0009",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "蒜头",
+        "customer_code": "1366",
+        "weight": "3",
+        "unit": "斤",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "芋头",
+        "customer_code": "1366",
+        "weight": "3",
+        "unit": "个",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "芋头",
+          "to": "蒜头"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0010",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0010",
+      "bbox": [
+        565,
+        984,
+        715.6666666666666,
+        1066
+      ],
+      "heading_text": "力虫蒜",
+      "entry_text": "15:25个",
+      "values": {
+        "category": "独蒜",
+        "customer_code": "15",
+        "weight": "25",
+        "unit": "斤",
+        "remark": "加工"
+      },
+      "ai_values": {
+        "category": "力虫蒜",
+        "customer_code": "15",
+        "weight": "25",
+        "unit": "个",
+        "remark": "小"
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "力虫蒜",
+          "to": "独蒜"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        },
+        {
+          "field": "remark",
+          "label": "备注",
+          "from": "小",
+          "to": "加工"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-row-0011",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "row-0011",
+      "bbox": [
+        84,
+        1670,
+        297.42857142857144,
+        1784
+      ],
+      "heading_text": "小茴姜",
+      "entry_text": "15:15个",
+      "values": {
+        "category": "小黄姜",
+        "customer_code": "15",
+        "weight": "15",
+        "unit": "斤",
+        "remark": "加工"
+      },
+      "ai_values": {
+        "category": "小蓝美",
+        "customer_code": "15",
+        "weight": "15",
+        "unit": "个",
+        "remark": "小"
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "小蓝美",
+          "to": "小黄姜"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "个",
+          "to": "斤"
+        },
+        {
+          "field": "remark",
+          "label": "备注",
+          "from": "小",
+          "to": "加工"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-人工-1",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "人工-1",
+      "bbox": [
+        312,
+        1000,
+        472,
+        1115
+      ],
+      "heading_text": null,
+      "entry_text": "1136:3个",
+      "values": {
+        "category": "没有这行，删除",
+        "customer_code": "1136",
+        "weight": "3",
+        "unit": "个",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "",
+        "customer_code": "",
+        "weight": "",
+        "unit": "",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "",
+          "to": "没有这行，删除"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "from": "",
+          "to": "1136"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "from": "",
+          "to": "3"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "",
+          "to": "个"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "bafa4d669393-人工-2",
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "row_id": "人工-2",
+      "bbox": [
+        312,
+        1000,
+        472,
+        1115
+      ],
+      "heading_text": null,
+      "entry_text": "1136:3个",
+      "values": {
+        "category": "没有这行，删除",
+        "customer_code": "1136",
+        "weight": "3",
+        "unit": "个",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "",
+        "customer_code": "",
+        "weight": "",
+        "unit": "",
+        "remark": ""
+      },
+      "corrections": [
+        {
+          "field": "category",
+          "label": "品类",
+          "from": "",
+          "to": "没有这行，删除"
+        },
+        {
+          "field": "customer_code",
+          "label": "编码",
+          "from": "",
+          "to": "1136"
+        },
+        {
+          "field": "weight",
+          "label": "数量",
+          "from": "",
+          "to": "3"
+        },
+        {
+          "field": "unit",
+          "label": "单位",
+          "from": "",
+          "to": "个"
+        }
+      ],
+      "customer": null,
+      "reviewer": "吴超",
+      "confirmed_at": "2026-11-06T13:21:33.397Z"
+    },
+    {
+      "id": "batch-2026-1-id-101",
+      "image_sha256": "batch-2026-11-07T17:43:33",
+      "row_id": "id-101",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "生姜",
+        "customer_code": "1366",
+        "weight": "2.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      "ai_values": {
+        "category": "生姜",
+        "customer_code": "1366",
+        "weight": "2.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      "corrections": [],
+      "customer": "农和",
+      "reviewer": "人工核对",
+      "confirmed_at": "2026-11-07T17:43:33"
+    }
+  ]
+}

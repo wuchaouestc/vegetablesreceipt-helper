@@ -1,0 +1,356 @@
+[
+  {
+    "number": 1,
+    "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:08+0800"
+  },
+  {
+    "number": 2,
+    "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:09+0800"
+  },
+  {
+    "number": 3,
+    "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:10+0800"
+  },
+  {
+    "number": 4,
+    "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:11+0800"
+  },
+  {
+    "number": 5,
+    "image_sha256": "9b47939204e3e17babea1b69ea1d33c7b0263defff0244949737c409fb026dd9",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:13+0800"
+  },
+  {
+    "number": 6,
+    "image_sha256": "9b47939204e3e17babea1b69ea1d33c7b0263defff0244949737c409fb026dd9",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:14+0800"
+  },
+  {
+    "number": 7,
+    "image_sha256": "b97852e168df41ef6ee7ac317c0b5aab6eb32e484cea8414d8f3045a7066ea22",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:15+0800"
+  },
+  {
+    "number": 8,
+    "image_sha256": "b97852e168df41ef6ee7ac317c0b5aab6eb32e484cea8414d8f3045a7066ea22",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:16+0800"
+  },
+  {
+    "number": 9,
+    "image_sha256": "267e319e0da4f5297276d0e59add8743419889ce574f4c87c8c87b57ca257a8c",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:17+0800"
+  },
+  {
+    "number": 10,
+    "image_sha256": "267e319e0da4f5297276d0e59add8743419889ce574f4c87c8c87b57ca257a8c",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:18+0800"
+  },
+  {
+    "number": 11,
+    "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:20+0800"
+  },
+  {
+    "number": 12,
+    "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:21+0800"
+  },
+  {
+    "number": 13,
+    "image_sha256": "99bf160ca788b72deb73972b014f74d9db4509bd0b4f1771f5c551f4b727d7b2",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:22+0800"
+  },
+  {
+    "number": 14,
+    "image_sha256": "99bf160ca788b72deb73972b014f74d9db4509bd0b4f1771f5c551f4b727d7b2",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:23+0800"
+  },
+  {
+    "number": 15,
+    "image_sha256": "e967cbe7f4b5426ac9874267fe967145e2f131e9476ac1f768c8d53e8e514a29",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:24+0800"
+  },
+  {
+    "number": 16,
+    "image_sha256": "e967cbe7f4b5426ac9874267fe967145e2f131e9476ac1f768c8d53e8e514a29",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:25+0800"
+  },
+  {
+    "number": 17,
+    "image_sha256": "2fcb17ca30d98689392f6afdf81dde8d6c364e4f80a03328649413b0458c1c32",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:26+0800"
+  },
+  {
+    "number": 18,
+    "image_sha256": "2fcb17ca30d98689392f6afdf81dde8d6c364e4f80a03328649413b0458c1c32",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:27+0800"
+  },
+  {
+    "number": 19,
+    "image_sha256": "1e69798c263dfbf1344f25ea77bb2d06298e65feab2d78cbd79785195aa133a3",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:28+0800"
+  },
+  {
+    "number": 20,
+    "image_sha256": "1e69798c263dfbf1344f25ea77bb2d06298e65feab2d78cbd79785195aa133a3",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:29+0800"
+  },
+  {
+    "number": 21,
+    "image_sha256": "cc47a26c4ecd21f7281b27deef39349d7a8901815a04967dfbe9e058b93bc871",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:30+0800"
+  },
+  {
+    "number": 22,
+    "image_sha256": "cc47a26c4ecd21f7281b27deef39349d7a8901815a04967dfbe9e058b93bc871",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:32+0800"
+  },
+  {
+    "number": 23,
+    "image_sha256": "daf7858a12a9bee7efa8fb4cef0c8b0d45162d508f1c0242489e68e50c2d59e0",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:34+0800"
+  },
+  {
+    "number": 24,
+    "image_sha256": "daf7858a12a9bee7efa8fb4cef0c8b0d45162d508f1c0242489e68e50c2d59e0",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:35+0800"
+  },
+  {
+    "number": 25,
+    "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralAccurateOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:37+0800"
+  },
+  {
+    "number": 26,
+    "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+    "provider": {
+      "kind": "tencent",
+      "action": "GeneralHandwritingOCR",
+      "adapter_version": 1,
+      "parameters": {}
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:37+0800"
+  },
+  {
+    "number": 27,
+    "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+    "provider": {
+      "kind": "model",
+      "model": "deepseek-chat",
+      "prompt_hash": "9e3aa568981983582635b765b954c65d349c418ea40d48ac2d8918e6457a9f6c",
+      "adapter_version": 1,
+      "max_tokens": 4096,
+      "purpose": "current_model_capability"
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:31:38+0800"
+  },
+  {
+    "number": 28,
+    "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+    "provider": {
+      "kind": "model",
+      "model": "deepseek-reasoner",
+      "prompt_hash": "9e3aa568981983582635b765b954c65d349c418ea40d48ac2d8918e6457a9f6c",
+      "adapter_version": 1,
+      "max_tokens": 4096,
+      "purpose": "current_model_capability"
+    },
+    "status": "error",
+    "started_at": "2026-11-06T17:31:41+0800"
+  },
+  {
+    "number": 29,
+    "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+    "provider": {
+      "kind": "model",
+      "model": "deepseek-chat",
+      "prompt_hash": "9e3aa568981983582635b765b954c65d349c418ea40d48ac2d8918e6457a9f6c",
+      "adapter_version": 1,
+      "max_tokens": 4096,
+      "purpose": "current_model_capability"
+    },
+    "status": "ok",
+    "started_at": "2026-11-06T17:33:15+0800"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "image_sha256": "9b47939204e3e17babea1b69ea1d33c7b0263defff0244949737c409fb026dd9",
+  "image_path": "1f1285fb0d1d895b526fcb46c1ee0077.jpg",
+  "source_group": "notebook_batch_01_unresolved",
+  "split": "unassigned",
+  "review_status": "draft_visual",
+  "reviewer": "AI visual inspection via view_image; not human-confirmed",
+  "doc_type": "handwritten_multicolumn",
+  "difficulties": [
+    "multicolumn",
+    "cursive_handwriting",
+    "faint_background",
+    "decimal_points"
+  ],
+  "records": [],
+  "regions": [],
+  "complete": false,
+  "notes": "三列长表，右侧相邻列残留；重复编码及划改，密集行与小数。"
+}

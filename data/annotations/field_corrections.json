@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "schema_version": 1,
+    "reviewed_by": "人工核对",
+    "reviewed_at": "2026-11-07",
+    "note": "本文件是字段区域（第 1 步补标注）的人工核对结论。键为图片 file_sha256。regions 的键是自动定位草稿里的 region_id。source=cross_evidence 表示人工未逐条表态，但由同行同码交叉证据 + 视觉复核推定。"
+  },
+  "267e319e0da4f5297276d0e59add8743419889ce574f4c87c8c87b57ca257a8c": {
+    "_image": "导入\\2026-10-18\\87da125c93d9ede229b162e047b69884.jpg",
+    "_human": "单位都是斤或包，不是个；cat-1 善肉改为姜肉；unit-5/11/23/25/32/33/34/40/47/49 逐条给了原文。",
+    "unit_rule": {
+      "to": "斤",
+      "keep": ["包"],
+      "digit_suffix": true
+    },
+    "regions": {
+      "cat-1": {"transcript": "姜肉", "normalized_value": "姜肉"},
+      "unit-5": {"transcript": "185:1斤", "normalized_value": "斤"},
+      "unit-11": {"transcript": "1188:2斤", "normalized_value": "斤"},
+      "unit-23": {"transcript": "935:2斤", "normalized_value": "斤"},
+      "unit-25": {"transcript": "1381:2斤", "normalized_value": "斤"},
+      "unit-32": {"transcript": "1137:2斤", "normalized_value": "斤"},
+      "unit-33": {"transcript": "1133:2斤", "normalized_value": "斤"},
+      "unit-34": {"transcript": "1133:2斤", "normalized_value": "斤"},
+      "unit-40": {"transcript": "48:5斤", "normalized_value": "斤"},
+      "unit-47": {"transcript": "12:3斤", "normalized_value": "斤"},
+      "unit-49": {"transcript": "29:2斤", "normalized_value": "斤"}
+    }
+  },
+  "99bf160ca788b72deb73972b014f74d9db4509bd0b4f1771f5c551f4b727d7b2": {
+    "_image": "导入\\2026-10-18\\b64eccbfc81cc646d4563b325ddb05a1.jpg",
+    "_human": "单位都是斤；cat-0 马路肉改为马蹄肉；cat-1 各皮改为去皮干葱头；cat-2 没有这个区域；cat-7 小营姜改为小黄姜；unit-12/14/15/21/30 逐条给了原文。",
+    "unit_rule": {
+      "to": "斤",
+      "keep": [],
+      "digit_suffix": true
+    },
+    "regions": {
+      "cat-0": {"transcript": "马蹄肉", "normalized_value": "马蹄肉"},
+      "cat-1": {"transcript": "去皮干葱头", "normalized_value": "去皮干葱头"},
+      "cat-2": {"remove": true, "reason": "人工核对：没有这个区域"},
+      "cat-7": {"transcript": "小黄姜", "normalized_value": "小黄姜"},
+      "unit-11": {"transcript": "931:0.5斤", "normalized_value": "斤", "source": "cross_evidence"},
+      "unit-12": {"transcript": "1381:2斤", "normalized_value": "斤"},
+      "unit-14": {"transcript": "935:6斤", "normalized_value": "斤"},
+      "unit-15": {"transcript": "185:1斤", "normalized_value": "斤"},
+      "unit-21": {"transcript": "931:0.5斤", "normalized_value": "斤"},
+      "unit-30": {"transcript": "12:0.2斤", "normalized_value": "斤"}
+    }
+  },
+  "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8": {
+    "_image": "导入\\2026-10-18\\屏幕截图 2026-10-18 221419.png",
+    "_human": "cat-0 垃圾中共使改为去皮干葱头；unit-1 原文 931:0.5斤，行末还有一个「长」字。",
+    "unit_rule": {
+      "to": "斤",
+      "keep": [],
+      "digit_suffix": true
+    },
+    "regions": {
+      "cat-0": {"transcript": "去皮干葱头", "normalized_value": "去皮干葱头"},
+      "unit-1": {"transcript": "931:0.5斤长", "normalized_value": "斤"}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "stage0": {
+    "inventory": "done",
+    "files": 13,
+    "unique_pixels": 13,
+    "visual_review": "13 images; 40 draft rows in 2 images",
+    "confirmed_annotations": 2,
+    "offline_baseline": "done",
+    "live_capability": "executed_see_live_findings",
+    "acceptance": "two_human_confirmed_samples_scored_not_full_dataset"
+  },
+  "stage1": {
+    "library": "implemented",
+    "dictionary_entries": 0,
+    "policy": "suggest_only_preserve_records",
+    "production_enabled": false
+  },
+  "stage2": {
+    "enhancement": "deferred_by_user_plan_section6",
+    "ocr_experiment_runner": "implemented",
+    "real_results": "29_requests_completed_no_accuracy_claim",
+    "promote": false
+  },
+  "budget": {
+    "max_live_requests": 30,
+    "max_run_seconds": 900,
+    "request_timeout_seconds": 45,
+    "retry": 0,
+    "model_output_tokens_per_call": 4096,
+    "account_prices": "not_verified",
+    "currency_budget_enforced": false,
+    "cost_formula": "N_accurate * P_accurate + N_handwriting * P_handwriting + model tokens tariff",
+    "business_latency_budget": "not_yet_confirmed"
+  },
+  "real_api_calls_performed": 29,
+  "production_code_unchanged": true,
+  "human_accuracy_report": "人工确认准确率.json"
+}

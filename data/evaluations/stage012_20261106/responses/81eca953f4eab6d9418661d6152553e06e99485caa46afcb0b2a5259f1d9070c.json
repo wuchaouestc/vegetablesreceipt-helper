@@ -1,0 +1,165 @@
+{
+  "request": {
+    "schema_version": 1,
+    "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+    "variant": "original",
+    "preprocessing": "disabled_by_plan",
+    "provider": {
+      "kind": "model",
+      "model": "deepseek-chat",
+      "prompt_hash": "9e3aa568981983582635b765b954c65d349c418ea40d48ac2d8918e6457a9f6c",
+      "adapter_version": 1,
+      "max_tokens": 4096,
+      "purpose": "current_model_capability"
+    }
+  },
+  "response": {
+    "provider": "deepseek",
+    "status": "ok",
+    "blocks": [],
+    "records": [
+      {
+        "category": "马齿苋",
+        "customer_code": "931",
+        "weight": "12",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "马齿苋",
+        "customer_code": "21",
+        "weight": "20",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "马齿苋",
+        "customer_code": "14",
+        "weight": "4",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "马齿苋",
+        "customer_code": "15",
+        "weight": "15",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "老农",
+        "customer_code": "21",
+        "weight": "8",
+        "unit": "斤",
+        "remark": "(长)"
+      },
+      {
+        "category": "老农",
+        "customer_code": "1188",
+        "weight": "2",
+        "unit": "斤",
+        "remark": "(长)"
+      },
+      {
+        "category": "老农",
+        "customer_code": "29",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": "(长)"
+      },
+      {
+        "category": "王美",
+        "customer_code": "1368",
+        "weight": "5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "沙姜",
+        "customer_code": "931",
+        "weight": "1",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "沙姜",
+        "customer_code": "15",
+        "weight": "4",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "沙姜",
+        "customer_code": "1361",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "红腥草",
+        "customer_code": "21",
+        "weight": "5",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "小茴香",
+        "customer_code": "23",
+        "weight": "2",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "小茴香",
+        "customer_code": "15",
+        "weight": "10",
+        "unit": "斤",
+        "remark": "(长)"
+      },
+      {
+        "category": "香芹",
+        "customer_code": "136",
+        "weight": "1",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "竹叶",
+        "customer_code": "14",
+        "weight": "3",
+        "unit": "斤",
+        "remark": ""
+      },
+      {
+        "category": "九层塔",
+        "customer_code": "15",
+        "weight": "2.5",
+        "unit": "斤",
+        "remark": "(长)"
+      }
+    ],
+    "notes": [
+      "第2行品类手写疑似“老农”，字迹潦草，需人工核对。",
+      "第12行品类手写疑似“红腥草”，字迹潦草，需人工核对。",
+      "第13行品类手写疑似“小茴香”，字迹潦草，需人工核对。",
+      "第15行品类手写疑似“香芹”，字迹潦草，需人工核对。",
+      "第16行品类手写疑似“竹叶”，字迹潦草，需人工核对。",
+      "第17行品类手写疑似“九层塔”，字迹潦草，需人工核对。",
+      "第2、3、4行备注“(长)”字迹潦草，需人工核对。",
+      "第14、17行备注“(长)”字迹潦草，需人工核对。"
+    ],
+    "error_code": "",
+    "request_id": "a930546f-8ab3-4ff3-b350-ba45b7407678",
+    "usage": {
+      "prompt_tokens": 1338,
+      "completion_tokens": 594,
+      "total_tokens": 1932,
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1210
+    },
+    "elapsed_seconds": 3.0135,
+    "model": "deepseek-chat"
+  },
+  "cache_hit": false,
+  "network_calls": 1
+}

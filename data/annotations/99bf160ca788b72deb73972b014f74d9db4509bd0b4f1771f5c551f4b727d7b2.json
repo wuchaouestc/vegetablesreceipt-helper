@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "image_sha256": "99bf160ca788b72deb73972b014f74d9db4509bd0b4f1771f5c551f4b727d7b2",
+  "image_path": "b64eccbfc81cc646d4563b325ddb05a1.jpg",
+  "source_group": "notebook_batch_01_unresolved",
+  "split": "unassigned",
+  "review_status": "draft_visual",
+  "reviewer": "AI visual inspection via view_image; not human-confirmed",
+  "doc_type": "handwritten_multicolumn",
+  "difficulties": [
+    "multicolumn",
+    "cursive_handwriting",
+    "faint_background",
+    "decimal_points"
+  ],
+  "records": [],
+  "regions": [],
+  "complete": false,
+  "notes": "疏排多栏；左缘截断相邻列；右上标题与 PNG 截图相符；下方数量有涂改。"
+}

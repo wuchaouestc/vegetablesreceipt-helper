@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+  "image_path": "导入\\2026-10-18\\屏幕截图 2026-10-18 221419.png",
+  "review_status": "confirmed",
+  "reviewer": "人工核对",
+  "confirmed_at": "2026-11-07",
+  "source_group": null,
+  "split": "debug",
+  "fields": [
+    {
+      "region_id": "cat-0",
+      "field": "category",
+      "bbox": [
+        11.0,
+        1.0,
+        100.0,
+        40.0
+      ],
+      "transcript": "去皮干葱头",
+      "normalized_value": "去皮干葱头",
+      "visibility": "visible",
+      "source": "human_confirmed",
+      "confirm_sources": [
+        "human_transcript",
+        "human_value"
+      ],
+      "confirmed": true
+    },
+    {
+      "region_id": "unit-1",
+      "field": "unit",
+      "bbox": [
+        12.0,
+        27.0,
+        84.0,
+        40.0
+      ],
+      "transcript": "931:0.5斤长",
+      "normalized_value": "斤",
+      "visibility": "visible",
+      "source": "human_confirmed",
+      "confirm_sources": [
+        "human_transcript",
+        "human_value"
+      ],
+      "confirmed": true
+    }
+  ],
+  "regions": [
+    {
+      "region_id": "cat-0",
+      "field": "category",
+      "bbox": [
+        7.0,
+        -3.0,
+        104.0,
+        44.0
+      ],
+      "source_bbox": [
+        11.0,
+        1.0,
+        100.0,
+        40.0
+      ],
+      "match_kind": "heading",
+      "row_ids": [],
+      "heading_bbox": [
+        11.0,
+        1.0,
+        100.0,
+        40.0
+      ],
+      "code": "",
+      "expected_unit": ""
+    },
+    {
+      "region_id": "unit-1",
+      "field": "unit",
+      "bbox": [
+        10.0,
+        25.0,
+        86.0,
+        42.0
+      ],
+      "source_bbox": [
+        12.0,
+        27.0,
+        84.0,
+        40.0
+      ],
+      "match_kind": "entry",
+      "row_ids": [],
+      "heading_bbox": null,
+      "code": "931",
+      "expected_unit": "个"
+    }
+  ],
+  "removed_regions": [],
+  "complete": true,
+  "notes": "cat-0 垃圾中共使改为去皮干葱头；unit-1 原文 931:0.5斤，行末还有一个「长」字。"
+}

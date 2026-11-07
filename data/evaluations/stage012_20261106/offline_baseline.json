@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "python": "3.13.13",
+  "code_sha256": {
+    "ttsb2.py": "2b802be5ffa989906776ec3a436283d155e4cf7f38e908dc24aaf652f0025171",
+    "打单助手.py": "32bbc9ff0c2aacfc93548701b5b96c3234097af4f69414c69b53b0fce031b968",
+    "app_settings.py": "317fe7ea18cc7f21632a2a1a30403a8044ec655d617433a218d22676db575832",
+    "customer_profiles.py": "31bb9dd6c08996bb71dba043002337778ce4ee7624ee5971c38838232cf8bc54",
+    "build.py": "fdbbc2b2081bf6ec899b7ebd82ce1e63296ac1a7eeb8aad4859e9bb1469a15e0",
+    "requirements.txt": "dad722359dad52b04a27f9146ceafd211362291315c0e5c66ccb1a20a7f76c60",
+    "_界面补丁/布局.py": "005949e4a8d654869a97e0628814fb44a51af38719386b2dc9e0a5f638f199d4",
+    "_界面补丁/识别补丁.py": "2d7e7ba0d9a19b4c48595c3d57f6162a9599b8a41e38b3513961de3f0b3144a9",
+    "_界面补丁/结构补丁.py": "ff37453c0a68900a91ac603fa6bc017db6b00e8b0aab1cb6328e1fc213781e71"
+  },
+  "settings_snapshot": {
+    "版本": 6,
+    "打印机": {
+      "vid": "vid_0471",
+      "pid": "pid_0055",
+      "名称": "打单助手标签PDF",
+      "通道": "driver"
+    },
+    "界面": {
+      "字号档": "大",
+      "显示预览": false,
+      "显示日志": false,
+      "侧边收起": false
+    },
+    "识别": {
+      "仔细模式默认": false,
+      "坐标聚行": true,
+      "聚行容差": 0,
+      "结构增强": "自动",
+      "结构引擎": "自动",
+      "结构服务": "http://127.0.0.1:18765",
+      "结构超时毫秒": 25000,
+      "结构客户": []
+    },
+    "客户": {
+      "上限": 15
+    },
+    "周末模式": {
+      "开启日期": "2026-11-01"
+    },
+    "系统": {
+      "运行模式": "debug"
+    }
+  },
+  "customers_sha256": "3c5a09b6138290c7ad40b627be66a1d06b9c809a2b0b194c84e55a3ce05a8ca0",
+  "manifest_id": "f61c52e421f9c10c50425ee5f88d66759e033455f846ce463c8494c325a77f1a",
+  "legacy_cache_inventory": [
+    {
+      "image_sha256": "8da9fd610faeeaf6ee5767f8169dd5dea96732bd08ee674d7094e4ec896d1662",
+      "sources": []
+    },
+    {
+      "image_sha256": "bafa4d669393103f19f8fb482f75a9af2f447649856e785298045a7b0448f31e",
+      "sources": []
+    },
+    {
+      "image_sha256": "9b47939204e3e17babea1b69ea1d33c7b0263defff0244949737c409fb026dd9",
+      "sources": []
+    },
+    {
+      "image_sha256": "b97852e168df41ef6ee7ac317c0b5aab6eb32e484cea8414d8f3045a7066ea22",
+      "sources": []
+    },
+    {
+      "image_sha256": "267e319e0da4f5297276d0e59add8743419889ce574f4c87c8c87b57ca257a8c",
+      "sources": [
+        {
+          "path": "dist\\打单助手V6\\ocr_cache\\dfc1b12284ae6e614634a9b1b78da1fd.json",
+          "sha256": "543ffdd44eaf90893c72f2e871b1f7187bf0633147ca5ddffa7c8dd22de603ea",
+          "blocks": 56,
+          "provenance": "legacy_cache_no_interface_version_or_request_id"
+        }
+      ]
+    },
+    {
+      "image_sha256": "d45dfce5b1a33411f9141da0c8ce1965d66e658e29fd955af1bb6a9800f92642",
+      "sources": []
+    },
+    {
+      "image_sha256": "99bf160ca788b72deb73972b014f74d9db4509bd0b4f1771f5c551f4b727d7b2",
+      "sources": []
+    },
+    {
+      "image_sha256": "e967cbe7f4b5426ac9874267fe967145e2f131e9476ac1f768c8d53e8e514a29",
+      "sources": []
+    },
+    {
+      "image_sha256": "2fcb17ca30d98689392f6afdf81dde8d6c364e4f80a03328649413b0458c1c32",
+      "sources": []
+    },
+    {
+      "image_sha256": "1e69798c263dfbf1344f25ea77bb2d06298e65feab2d78cbd79785195aa133a3",
+      "sources": []
+    },
+    {
+      "image_sha256": "cc47a26c4ecd21f7281b27deef39349d7a8901815a04967dfbe9e058b93bc871",
+      "sources": []
+    },
+    {
+      "image_sha256": "daf7858a12a9bee7efa8fb4cef0c8b0d45162d508f1c0242489e68e50c2d59e0",
+      "sources": []
+    },
+    {
+      "image_sha256": "14fb96e752c86cb08f21ac258eba9b7e915054a020f53fe7744c4648dd65cde8",
+      "sources": []
+    }
+  ],
+  "offline_risks": {
+    "whole_page_fields_report_support": {
+      "category": true,
+      "customer_code": true,
+      "weight": true
+    },
+    "same_model_consensus_without_ocr": {
+      "confidence": "high",
+      "uncertain": false
+    }
+  },
+  "network_calls": 0,
+  "accuracy": null,
+  "limitations": [
+    "没有真实模型请求复现，不能据此确定真实样本的主要错误来源。",
+    "旧缓存无接口版本证据，只能辅助排查，不能用作新旧 OCR 公平对照。",
+    "风险用例为合成数据，证明本地判据边界，不证明某张业务单据实际错在此处。"
+  ]
+}
