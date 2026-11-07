@@ -13,19 +13,36 @@
 """
 
 import os
+import sys
 from pathlib import Path
 
 
+def _候选本地文件():
+    """按顺序找 config_local.py。
+
+    PyInstaller 打包后 `__file__` 落在 `_internal/` 里，密钥文件却和 exe 挨着，
+    所以还要看 `sys.executable` 所在目录，否则打包版读不到密钥。
+    """
+    候选 = [Path(__file__).with_name("config_local.py")]
+    if getattr(sys, "frozen", False):
+        可执行 = getattr(sys, "executable", "")
+        if 可执行:
+            候选.append(Path(可执行).with_name("config_local.py"))
+    候选.append(Path.cwd() / "config_local.py")
+    return 候选
+
+
 def _读本地密钥():
-    local = Path(__file__).with_name("config_local.py")
-    if not local.is_file():
-        return {}
-    ns = {}
-    try:
-        exec(compile(local.read_text(encoding="utf-8"), str(local), "exec"), ns)
-    except Exception:
-        return {}
-    return ns
+    for local in _候选本地文件():
+        if not local.is_file():
+            continue
+        ns = {}
+        try:
+            exec(compile(local.read_text(encoding="utf-8"), str(local), "exec"), ns)
+        except Exception:
+            continue
+        return ns
+    return {}
 
 
 _LOCAL = _读本地密钥()

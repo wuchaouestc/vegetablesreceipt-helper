@@ -61,16 +61,24 @@ def 取密钥(名):
     源码运行时就是 `from config import ...` 那两个值；
     **打包成 exe 以后以 exe 旁边那个 config.py 为准** —— 换密钥只要改那个文件、
     重开程序，不用重新打包（也不该为了换个密钥就让父母等我重打一次包）。
+
+    注意顺序：外部 config.py 要先看。打包进 exe 的 config.py 只是空壳，
+    `import config` 拿到的会是空串而**不会抛异常**，若先 import 就再也没机会
+    回退到外部文件，打包版会一直报"没找到密钥"。
     """
-    try:
-        import config
-        return getattr(config, 名)
-    except Exception:
-        pass
-    # 打包后读 exe 旁边的 config.py
+    # 打包后先读 exe 旁边的 config.py
     外 = 路径.读配置()
     if 外 is not None:
-        return getattr(外, 名, None)
+        值 = getattr(外, 名, None)
+        if 值:
+            return 值
+    try:
+        import config
+        值 = getattr(config, 名, None)
+        if 值:
+            return 值
+    except Exception:
+        pass
     return None
 
 

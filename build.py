@@ -21,6 +21,9 @@ PRODUCT_NAME = "打单助手V6"
 DIST_DIR = ROOT / "dist" / PRODUCT_NAME
 STAGING_ROOT = ROOT / "build" / "release_staging"
 RELEASE_FILES = ("settings.json", "customers.json", "启动V6.bat")
+# 真实密钥只放在**本机发布目录**：不进仓库、不打包进 exe，缺失也不算构建失败
+# （从 GitHub 下载源码的人没有这个文件，他们按 config_local.example.py 自己填）。
+OPTIONAL_RELEASE_FILES = ("config_local.py",)
 
 # 「越用越智能」的积累数据：发布时把初始词典/示例库带过去，
 # 但**存在就不覆盖**——用户运行中积累的别名、示例不能被打包的新版冲掉。
@@ -70,6 +73,17 @@ def copy_release_files(source_dir=ROOT, dist_dir=DIST_DIR):
         if not source.is_file():
             result["missing"].append(name)
         elif target.exists():
+            result["kept"].append(name)
+        else:
+            shutil.copy2(source, target)
+            result["copied"].append(name)
+    # 可选文件（真实密钥）：有就补上，没有就跳过，不报警告。
+    for name in OPTIONAL_RELEASE_FILES:
+        source = source_dir / name
+        target = dist_dir / name
+        if not source.is_file():
+            continue
+        if target.exists():
             result["kept"].append(name)
         else:
             shutil.copy2(source, target)
