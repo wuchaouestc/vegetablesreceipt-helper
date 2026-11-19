@@ -418,6 +418,50 @@ def _打印配置():
     }
 
 
+def uses_pdf_printer():
+    """判断所选驱动是否为 PDF 虚拟打印机，包括重命名的队列。"""
+    config = _打印配置()
+    if config['通道'] != 'driver':
+        return False
+    import win32print
+    name = config['名称'] or win32print.GetDefaultPrinter()
+    handle = win32print.OpenPrinter(name)
+    try:
+        info = win32print.GetPrinter(handle, 2)
+        return 'pdf' in str(info.get('pDriverName', '')).lower()
+    finally:
+        win32print.ClosePrinter(handle)
+
+
+def save_label_pdf(folder, basename, category, code='', weight='', unit='', remark='', *, separator=False):
+    """使用标签位图保存单页 PDF，按标签物理尺寸输出且不覆盖已有文件。"""
+    import re
+    import os
+    import tempfile
+    folder = Path(folder)
+    img, _info = (render_separator(category) if separator else
+                  render_label(category, code, weight, unit, remark))
+    name = re.sub(r'[<>:"/\\|?*\x00-\x1f]', '_', str(basename)).strip(' .')[:150] or 'label'
+    descriptor, temporary = tempfile.mkstemp(suffix='.pdf', dir=folder)
+    os.close(descriptor)
+    try:
+        img.convert('RGB').save(temporary, format='PDF',
+                                dpi=(img.width * 25.4 / 宽MM, img.height * 25.4 / 高MM))
+        number = 0
+        while True:
+            suffix = f'_{number}' if number else ''
+            target = folder / (name + suffix + '.pdf')
+            try:
+                # Windows rename fails if the destination already exists.
+                os.rename(temporary, target)
+                return str(target)
+            except FileExistsError:
+                number += 1
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
 def print_label(category, code, weight, unit, remark, via=None):
     """打印一张标签；via 可为 usb、driver 或 auto（USB 失败后走驱动）。"""
     配置 = _打印配置()

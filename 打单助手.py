@@ -2045,14 +2045,25 @@ class App:
         掂 = LY.掂量(len(待打), 状态)
         if not 掂['能打'] and not messagebox.askyesno('标签纸可能不够', 掂['文案'] + '\n\n还要打吗？'):
             return
+        pdf_directory = None
+        try:
+            if LB.uses_pdf_printer():
+                pdf_directory = filedialog.askdirectory(title='选择本批标签 PDF 保存文件夹', parent=self.root)
+                if not pdf_directory:
+                    return
+        except Exception as exc:
+            messagebox.showerror('无法读取打印机', str(exc))
+            return
         self._task_kind = 'print'
         self.set_busy(True)
         self.set_status('正在打印…', 主题.主色)
-        self.worker.run(self._print_task, 待打, customer=客户, 重打=False)
+        self.worker.run(self._print_task, 待打, customer=客户, 重打=False,
+                        pdf_directory=pdf_directory)
 
-    def _print_task(self, records, customer=None, 重打=False):
+    def _print_task(self, records, customer=None, 重打=False, pdf_directory=None):
         self._打印重打 = bool(重打)
         客户 = customer or self.var_customer.get()
+        批次名 = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
         图号们 = {}
         if not 重打:
             来源们 = list(dict.fromkeys(str(r.get('_src', '') or '') for r in records))
@@ -2061,7 +2072,12 @@ class App:
                     图号们[来源] = '%s_%d' % (datetime.now().strftime('%Y%m%d_%H%M%S'), i + 1)
             if not 客户:
                 raise RuntimeError('没有选客户，不能打印分隔标签')
-            if not LB.print_separator(客户):
+            if pdf_directory:
+                LB.save_label_pdf(pdf_directory, f'{批次名}_000_客户_{客户}', 客户, separator=True)
+                分隔成功 = True
+            else:
+                分隔成功 = LB.print_separator(客户)
+            if not 分隔成功:
                 raise RuntimeError('客户分隔标签发送失败：%s' % (LB.最后打印错误 or '未知错误'))
             时间 = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             DR.记一张(客户, '名牌', '', '', '', '', '', '—', '已发出', 时间)
@@ -2082,7 +2098,12 @@ class App:
                 rem = ' '.join(rem)
             客 = r.get('_客户') or r.get('customer') or 客户 or ''
             是名牌 = 重打 and r.get('type') == '名牌'
-            if 是名牌:
+            if pdf_directory:
+                文件名 = f'{批次名}_{成功数 + 1:03d}_{cat}_{code}_{w}{u}'
+                LB.save_label_pdf(pdf_directory, 文件名, 客 if 是名牌 else cat,
+                                  code, w, u, rem, separator=是名牌)
+                发送成功 = True
+            elif 是名牌:
                 if not 客:
                     raise RuntimeError('历史名牌缺少客户名，不能补打')
                 发送成功 = LB.print_separator(客)
