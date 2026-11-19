@@ -12,12 +12,16 @@
 主题.侧栏字 = '#d9e0e8'
 主题.侧栏淡 = '#8f9cab'
 
+# 改为 True 后，下次启动显示左栏「周末模式」菜单。
+App.显示周末模式菜单 = False
 App.导航 = [
     ('scan', '单据识别', '▦'),
     ('history', '打印历史', '◷'),
     ('周末', '周末模式', '末'),
     ('settings', '设置', '⚙'),
 ]
+if not App.显示周末模式菜单:
+    App.导航 = [item for item in App.导航 if item[0] != '周末']
 
 
 def _build_ui(self):
@@ -198,8 +202,7 @@ def _on_customer_change(self, e=None):
     if hasattr(self, '_侧栏客户'):
         self._侧栏客户.configure(text=客户 or '未选择')
     if hasattr(self, 'lbl_customer_hint'):
-        编码 = '显示客户编码' if 档案.get('show_code', True) else '隐藏客户编码'
-        self.lbl_customer_hint.configure(text=f'【{客户 or "未选择"}】\n{编码}；仅影响输出格式，识别只看图片。')
+        self.lbl_customer_hint.configure(text=CP.customer_hint(客户, 档案))
     if hasattr(self, 'tree'):
         选中 = self.tree.selection()
         self._redraw_records()
@@ -487,10 +490,23 @@ def _build_checklist(self, parent):
     条 = tk.Frame(盒, bg=主题.面)
     条.pack(fill='x', padx=P(14), pady=(P(8), P(0)))
     分区标题(条, '核对清单', '双击单元格就能改').pack(side='left')
-    self.btn_print = 主按钮(条, '确认打印', self.do_print, 色调='成功')
+    # Reference: controls end at the table/preview boundary, not beside its title.
+    self._学习操作组 = tk.Frame(条, bg=主题.面)
+    self._学习操作组.place(relx=2 / 3, y=0, anchor='ne')
+    tk.Label(self._学习操作组, text='全部标记：', bg=主题.面, fg=主题.正文,
+             font=(主题.字体, 主题.字号)).pack(side='left')
+    self.var_全部标记 = tk.StringVar(value='选择状态')
+    self._全部标记框 = ttk.Combobox(self._学习操作组, textvariable=self.var_全部标记, state='readonly',
+                                 values=('✓ 已确认', '已识别', '? 拿不准', '! 可疑'), width=10)
+    self._全部标记框.pack(side='left', padx=P(4))
+    self._全部标记框.bind('<<ComboboxSelected>>', self._全部标记状态)
+    self.btn_学习核对 = 次按钮(self._学习操作组, '学习核对结果', self._学习核对结果)
+    self.btn_学习核对.pack(side='left', padx=(P(10), 0))
+    第二 = tk.Frame(盒, bg=主题.面)
+    self.btn_print = 主按钮(第二, '确认打印', self.do_print, 色调='成功')
     self.btn_print.configure(pady=P(1), font=(主题.字体, 主题.字号, 'bold'))
     self.btn_print.pack(side='right')
-    self.btn_undo = 次按钮(条, '撤销修改', self.undo_edits)
+    self.btn_undo = 次按钮(第二, '撤销修改', self.undo_edits)
     self.btn_undo.pack(side='right', padx=P(6))
     self.btn_del = 次按钮(条, '删除这一行', self.delete_selected, 危险=True)
     self.btn_del.pack(side='right', padx=(P(0), P(6)))
@@ -499,7 +515,6 @@ def _build_checklist(self, parent):
     self.btn_preview = 次按钮(条, '隐藏预览', self.toggle_preview)
     self.btn_preview.pack(side='right', padx=(P(0), P(6)))
 
-    第二 = tk.Frame(盒, bg=主题.面)
     第二.pack(fill='x', padx=P(14), pady=(P(2), P(0)))
     self.lbl_check_status = tk.Label(第二, text='', bg=主题.面, fg=主题.次要, font=(主题.字体, 主题.字号小), anchor='w')
     self.lbl_check_status.pack(side='left', fill='x', expand=True)
@@ -537,8 +552,12 @@ def _build_checklist(self, parent):
     左 = tk.Frame(self.pane, bg=主题.面)
     self.pane.add(左, minsize=P(360))
     cols = ('no', 'state', 'category', 'code', 'weight', 'unit', 'remark')
-    self.tree = ttk.Treeview(左, columns=cols, show='headings', height=12, selectmode='browse')
-    for cid, title, w, anchor, stretch in (('no', '#', P(28), 'center', False), ('state', '状态', P(60), 'center', False), ('category', '品类', P(120), 'w', True), ('code', '客户编码', P(76), 'center', False), ('weight', '斤数', P(52), 'center', False), ('unit', '单位', P(44), 'center', False), ('remark', '备注', P(80), 'w', True)):
+    # style=清单样式：字号/行高单独配，别连累图片列表和历史页的 Treeview
+    self.tree = ttk.Treeview(左, columns=cols, show='headings', height=12,
+                             selectmode='extended', style=清单样式)
+    # 状态列放宽到 P(72)：字号提到 11 号以后「✓ 已确认」在 150% 缩放下约 97px，
+    # 原来的 P(60)=90px 会把最后一个字切掉。
+    for cid, title, w, anchor, stretch in (('no', '#', P(28), 'center', False), ('state', '状态', P(72), 'center', False), ('category', '品类', P(120), 'w', True), ('code', '客户编码', P(76), 'center', False), ('weight', '斤数', P(52), 'center', False), ('unit', '单位', P(44), 'center', False), ('remark', '备注', P(80), 'w', True)):
         self.tree.heading(cid, text=title)
         self.tree.column(cid, width=w, anchor=anchor, stretch=stretch)
     self.tree.tag_configure('斤数可疑', background=主题.警告淡)
@@ -548,6 +567,13 @@ def _build_checklist(self, parent):
     vs = ttk.Scrollbar(左, orient='vertical', command=self._tree_yview)
     hs = ttk.Scrollbar(左, orient='horizontal', command=self.tree.xview)
     self.tree.configure(yscrollcommand=vs.set, xscrollcommand=hs.set)
+    # 行线（每行上下那条淡边框）贴在清单控件上，得跟着滚动/改尺寸重贴。
+    self._清单滚动条 = vs
+    self._行线池 = []
+    try:
+        self.tree.configure(yscrollcommand=(lambda a, b, s=self: _清单滚回调(s, a, b)))
+    except Exception:
+        pass
     self.tree.grid(row=0, column=0, sticky='nsew')
     vs.grid(row=0, column=1, sticky='ns')
     hs.grid(row=1, column=0, sticky='ew')
@@ -567,6 +593,12 @@ def _build_checklist(self, parent):
     self.root.bind('<Control-b>', (lambda e: self._切换侧边()))
     self.root.bind('<Control-B>', (lambda e: self._切换侧边()))
     self.tree.bind('<Configure>', (lambda e: self._commit_editor()))
+    # 缩放/切页/展开图片区都会改清单的尺寸，行线要重贴一次
+    self.tree.bind('<Configure>', (lambda e: self._排队贴行线()), add='+')
+    try:
+        self.root.after(150, (lambda: self._排队贴行线()))
+    except Exception:
+        pass
 
     self.右键菜单 = tk.Menu(self.tree, tearoff=0, font=(主题.字体, 主题.字号小))
     self.右键菜单.add_command(label='改这一格（F2）', command=self.open_editor_for_selection)
@@ -576,13 +608,17 @@ def _build_checklist(self, parent):
     self.右键菜单.add_separator()
     self.右键菜单.add_command(label='删除这一行', command=self.delete_selected)
     self.右键菜单.add_command(label='撤销全部修改', command=self.undo_edits)
+    状态菜单 = tk.Menu(self.右键菜单, tearoff=0)
+    for 状态 in ('✓ 已确认', '已识别', '? 拿不准', '! 可疑'):
+        状态菜单.add_command(label=状态, command=lambda value=状态: self._标记选中状态(value))
+    self.右键菜单.add_cascade(label='设置选中行状态', menu=状态菜单)
 
     self.preview_panel = tk.Frame(self.pane, bg=主题.面)
-    tk.Label(self.preview_panel, text='标签预览（实际纸张 40×30mm）', bg=主题.面,
+    tk.Label(self.preview_panel, text='标签预览（1:1，实际 40×30mm）', bg=主题.面,
              fg=主题.次要, font=(主题.字体, 主题.字号小)).pack(anchor='w', pady=(P(2), P(6)))
-    self.canvas = tk.Canvas(self.preview_panel, width=P(176), height=P(132), bg='#ffffff',
+    self.canvas = tk.Canvas(self.preview_panel, width=LB.标签宽, height=LB.标签高, bg='#ffffff',
                             highlightthickness=1, highlightbackground=主题.边框)
-    self.canvas.pack(fill='x')
+    self.canvas.pack(anchor='w', padx=(P(6), 0))
     self.canvas.bind('<Configure>', lambda event: self.update_preview())
     # 说明文字固定单行：wraplength=0 表示不换行。
     # 原来写死 wraplength=P(176)，面板早就被拉宽到 1000+，文字还是按 176 折行，
@@ -1121,3 +1157,295 @@ def update_preview(self, rec=None):
 
 App._压成一行 = _压成一行
 App.update_preview = update_preview
+
+
+# ===========================================================================
+# 核对清单：子项字号 / 行距 / 每行淡边框 / 单元格编辑放大
+# ===========================================================================
+# 由来（2026-11-07，按「单据识别 核对清单列表子项样式.png」改）：
+#   1) ttk 默认字号 9 号、默认行高 20px。20px 是写死在主题里的、不跟 DPI 走，
+#      在 150% 缩放的屏幕上字号被系统放大、行高没放大，字几乎顶满行。
+#      这里给清单单独配一套：子项 11 号、表头 10 号加粗（子项比表头略大一号）。
+#   2) 行距：行高按设计尺寸走 P(30)，字号变大也还留着上下呼吸的空。
+#   3) 每行上下一条淡边框（透明度 70%）。Treeview 没有逐行边框这个能力，
+#      实测三条路都不通：Item 布局里塞 border 元素不画（8.6 画单元格不走这段布局）；
+#      Item padding 留白想露出树背景也不行（整行被 tag 背景铺满）；tag 画不出线。
+#      所以用 1px 的 Frame 贴在行与行的接缝上，坐标走 bbox，滚动/重画/改尺寸时重贴。
+#   4) 双击改单元格时，编辑框从原格子「弹」大一圈：蓝框、字号大一档、带缓动。
+# 全部 try/except 包住，任何一处出错就退回原样式，不影响主流程。
+
+清单样式 = 'Checklist.Treeview'
+清单行高 = 30          # 设计像素，实际按 P() 换算成屏幕像素
+清单子项字号 = 11      # 比表头大一号
+清单表头字号 = 10
+行线基色 = '#c8cdd6'   # 画线用的灰
+行线不透明度 = 0.30    # 「透明 70%」= 30% 不透明，混到白底上实测 #eef0f3
+行线开关 = True        # 万一哪台机器上贴线有问题，改这里就能关掉
+
+
+def _混到白(色, 不透明):
+    '''把 色 按 不透明 混到白底上，返回 #rrggbb。算不出来就给个安全的浅灰。'''
+    try:
+        s = str(色).lstrip('#')
+        值 = [int(s[i:i + 2], 16) for i in (0, 2, 4)]
+        混 = [int(round(255 - 不透明 * (255 - v))) for v in 值]
+        return '#%02x%02x%02x' % tuple(混)
+    except Exception:                          # noqa: BLE001
+        return '#eef0f4'
+
+
+def _配清单样式(self):
+    '''给核对清单配字号和行高。必须在 root 建好之后调（P() 要读 DPI）。'''
+    try:
+        样式 = ttk.Style(self.root)
+        样式.configure(清单样式, font=(主题.字体, 清单子项字号),
+                       rowheight=P(清单行高))
+        样式.configure(清单样式 + '.Heading',
+                       font=(主题.字体, 清单表头字号, 'bold'))
+    except Exception:                          # noqa: BLE001
+        pass
+
+
+_原_init_style = App._init_style
+
+
+def _init_style(self):
+    _原_init_style(self)
+    _配清单样式(self)
+
+
+App._init_style = _init_style
+
+
+def _行线控件(self, i):
+    '''取（不够就建）第 i 条行线 —— 贴在清单控件里的 1px Frame。'''
+    池 = getattr(self, '_行线池', None)
+    if 池 is None:
+        池 = self._行线池 = []
+    while len(池) <= i:
+        线 = tk.Frame(self.tree, bg=_混到白(行线基色, 行线不透明度),
+                      height=1, bd=0, highlightthickness=0, takefocus=0)
+        线.bind('<Button-1>', (lambda e: self._行线被点(e, False)))
+        线.bind('<Double-1>', (lambda e: self._行线被点(e, True)))
+        池.append(线)
+    return 池[i]
+
+
+def _行线被点(self, e, 双击=False):
+    '''行线只有 1px，但正好落在接缝上也得能用：自己找出是哪一行。'''
+    try:
+        tree = self.tree
+        y = e.y_root - tree.winfo_rooty()
+        x = e.x_root - tree.winfo_rootx()
+        iid = tree.identify_row(y)
+        if not iid:
+            return 'break'
+        tree.focus_set()
+        tree.selection_set(iid)
+        if 双击:
+            self._open_editor(iid, tree.identify_column(x))
+        return 'break'
+    except Exception:                          # noqa: BLE001
+        return None
+
+
+def _重贴行线(self):
+    '''把行线贴到可见行与行的接缝上。返回贴了几条（0 说明这会儿还量不出行）。'''
+    if not 行线开关:
+        return 0
+    tree = getattr(self, 'tree', None)
+    if tree is None:
+        return 0
+    try:
+        if not tree.winfo_exists():
+            return 0
+        池 = getattr(self, '_行线池', [])
+        for 线 in 池:
+            try:
+                线.place_forget()
+            except Exception:                  # noqa: BLE001
+                pass
+        宽 = tree.winfo_width()
+        高 = tree.winfo_height()
+        if 宽 <= 1 or 高 <= 1:
+            return 0
+        n = 0
+        贴过顶 = False
+        for iid in tree.get_children():
+            bb = tree.bbox(iid, '#1')
+            if not bb:
+                continue
+            _x, y, _w, h = bb
+            if y >= 高:
+                break
+            if y + h <= 0:
+                continue
+            位置们 = [y + h - 1]                       # 每行的下边框
+            if not 贴过顶 and y - 1 >= 0:              # 第一整行的上边框
+                位置们.append(y - 1)
+                贴过顶 = True
+            for 位置 in 位置们:
+                if 0 <= 位置 < 高:
+                    线 = self._行线控件(n)
+                    n += 1
+                    try:
+                        线.place(x=0, y=位置, width=宽, height=1)
+                        线.lift()
+                    except Exception:              # noqa: BLE001
+                        pass
+        # 行线刚才被 lift 过，编辑框要重新压回最上面
+        框 = getattr(self, '_编辑框', None)
+        if 框 is not None:
+            try:
+                框.lift()
+            except Exception:                      # noqa: BLE001
+                pass
+        return n
+    except Exception:                          # noqa: BLE001
+        return 0
+
+
+def _排队贴行线(self):
+    '''滚动/重画会连着触发很多次，攒到 idle 再贴一次就够。'''
+    if not 行线开关:
+        return
+    if getattr(self, '_行线任务', None) is not None:
+        return
+    self._行线重试 = 0
+    try:
+        # 注意：这儿必须给绑定方法，裸函数会少一个 self，回调直接抛 TypeError
+        self._行线任务 = self.root.after_idle(self._真的贴行线)
+    except Exception:                          # noqa: BLE001
+        self._行线任务 = None
+
+
+def _真的贴行线(self):
+    self._行线任务 = None
+    贴了 = _重贴行线(self)
+    # 刚建表 / 刚切页的时候 bbox 还量不出行，隔一帧再试（最多 3 次，不会无限重排）
+    try:
+        有行 = bool(self.tree.get_children())
+    except Exception:                          # noqa: BLE001
+        有行 = False
+    次数 = int(getattr(self, '_行线重试', 0) or 0)
+    if 有行 and 贴了 == 0 and 次数 < 3:
+        self._行线重试 = 次数 + 1
+        try:
+            self._行线任务 = self.root.after(60, self._真的贴行线)
+        except Exception:                      # noqa: BLE001
+            self._行线任务 = None
+    else:
+        self._行线重试 = 0
+
+
+def _清单滚回调(self, 首, 末):
+    '''滚动条定位 → 顺带把行线重贴（滚动条的 set 原来直接挂在 vs 上）。'''
+    try:
+        self._清单滚动条.set(首, 末)
+    except Exception:                          # noqa: BLE001
+        pass
+    _排队贴行线(self)
+
+
+App._配清单样式 = _配清单样式
+App._行线控件 = _行线控件
+App._行线被点 = _行线被点
+App._重贴行线 = _重贴行线
+App._排队贴行线 = _排队贴行线
+App._真的贴行线 = _真的贴行线
+
+
+_原_redraw_records_行线 = App._redraw_records
+
+
+def _redraw_records(self):
+    _原_redraw_records_行线(self)
+    _排队贴行线(self)
+
+
+App._redraw_records = _redraw_records
+
+
+# ---------- 双击改单元格：编辑框弹大一圈 ----------
+_原_open_editor = App._open_editor
+
+
+def _open_editor(self, iid, col):
+    _原_open_editor(self, iid, col)
+    try:
+        _放大编辑框(self)
+    except Exception:                          # noqa: BLE001
+        pass
+
+
+def _放大编辑框(self):
+    '''把刚摆好的编辑框从原格子放大一圈：蓝框 + 字号大一档 + 缓动。'''
+    框 = getattr(self, '_编辑框', None)
+    if 框 is None:
+        return
+    try:
+        if not 框.winfo_exists():
+            return
+    except Exception:                          # noqa: BLE001
+        return
+    信息 = 框.place_info()
+    try:
+        原x, 原y = int(信息['x']), int(信息['y'])
+        原w, 原h = int(信息['width']), int(信息['height'])
+    except Exception:                          # noqa: BLE001
+        return
+    撑宽, 撑高 = P(26), P(10)
+    新w, 新h = 原w + 撑宽, 原h + 撑高
+    新x = max(0, 原x - 撑宽 // 2)
+    新y = max(0, 原y - 撑高 // 2)
+    tree = getattr(self, 'tree', None)
+    try:
+        上限w, 上限h = tree.winfo_width(), tree.winfo_height()
+        if 新x + 新w > 上限w:
+            新x = max(0, 上限w - 新w)
+        if 新y + 新h > 上限h:
+            新y = max(0, 上限h - 新h)
+    except Exception:                          # noqa: BLE001
+        pass
+    try:
+        框.configure(font=(主题.字体, 清单子项字号 + 1),
+                     highlightthickness=P(2), highlightbackground=主题.主色,
+                     highlightcolor=主题.主色)
+    except Exception:                          # noqa: BLE001
+        pass    # ttk.Combobox 不认这几个选项，忽略，只放大不改配色
+    try:
+        框.lift()
+    except Exception:                          # noqa: BLE001
+        pass
+
+    帧数 = 4
+    间隔 = 16
+
+    def 摆一帧(i):
+        当前 = getattr(self, '_编辑框', None)
+        if 当前 is not 框:
+            return
+        try:
+            if not 框.winfo_exists():
+                return
+        except Exception:                      # noqa: BLE001
+            return
+        u = i / float(帧数)
+        t = 1 - (1 - u) ** 2                   # 先快后慢，弹出来的手感
+        框.place(x=int(原x + (新x - 原x) * t), y=int(原y + (新y - 原y) * t),
+                 width=int(原w + (新w - 原w) * t), height=int(原h + (新h - 原h) * t))
+        try:
+            框.lift()
+        except Exception:                      # noqa: BLE001
+            pass
+        if i < 帧数:
+            try:
+                self.root.after(间隔, (lambda: 摆一帧(i + 1)))
+            except Exception:                  # noqa: BLE001
+                pass
+
+    摆一帧(1)
+
+
+App._放大编辑框 = _放大编辑框
+App._open_editor = _open_editor

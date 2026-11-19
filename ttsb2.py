@@ -40,7 +40,7 @@ HERE = 路径.程序目录()
 
 def _debug_log(msg):
     try:
-        import _库.配置 as 设置
+        import app_settings as 设置
         if 设置.取('系统.运行模式') == 'debug':
             log_dir = HERE / 'log'
             log_dir.mkdir(exist_ok=True)
@@ -252,7 +252,8 @@ def compress_image(image_path, max_size=1400):
 # ---------------------------------------------------------------------------
 
 
-def deepseek_parse(image_path, blocks=None, effort='off', system_prompt=''):
+def deepseek_parse(image_path, blocks=None, effort='off', system_prompt='', *, timeout=120,
+                   reference_images=()):
     """调一次 DeepSeek，返回模型原始输出的 dict（含 records / notes）。
 
     ``blocks`` 可以省略：此时直接理解图片，因而能与腾讯 OCR 并行执行。
@@ -287,6 +288,14 @@ def deepseek_parse(image_path, blocks=None, effort='off', system_prompt=''):
                 '本次没有等待其他 OCR 结果；只输出你实际看清的明细，模糊或无法确定的写进 notes。')
         _debug_log(f"deepseek_parse 开始，直接进行图片理解，模型: {model}")
 
+    references = []
+    for index, path in enumerate(reference_images, 1):
+        with open(path, 'rb') as file:
+            encoded = base64.b64encode(file.read()).decode()
+        references.extend([
+            {'type': 'text', 'text': f'历史参考图 {index}，仅用于笔迹参考，不输出图中明细。'},
+            {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,' + encoded}},
+        ])
     payload = {
         'model': model,
         'messages': [
@@ -294,6 +303,7 @@ def deepseek_parse(image_path, blocks=None, effort='off', system_prompt=''):
             {'role': 'user', 'content': [
                 {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,' + img_b64}},
                 {'type': 'text', 'text': 用户},
+                *references,
             ]},
         ],
         'temperature': 0.1,
@@ -302,7 +312,7 @@ def deepseek_parse(image_path, blocks=None, effort='off', system_prompt=''):
                       data=json.dumps(payload).encode(),
                       headers={'Authorization': 'Bearer ' + key,
                                'Content-Type': 'application/json'})
-    with _ur.urlopen(req, timeout=120) as r:
+    with _ur.urlopen(req, timeout=timeout) as r:
         resp = json.loads(r.read().decode())
     内容 = resp['choices'][0]['message']['content']
 
@@ -313,7 +323,7 @@ def deepseek_parse(image_path, blocks=None, effort='off', system_prompt=''):
         raise RuntimeError('模型没返回 JSON')
     
     结果_json = json.loads(m.group())
-    _debug_log(f"deepseek_parse 结果: 返回了 {len(结果_json.get('records', []))} 条记录")
+    _debug_log(f"{model} 模型返回: {len(结果_json.get('records', []))} 条记录；说明: {json.dumps(结果_json.get('notes', []), ensure_ascii=False)}")
     return 结果_json
 
 
@@ -992,6 +1002,8 @@ def mark_uncertain(records, profile=None):
     """
     说明 = []
     for r in records:
+        if r.get('_partial_review_replay') and r.get('_user_confirmed'):
+            continue
         if r.get('_hedged') or r.get('_suspect'):
             r['_uncertain'] = True
             说明.append('「%s %s」拿不准，请核对' %
@@ -1193,6 +1205,110 @@ def merge_consensus(runs, blocks):
     return 结果, notes
 
 
+def review_printed_rows(image_path, records, blocks, prompt):
+    """Cross-check printed detail cells against their table row."""
+    from collections import Counter
+    from tempfile import TemporaryDirectory
+    from handwriting.geometry import normalize_blocks, v_overlap_ratio
+    from handwriting.review import crop_region
+
+    cells = normalize_blocks(blocks)
+    headers = [(category, detail) for category in cells for detail in cells
+               if ('分类' in category.text or category.text in ('商品名称', '物料名称', '品类'))
+               and detail.text.strip() in ('详情', '客户明细')
+               and category.bbox[2] < detail.bbox[0]
+               and v_overlap_ratio(category.bbox, detail.bbox) >= 0.5]
+    if len(headers) != 1:
+        return []
+    category_header, detail_header = headers[0]
+    detail_pattern = re.compile(r'\(([^()]+)\)\s*(\d+(?:\.\d+)?)\s*(公斤|千克|kg|斤|包|件|箱|袋|个|盒|瓶|只|份)', re.I)
+    rows = []
+    for cell in cells:
+        if cell.bbox[0] < detail_header.bbox[0] - (detail_header.bbox[0] - category_header.bbox[0]) * 0.5:
+            continue
+        if cell.bbox[1] <= detail_header.bbox[3]:
+            continue
+        details = detail_pattern.findall(unicodedata.normalize('NFKC', cell.text))
+        if not details:
+            continue
+        # The category cell is the leftmost non-number cell after the row number.
+        left = [c for c in cells if c.bbox[1] > category_header.bbox[3]
+                and c.bbox[2] < cell.bbox[0] and v_overlap_ratio(c.bbox, cell.bbox) >= 0.65]
+        left.sort(key=lambda c: c.bbox[0])
+        if len(left) < 2 or not left[0].text.strip().isdigit():
+            continue
+        category = left[1]
+        if not re.search(r'[\u4e00-\u9fff]', category.text) or category.text in 表头词:
+            continue
+        for code, weight, unit in details:
+            rows.append((category, cell, _文本键(code.strip().rstrip('.')), _数值(weight), _文本键(unit)))
+
+    notes = []
+    codes = Counter(_文本键(r.get('customer_code')).rstrip('.') for r in records)
+    signatures = Counter((_文本键(r.get('customer_code')).rstrip('.'),
+                          _数值(r.get('weight')), _文本键(r.get('unit'))) for r in records)
+    with TemporaryDirectory(prefix='printed-review-') as folder:
+        for index, record in enumerate(records):
+            code = _文本键(record.get('customer_code')).rstrip('.')
+            if not code or record.get('_user_confirmed') or record.get('_user_edited'):
+                continue
+            weight, unit = _数值(record.get('weight')), _文本键(record.get('unit'))
+            if signatures[code, weight, unit] != 1:
+                continue
+            matches = [row for row in rows if row[2] == code and row[3:] == (weight, unit)]
+            if len(matches) != 1:
+                if matches or codes[code] != 1:
+                    continue
+                matches = [row for row in rows if row[2] == code]
+                if len(matches) != 1:
+                    continue
+            category, detail, _, ocr_weight, ocr_unit = matches[0]
+            expected = {'category': category.text.strip(), 'weight': str(ocr_weight), 'unit': ocr_unit}
+            pending = {field for field, same in (
+                ('category', _文本键(record.get('category')) == _文本键(category.text)),
+                ('weight', weight == ocr_weight), ('unit', unit == ocr_unit)) if not same}
+            if not record.get('_uncertain'):
+                # A field accepted by the earlier pass is not a review target.
+                continue
+            if not pending:
+                continue
+            if (pending == {'category'} and (category.confidence or 0) >= 90
+                    and (detail.confidence or 0) >= 90):
+                record['category'] = expected['category']
+                pending.clear()
+            if pending:
+                bbox = (category.bbox[0], min(category.bbox[1], detail.bbox[1]),
+                        detail.bbox[2], max(category.bbox[3], detail.bbox[3]))
+                crop = crop_region(image_path, bbox, folder, f'row-{index}')
+                if crop:
+                    try:
+                        result = deepseek_parse(crop, None, 'off', prompt + '\n'
+                            f'只复核本裁图中客户编码 {code!r} 对应的明细。'
+                            f'仅返回一条记录，含 customer_code 和待核对字段 {sorted(pending)}。'
+                            '看不清时留空，不猜测。', timeout=30)
+                        reviewed = result.get('records') or []
+                    except Exception as exc:
+                        notes.append(f'第{index + 1}条印刷明细局部复核失败：{type(exc).__name__}')
+                        reviewed = []
+                    if (len(reviewed) == 1 and isinstance(reviewed[0], dict)
+                            and _文本键(reviewed[0].get('customer_code')).rstrip('.') == code):
+                        for field in tuple(pending):
+                            value = reviewed[0].get(field)
+                            agrees = (_数值(value) == ocr_weight if field == 'weight'
+                                      else _文本键(value) == _文本键(expected[field]))
+                            if agrees:
+                                record[field] = expected[field]
+                                pending.remove(field)
+            if not pending:
+                _接受(record, 'ocr')
+                notes.append(f'第{index + 1}条已按印刷表格同行证据核对')
+            else:
+                record['_uncertain'] = True
+                names = {'category': '品类', 'weight': '数量', 'unit': '单位'}
+                record['_warn'] = '印刷明细待核对：' + '、'.join(names[f] for f in sorted(pending))
+    return notes
+
+
 def recognize_parallel(img_path, effort, prompt, careful=False):
     """腾讯 OCR 与 DeepSeek 图片理解并行，返回 ``(records, blocks, notes)``。
 
@@ -1257,8 +1373,8 @@ def extract_consensus(img_path, blocks, effort, prompt, rounds=2):
 
 
 def build_prompt(profile=None):
-    """统一按图片提取；保留参数仅为兼容，客户档案不能改变识别。"""
-    return '''请仅根据图片识别采购单据，自行判断印刷表格、逐行明细或手写分栏布局。
+    """Image extraction with compiled customer layout and field semantics."""
+    return '''请根据图片和客户识别上下文识别采购单据，判断印刷表格、逐行明细或手写分栏布局。
 返回 JSON：{"records":[{"category":"品类","customer_code":"编码","weight":"数量",
 "unit":"单位","remark":"备注"}],"notes":["需要人工核对的内容"]}。
 完整提取每一条明细，按图片阅读顺序输出；不得按客户、品类或编码过滤。
@@ -1271,7 +1387,7 @@ def build_prompt(profile=None):
 手写分栏按各栏标题及编码、数量的位置归属；“1136:2.5斤”拆成编码1136、数量2.5、单位斤。
 编码与名称按原图完整保留，备注单独提取；品类自带括号不是备注，重复行也不可遗漏。
 忽略明确划掉的内容。不能辨认或归属不确定时保留可辨认字段，并在 notes 指明具体行和疑点。
-只根据图片中的证据报告不确定，不使用任何客户预设。'''
+只根据图片中的证据报告不确定，客户上下文不能替代模糊区域的实际图像证据。''' + '\n' + CP.recognition_context(profile)
 
 
 def collect_records(only=None):

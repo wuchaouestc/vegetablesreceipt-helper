@@ -414,6 +414,7 @@ def learn_examples(payload, *, examples_path):
             'id': item_id,
             'image_sha256': payload.get('image_sha256'),
             'row_id': row.get('row_id'),
+            'image_path': payload.get('image_path'),
             'bbox': row.get('bbox'),
             'heading_text': row.get('heading_text'),
             'entry_text': row.get('entry_text'),
@@ -429,6 +430,12 @@ def learn_examples(payload, *, examples_path):
     payload_out = {'schema_version': 1, 'revision': _revision('e'),
                    'examples': list(examples.values())}
     write_json(target, payload_out)
+    # Both printed and handwritten confirmed examples contribute paired facts.
+    try:
+        from .category_units import refresh_dictionary
+        refresh_dictionary(target, target.parent.parent / 'dictionaries' / 'category_units.json')
+    except Exception:
+        pass  # Dictionary generation must not break saving confirmed examples.
     return {'examples': len(payload_out['examples']), 'written': added,
             'revision': payload_out['revision']}
 
@@ -470,6 +477,8 @@ def learn_from_confirmed_records(records, *, vocabulary_path, examples_path, cus
                 continue
             if not (record.get('_user_edited') or record.get('_user_confirmed')):
                 continue
+            if record.get('_review_excluded'):
+                continue
             evidence = record.get('_evidence')
             evidence = evidence if isinstance(evidence, dict) else {}
             # final = 用户在清单里改对的值（当前值）。
@@ -477,6 +486,9 @@ def learn_from_confirmed_records(records, *, vocabulary_path, examples_path, cus
             # ai = AI 读到的原值：手写通道从候选里取「模型」来源；取不到就退回当前值，
             # 这样普通（非手写）行也能照常收录规范值，只是没有「读错别名」可学。
             ai = dict(final)
+            for change in reversed(record.get('_user_changes') or []):
+                if change.get('field') in REVIEW_FIELDS:
+                    ai[change['field']] = str(change.get('before') or '')
             candidates = evidence.get('candidates') or {}
             for field in REVIEW_FIELDS:
                 for candidate in candidates.get(field) or []:

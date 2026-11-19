@@ -13,6 +13,7 @@ OCR 标题文字、词典候选、局部复核结果。本模块把这些候选*
 """
 from __future__ import annotations
 
+from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from decimal import Decimal, InvalidOperation
 
@@ -69,6 +70,8 @@ class RowEvidence:
     heading_score: float = 0.0
     bbox: tuple | None = None
     column: int | None = None
+    recovered_gap: int | None = None
+    group_heading: TextBlock | None = None
     candidates: dict = field(default_factory=dict)     # 字段 → [Candidate]
     conflicts: list = field(default_factory=list)      # 字段级冲突
     decisions: list = field(default_factory=list)      # 裁决动作
@@ -103,7 +106,7 @@ class PageEvidence:
 
 
 # --------------------------------------------------------------------- 配对
-def _pair_score(record, entry, heading_text):
+def _pair_score(record, entry, heading_text, *, use_quantity=True):
     code = normalize_text(record.get('customer_code'))
     ecode = normalize_text(entry.code)
     score = 0.0
@@ -114,9 +117,9 @@ def _pair_score(record, entry, heading_text):
             score += 3                       # 截断/多位：模型常见丢首位或末位
         else:
             score -= 5
-    if _same_number(record.get('weight'), entry.quantity):
+    if use_quantity and _same_number(record.get('weight'), entry.quantity):
         score += 4
-    elif entry.quantity is not None:
+    elif use_quantity and entry.quantity is not None:
         score -= 1
     eunit = normalize_text(entry.unit)
     if eunit and normalize_text(record.get('unit')) == eunit:
@@ -127,7 +130,7 @@ def _pair_score(record, entry, heading_text):
     return score
 
 
-def match_records(records, layout, min_score=3.0):
+def match_records(records, layout, min_score=3.0, *, use_category=True):
     """模型明细与 OCR 条目一对一配对。
 
     只用**内容**（编码/数量/单位/标题）配对，不按金额相同跨行匹配；
@@ -135,17 +138,52 @@ def match_records(records, layout, min_score=3.0):
     """
     entries = [(row_index, entry) for row_index, row in enumerate(layout.rows)
                for entry in row.get('entries', [])]
+    columns_by_name = {}
+    if not use_category:
+        anchors = defaultdict(list)
+        exact = defaultdict(list)
+        for row_index, entry in entries:
+            if entry.quantity is not None and entry.unit:
+                exact[(normalize_text(entry.code), _numeric(entry.quantity))].append(
+                    layout.rows[row_index]['column'])
+        for record in records:
+            hits = exact.get((normalize_text(record.get('customer_code')), _numeric(record.get('weight'))), [])
+            name = normalize_text(record.get('category'))
+            if name and len(hits) == 1:
+                anchors[name].append(hits[0])
+        for name, votes in anchors.items():
+            column, count = Counter(votes).most_common(1)[0]
+            if count >= 2 and count * 2 > len(votes):
+                columns_by_name[name] = column
     pairs = []
     for record_index, record in enumerate(records):
+        preferred_column = columns_by_name.get(normalize_text(record.get('category')))
+        if not use_category:
+            record = {**record, 'category': ''}
         for entry_index, (row_index, entry) in enumerate(entries):
+            if preferred_column is not None and layout.rows[row_index]['column'] != preferred_column:
+                continue
             heading = entry.heading if entry.heading is not None else layout.rows[row_index].get('heading')
             heading_text = normalize_text(heading.text) if heading is not None else ''
-            score = _pair_score(record, entry, heading_text)
+            score = _pair_score(record, entry, heading_text,
+                                use_quantity=use_category or bool(entry.unit))
             if score >= min_score:
                 pairs.append((score, record_index, entry_index))
     pairs.sort(key=lambda item: (-item[0], item[1], item[2]))
+    # Equal best candidates in different columns have no reliable position.
+    ambiguous = set()
+    for record_index in range(len(records)):
+        choices = [p for p in pairs if p[1] == record_index]
+        if choices:
+            best = choices[0][0]
+            columns = {layout.rows[entries[p[2]][0]].get('column')
+                       for p in choices if p[0] == best}
+            if len(columns) > 1:
+                ambiguous.add(record_index)
     used_records, used_entries, assignment = set(), set(), {}
     for score, record_index, entry_index in pairs:
+        if record_index in ambiguous:
+            continue
         if record_index in used_records or entry_index in used_entries:
             continue
         used_records.add(record_index)
@@ -166,7 +204,7 @@ def _decide_code(model_value, entry):
 
 
 def _decide_weight(model_value, entry):
-    """数量：数字本身不同才算行内文字更可信；只是小数点位置不同则不裁决。"""
+    """数量冲突保留模型原值待核对；OCR 可能把单位读成数字。"""
     if entry.quantity is None:
         if entry.ambiguous == 'range':
             return ('keep', model_value, '数量疑似区间写法，无法确定具体数值')
@@ -174,7 +212,7 @@ def _decide_weight(model_value, entry):
     if _same_number(model_value, entry.quantity):
         return None
     if _digits(model_value) != _digits(entry.quantity):
-        return ('replace', entry.quantity, '数量两路不一致，已按原图行内文字修正')
+        return ('keep', model_value, '数量两路不一致，OCR可能误读数字或单位，需人工核对')
     return ('keep', model_value, '数量小数点位置两路不一致，需人工核对')
 
 
@@ -184,7 +222,7 @@ def _decide_category(model_value, heading, min_heading_confidence):
         return None
     heading_text = normalize_text(heading.text)
     model_text = normalize_text(model_value)
-    if not heading_text or heading_text == model_text:
+    if not heading_text or not model_text or heading_text == model_text:
         return None
     confidence = heading.confidence
     if confidence is not None and confidence >= min_heading_confidence:
@@ -193,16 +231,54 @@ def _decide_category(model_value, heading, min_heading_confidence):
 
 
 def build_evidence(records, layout, *, vocabulary=None, customer=None,
-                   min_heading_confidence=90.0, row_id_key='row_id'):
+                   min_heading_confidence=90.0, row_id_key='row_id', grouped_categories=False):
     """给每条明细建立候选追踪与裁决结果。
 
     返回 PageEvidence；调用方决定要不要把裁决结果写回明细。
     """
     page = PageEvidence()
-    assignment, entries, used_entries = match_records(records, layout)
+    assignment, entries, used_entries = match_records(records, layout, use_category=not grouped_categories)
+    recovered = {}
+    if grouped_categories:
+        # Match the entire gap between independently matched anchors.
+        anchors = dict(assignment)
+        ordered = sorted(anchors)
+        for left, right in zip(ordered, ordered[1:]):
+            if right - left < 2:
+                continue
+            before_row, before = entries[anchors[left][0]]
+            after_row, after = entries[anchors[right][0]]
+            if not all(entry.unit and normalize_text(records[i].get('customer_code')) == normalize_text(entry.code)
+                       and _same_number(records[i].get('weight'), entry.quantity)
+                       for i, entry in ((left, before), (right, after))):
+                continue
+            heading = before.heading or layout.rows[before_row].get('heading')
+            next_heading = after.heading or layout.rows[after_row].get('heading')
+            column = layout.rows[before_row]['column']
+            if heading is None or heading != next_heading or column != layout.rows[after_row]['column']:
+                continue
+            between = sorted(
+                ((j, entry) for j, (row, entry) in enumerate(entries)
+                 if layout.rows[row]['column'] == column
+                 and before.bbox[1] < entry.bbox[1] < after.bbox[1]),
+                key=lambda pair: pair[1].bbox[1])
+            indices = range(left + 1, right)
+            if (len(between) != len(indices)
+                    or len({entry.bbox[1] for _, entry in between}) != len(indices)
+                    or any(j in used_entries or
+                           (entry.heading or layout.rows[entries[j][0]].get('heading')) != heading
+                           or normalize_text(records[i].get('customer_code')) != normalize_text(entry.code)
+                           for i, (j, entry) in zip(indices, between))):
+                continue
+            for i, (j, _) in zip(indices, between):
+                assignment[i] = (j, 0.0)
+                used_entries.add(j)
+                if len(indices) > 1:
+                    recovered[i] = left
     for record_index, record in enumerate(records):
         row_id = str(record.get(row_id_key) or ('row-%04d' % (record_index + 1)))
         evidence = RowEvidence(row_id=row_id, record_index=record_index)
+        evidence.recovered_gap = recovered.get(record_index)
         matched = assignment.get(record_index)
         for field_name in FIELDS:
             value = record.get(field_name)
@@ -230,7 +306,8 @@ def build_evidence(records, layout, *, vocabulary=None, customer=None,
         evidence.add(Candidate(field='customer_code', value=entry.code, source='ocr_row',
                                confidence=entry.confidence, evidence=entry.text, bbox=entry.bbox))
         if entry.quantity is not None:
-            evidence.add(Candidate(field='weight', value=entry.quantity, source='ocr_row',
+            quantity_source = 'ocr_invalid_format' if grouped_categories and not entry.unit else 'ocr_row'
+            evidence.add(Candidate(field='weight', value=entry.quantity, source=quantity_source,
                                    confidence=entry.confidence, evidence=entry.text, bbox=entry.bbox))
         if entry.unit:
             evidence.add(Candidate(field='unit', value=entry.unit, source='ocr_row',
@@ -251,10 +328,15 @@ def build_evidence(records, layout, *, vocabulary=None, customer=None,
                                            detail={'id': item['id'], 'revision': vocabulary.revision}))
         decisions = []
         for field_name, decider in (('customer_code', lambda: _decide_code(record.get('customer_code'), entry)),
-                                    ('weight', lambda: _decide_weight(record.get('weight'), entry)),
+                                    ('weight', lambda: (
+                                        ('keep', record.get('weight'), 'OCR 行缺少有效单位，数量待局部复核')
+                                        if grouped_categories and not entry.unit and entry.quantity is not None
+                                        else _decide_weight(record.get('weight'), entry))),
                                     ('category', lambda: _decide_category(record.get('category'),
                                                                           evidence.heading,
                                                                           min_heading_confidence))):
+            if grouped_categories and field_name == 'category':
+                continue
             outcome = decider()
             if outcome is None:
                 continue
@@ -267,6 +349,10 @@ def build_evidence(records, layout, *, vocabulary=None, customer=None,
         model_unit = normalize_text(record.get('unit'))
         if ocr_unit and model_unit and ocr_unit != model_unit:
             evidence.observations.append('单位字形两路不一致（斤/个等易混字），不作裁决依据')
+            if grouped_categories:
+                reason = '单位两路读数不同，待核对'
+                evidence.reasons.append(reason)
+                evidence.conflicts.append({'field': 'unit', 'reason': reason})
         elif ocr_unit and not model_unit:
             evidence.observations.append('模型没读出单位，原图行内文字是「%s」，请核对' % entry.unit)
         elif not ocr_unit and not model_unit:
@@ -281,9 +367,29 @@ def build_evidence(records, layout, *, vocabulary=None, customer=None,
                 if not observed:
                     continue
                 if not preview_candidates(vocabulary, field_name, str(observed), customer):
-                    evidence.reasons.append('词典外%s：%s' % (FIELD_LABELS.get(field_name, field_name), observed))
+                    target = evidence.reasons
+                    if grouped_categories and (field_name == 'category' or
+                                               normalize_text(observed) == normalize_text(entry.code)):
+                        target = evidence.observations
+                    target.append('词典外%s：%s' % (FIELD_LABELS.get(field_name, field_name), observed))
         evidence.decisions = decisions
         page.rows.append(evidence)
+    if grouped_categories:
+        # A missing OCR detail can still inherit a group bounded by two exact anchors.
+        anchors = [row for row in page.rows if row.matched and row.heading is not None and row.entry.unit
+                   and normalize_text(records[row.record_index].get('customer_code')) == normalize_text(row.entry.code)
+                   and _same_number(records[row.record_index].get('weight'), row.entry.quantity)]
+        for before, after in zip(anchors, anchors[1:]):
+            if (before.column != after.column or before.heading != after.heading
+                    or before.bbox[1] >= after.bbox[1]):
+                continue
+            first, last = before.record_index, after.record_index
+            name = normalize_text(records[first].get('category'))
+            if not name or any(normalize_text(r.get('category')) != name for r in records[first:last+1]):
+                continue
+            for row in page.rows[first+1:last]:
+                if not row.matched:
+                    row.group_heading = before.heading
     page.unmatched_entries = [entry for index, (_row, entry) in enumerate(entries)
                                if index not in used_entries]
     if page.unmatched_entries:

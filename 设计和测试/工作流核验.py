@@ -22,6 +22,37 @@ import build as 构建
 
 
 class 界面用例(unittest.TestCase):
+    def test_同图跨客户复用不调用外部接口(self):
+        from handwriting import modes
+        app = self.app
+        app.files = [str(Path(__file__).resolve().parents[1] / '导入/2026-10-18/87da-1.png')]
+        app._手写快照 = {'配置': modes.ModeConfig(), '逐张': {}, '模式': modes, '仔细': False}
+        reviewed = [{'category': '姜肉', 'customer_code': '001', 'weight': '2', 'unit': '斤',
+                     'remark': '', '_learned_replay': True}]
+        with patch('handwriting.review_actions.load_reviewed_result', return_value=reviewed), \
+                patch.object(主程序.T, 'tencent_ocr', side_effect=AssertionError('unexpected OCR')), \
+                patch.object(主程序.T, 'deepseek_parse', side_effect=AssertionError('unexpected model')):
+            records = app._scan_task('南波旺')
+        self.assertEqual(records[0]['category'], '姜肉')
+        self.assertFalse(records[0].get('_uncertain', False))
+
+    def test_多选右键保留选择且仅更新所选状态(self):
+        from types import SimpleNamespace
+        app = self.app
+        app.records = [{'_id': i, 'category': '生姜', 'customer_code': str(i),
+                        'weight': '2', 'unit': '斤'} for i in (1, 2, 3)]
+        app._redraw_records()
+        self.assertEqual(str(app.tree.cget('selectmode')), 'extended')
+        app.tree.selection_set(('1', '3'))
+        with patch.object(app.tree, 'identify_row', return_value='3'), \
+                patch.object(app.右键菜单, 'tk_popup'), patch.object(app.右键菜单, 'grab_release'):
+            app._popup_menu(SimpleNamespace(y=0, x_root=0, y_root=0))
+        self.assertEqual(set(app.tree.selection()), {'1', '3'})
+        app._标记选中状态('✓ 已确认')
+        self.assertTrue(app.records[0]['_user_confirmed'])
+        self.assertFalse(app.records[1].get('_user_confirmed', False))
+        self.assertTrue(app.records[2]['_user_confirmed'])
+
     def test_选中识别结果显示白底黑字标签且不拉伸(self):
         app = self.app
         app.goto('scan')
@@ -544,7 +575,7 @@ class 客户独立识别用例(unittest.TestCase):
                         self.assertEqual([(r['category'],r['customer_code'],r['weight']) for r in result], values)
                         self.assertFalse(any(self.app._需要核对(r) for r in result))
                         self.assertEqual(model.call_args.args[2], 'high' if careful else 'off')
-                self.assertEqual(len({c.args[3] for c in model.call_args_list}), 1)
+            self.assertGreater(len({c.args[3] for c in model.call_args_list}), 1)
 
     def test_切换客户仅改变显示编码不破坏原始数据(self):
         raw = {'_id': 1, 'category': '大肉姜(生姜)', 'customer_code': 'C1-9', 'weight': '2', 'unit': '公斤', 'remark': ''}

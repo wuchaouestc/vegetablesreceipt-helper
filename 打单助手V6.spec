@@ -2,9 +2,13 @@
 
 from PyInstaller.utils.hooks import collect_all
 from pathlib import Path
+import ssl
 
 
 dnd_datas, dnd_binaries, dnd_hiddenimports = collect_all("tkinterdnd2")
+# Some Python distributions load this file when creating an SSL context.
+ssl_policy = Path(ssl.__file__).with_name("codex-rejected-cas.pem")
+ssl_datas = [(str(ssl_policy), ".")] if ssl_policy.is_file() else []
 
 a = Analysis(
     ["启动器.py"],
@@ -14,7 +18,7 @@ a = Analysis(
         ("_界面补丁", "_界面补丁"),
         ("handwriting/review_page.html", "handwriting"),
     ] + [(str(p), "_ppstructure") for p in Path("_ppstructure").iterdir()
-         if p.is_file() and p.suffix in (".py", ".bat", ".txt")] + dnd_datas,
+         if p.is_file() and p.suffix in (".py", ".bat", ".txt")] + dnd_datas + ssl_datas,
     hiddenimports=[
         "PIL.Image",
         "PIL.ImageDraw",

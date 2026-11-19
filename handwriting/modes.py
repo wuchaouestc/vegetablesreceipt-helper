@@ -25,7 +25,7 @@ SETTING_DEFAULTS = {
     '手写辅助模式': '自动',
     '手写局部复核': True,
     '手写词典辅助': '',
-    '手写预算请求数': 8,
+    '手写预算请求数': 15,
     '手写预算秒数': 120,
     '手写标题置信阈值': 90,
     '手写复核区域数': 2,
@@ -50,7 +50,7 @@ class ModeConfig:
     enhancement: bool = False
     vocabulary_path: str | None = None
     review_enabled: bool = True
-    budget_requests: int = 8
+    budget_requests: int = 15
     budget_seconds: int = 120
     heading_confidence: float = 90.0
     review_regions: int = 2

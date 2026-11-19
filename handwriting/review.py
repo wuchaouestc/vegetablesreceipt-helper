@@ -36,11 +36,12 @@ class ReviewRegion:
     heading_bbox: tuple | None = None
     crop_path: str | None = None
     token: ReviewToken | None = None
+    ordered_gap: bool = False
 
     def as_dict(self):
         return {'bbox': list(self.bbox), 'row_ids': list(self.row_ids), 'reasons': list(self.reasons),
                 'heading_bbox': list(self.heading_bbox) if self.heading_bbox else None,
-                'crop_path': self.crop_path}
+                'crop_path': self.crop_path, 'ordered_gap': self.ordered_gap}
 
 
 def row_version(row):
@@ -68,9 +69,28 @@ def validate_late(token, current_row_version, task_id=None, image_version=None):
 def plan_regions(page, layout, max_regions=2, merge_gap=140.0, padding=12):
     """把疑点行规划成复核区域：相邻疑点合并，区域带上相邻行与所属标题。"""
     rows_by_id = {row.row_id: row for row in page.rows}
-    suspicious = [row for row in page.rows if row.reasons]
-    if not suspicious:
-        return []
+    regions = []
+    gaps = {}
+    for row in page.rows:
+        if row.recovered_gap is not None:
+            gaps.setdefault(row.recovered_gap, []).append(row)
+    for members in gaps.values():
+        if not any(c['field'] == 'weight' for row in members for c in row.conflicts):
+            continue
+        boxes = [row.bbox for row in members]
+        bbox = (min(b[0] for b in boxes), min(b[1] for b in boxes),
+                max(b[2] for b in boxes), max(b[3] for b in boxes))
+        member_entries = {id(row.entry) for row in members}
+        if any(id(entry) not in member_entries
+               and bbox[0] <= (entry.bbox[0] + entry.bbox[2]) / 2 <= bbox[2]
+               and bbox[1] <= (entry.bbox[1] + entry.bbox[3]) / 2 <= bbox[3]
+               for entry in layout.entries()):
+            continue
+        regions.append(ReviewRegion(bbox=bbox, row_ids=[row.row_id for row in members],
+                                    reasons=['连续明细数量复核'], ordered_gap=True))
+    regions = regions[:max(0, max_regions)]
+    scheduled = {rid for region in regions for rid in region.row_ids}
+    suspicious = [row for row in page.rows if row.reasons and row.row_id not in scheduled]
     groups = []
     for row in sorted(suspicious, key=lambda r: (r.column if r.column is not None else 0,
                                                  r.bbox[1] if r.bbox else 0)):
@@ -84,8 +104,7 @@ def plan_regions(page, layout, max_regions=2, merge_gap=140.0, padding=12):
                 continue
         groups.append({'row_ids': [row.row_id], 'reasons': list(row.reasons)})
     groups.sort(key=lambda g: (-len(g['row_ids']), g['row_ids'][0]))
-    regions = []
-    for group in groups[:max(0, max_regions)]:
+    for group in groups[:max(0, max_regions - len(regions))]:
         members = [rows_by_id[rid] for rid in group['row_ids'] if rid in rows_by_id]
         boxes = [m.bbox for m in members if m.bbox]
         if not boxes:
@@ -124,6 +143,47 @@ def plan_regions(page, layout, max_regions=2, merge_gap=140.0, padding=12):
     return regions
 
 
+def plan_quantity_regions(page, layout):
+    """Crop consecutive located rows around each unresolved quantity."""
+    located = {id(row.entry): row for row in page.rows if row.entry is not None and row.bbox}
+    regions = []
+    for column in layout.column_members:
+        entries = sorted((entry for entry in layout.entries() if entry.block_index in column),
+                         key=lambda entry: entry.bbox[1])
+        selected = set()
+        for i, entry in enumerate(entries):
+            row = located.get(id(entry))
+            if row is None or not any(c['field'] == 'weight' for c in row.conflicts):
+                continue
+            selected.add(i)
+            for neighbor in (i - 1, i + 1):
+                if (0 <= neighbor < len(entries) and entries[neighbor].code == entry.code
+                        and id(entries[neighbor]) in located):
+                    selected.add(neighbor)
+        groups = []
+        for i in sorted(selected):
+            if (groups and i == groups[-1][-1] + 1
+                    and entries[i].bbox[1] > entries[i-1].bbox[1]
+                    and located[id(entries[i])].heading == located[id(entries[i-1])].heading):
+                groups[-1].append(i)
+            else:
+                groups.append([i])
+        for group in groups:
+            members = [located[id(entries[i])] for i in group]
+            boxes = [row.bbox for row in members]
+            bbox = (min(b[0] for b in boxes), min(b[1] for b in boxes),
+                    max(b[2] for b in boxes), max(b[3] for b in boxes))
+            identities = {id(row.entry) for row in members}
+            if any(id(entry) not in identities
+                   and bbox[0] <= (entry.bbox[0] + entry.bbox[2]) / 2 <= bbox[2]
+                   and bbox[1] <= (entry.bbox[1] + entry.bbox[3]) / 2 <= bbox[3]
+                   for entry in layout.entries()):
+                continue
+            regions.append(ReviewRegion(bbox=bbox, row_ids=[row.row_id for row in members],
+                                        reasons=['数量局部复核'], ordered_gap=True))
+    return regions
+
+
 def crop_region(image_path, bbox, output_dir, name='review', padding=0):
     """裁剪原图区域，保留原分辨率；缺 Pillow 时返回 None（跳过复核）。"""
     try:
@@ -158,11 +218,12 @@ def write_region_manifest(path, regions, image_path, task_id):
     return str(target)
 
 
-def apply_review_results(page, results, records=None):
+def apply_review_results(page, results, records=None, *, confirm_agreement=False, pending_only=False):
     """把复核结果并回证据链。
 
     保守规则：
-      · 复核值与 OCR 行内文字一致 → 采信该值（原先「保留」才升级为「采信」）；
+      · 数量/单位与模型冲突 → 保留原值待核对，不以 OCR 一致授权覆盖；
+      · 其它字段复核值与 OCR 行内文字一致 → 采信该值；
       · 复核值与模型读数一致 → 保留模型值，但仍保留疑点；
       · 复核值与两路都不一致 → 仍然保留疑点，转人工；
       · 已确认或手动修改的结果不被覆盖。
@@ -188,19 +249,25 @@ def apply_review_results(page, results, records=None):
             if record.get('_user_confirmed') or record.get('_user_edited'):
                 notes.append('复核响应已丢弃（%s）：该行已确认或手动修改' % row_id)
                 continue
+            if pending_only:
+                pending = {conflict['field'] for conflict in row.conflicts}
+                row_values = {field: value for field, value in row_values.items() if field in pending}
             for field_name, value in row_values.items():
-                row.add(Candidate(field=field_name, value=str(value), source='review',
+                annotated = result.get('annotation', False)
+                row.add(Candidate(field=field_name, value=str(value), source='human_annotation' if annotated else 'review',
                                   evidence=(result.get('raw_text') or '')[:200],
-                                  bbox=region.bbox if region else None))
-            _re_decide(row, list(row_values))
+                                  bbox=region.bbox if region else None,
+                                  detail={'ordered_gap': True}
+                                  if region and region.ordered_gap else {}))
+            _re_decide(row, list(row_values), confirm_agreement=confirm_agreement)
     if notes:
         page.notes.extend(notes)
     return page
 
 
-def _re_decide(row, field_names):
+def _re_decide(row, field_names, *, confirm_agreement=False):
     """复核之后重新裁决受影响的字段。"""
-    from .evidence import FIELD_LABELS
+    from .evidence import FIELD_LABELS, _same_number
     for field_name in field_names:
         for conflict in [c for c in row.conflicts if c['field'] == field_name]:
             if conflict['reason'] in row.reasons:
@@ -210,16 +277,37 @@ def _re_decide(row, field_names):
         candidates = row.candidates.get(field_name, [])
         model_value = next((c.value for c in candidates if c.source == 'model'), None)
         ocr_value = next((c.value for c in candidates if c.source in ('ocr_row', 'ocr_heading')), None)
-        review_value = next((c.value for c in candidates if c.source == 'review'), None)
+        review_candidate = next((c for c in reversed(candidates) if c.source == 'human_annotation'), None)
+        if review_candidate is None:
+            review_candidate = next((c for c in reversed(candidates) if c.source == 'review'), None)
+        review_value = review_candidate.value if review_candidate is not None else None
         if review_value is None:
             continue
         label = FIELD_LABELS.get(field_name, field_name)
-        if ocr_value is not None and normalize_text(review_value) == normalize_text(ocr_value):
+        ordered_confirmation = (field_name == 'weight'
+                                and review_candidate.detail.get('ordered_gap')
+                                and (_same_number(review_value, ocr_value)
+                                     or _same_number(review_value, model_value)))
+        if review_candidate.source == 'human_annotation':
+            action, value, reason = 'replace', review_value, '同图同行人工标注已确认%s' % label
+        elif ordered_confirmation:
+            action, value, reason = 'replace', review_value, '连续明细局部复核已确认数量'
+        elif (field_name in ('weight', 'unit') and model_value is not None
+                and normalize_text(review_value) != normalize_text(model_value)):
+            action, value, reason = 'keep', model_value, '局部复核与模型%s冲突，保留原值待人工核对' % label
+        elif ocr_value is not None and normalize_text(review_value) == normalize_text(ocr_value):
             action, value, reason = 'replace', ocr_value, '局部复核与原图行内文字一致，%s已采信' % label
         elif model_value is not None and normalize_text(review_value) == normalize_text(model_value):
             action, value, reason = 'keep', model_value, '局部复核与模型读数一致，%s仍请核对' % label
         else:
             action, value, reason = 'keep', model_value, '局部复核与两路都不一致，%s仍需人工核对' % label
+        confirmed = confirm_agreement and bool(normalize_text(value)) and (
+            action == 'replace' or normalize_text(review_value) == normalize_text(model_value))
+        if confirmed:
+            if review_candidate.source != 'human_annotation':
+                reason = '局部复核已确认%s' % label
+            row.observations.append(reason)
+        else:
+            row.conflicts.append({'field': field_name, 'reason': reason})
+            row.reasons.append(reason)
         row.decisions.append({'field': field_name, 'action': action, 'value': value, 'reason': reason})
-        row.conflicts.append({'field': field_name, 'reason': reason})
-        row.reasons.append(reason)

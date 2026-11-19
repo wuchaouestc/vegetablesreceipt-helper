@@ -1222,7 +1222,7 @@ class App:
                                          font=(主题.字体, 主题.字号小), anchor='w')
         self.lbl_check_status.pack(side='left', fill='x', expand=True)
         cols = ('no', 'state', 'category', 'code', 'weight', 'unit', 'remark')
-        self.tree = ttk.Treeview(盒, columns=cols, show='headings', height=12, selectmode='browse')
+        self.tree = ttk.Treeview(盒, columns=cols, show='headings', height=12, selectmode='extended')
         for cid, t, w, anchor, stretch in (('no', '#', 40, 'center', False),
                                            ('state', '状态', 96, 'center', False),
                                            ('category', '品类', 190, 'w', True),
@@ -1482,7 +1482,7 @@ class App:
 
     def _scan_task(self, 客户):
         self._识别警告 = []
-        prompt = T.build_prompt(None)
+        prompt = T.build_prompt(CP.get_profile(客户))
         仔细 = bool(self.var_effort.get())
         effort = 'high' if 仔细 else 'off'
         records = []
@@ -1524,6 +1524,8 @@ class App:
         return records
 
     def on_scan_done(self, result):
+        from handwriting.diagnostics import trace_display
+        trace_display(result, 'ui_received')
         self.debug_log('识别流程结束，合并结果共 %d 条' % len(result))
         self.records = list(result)
         for r in self.records:
@@ -1536,6 +1538,8 @@ class App:
         self.set_busy(False)
         self._redraw_files()
         self._redraw_records()
+        from handwriting.diagnostics import trace_rendered
+        trace_rendered(self.records, self.tree)
         self._刷打印按钮()
         if self.records:
             待核对 = sum(self._需要核对(r) for r in self.records)
@@ -1578,6 +1582,10 @@ class App:
                 and bool(r.get('_uncertain') or r.get('_suspect')))
 
     def _rec_state(self, r):
+        if r.get('_bulk_review_state'):
+            state = r['_bulk_review_state']
+            return (state, '斤数可疑' if state in ('? 拿不准', '! 可疑') else '',
+                    '可疑' if state in ('? 拿不准', '! 可疑') else '正常')
         if r.get('_printed'):
             return ('已打印', '已打印', '正常')
         if r.get('_user_edited'):
@@ -1756,6 +1764,29 @@ class App:
     def _on_editor_focus_out(self, e=None):
         self._commit_editor(e)
 
+    def _全部标记状态(self, event=None):
+        if self.busy or not self._commit_editor():
+            return
+        from handwriting.review_actions import mark_all
+        mark_all(self.records, self.var_全部标记.get())
+        self._redraw_records()
+        self.update_preview()
+        self.log('全部标记：%s，共 %d 条（包含筛选隐藏的记录）' % (self.var_全部标记.get(), len(self.records)))
+        self.var_全部标记.set('选择状态')
+
+    def _学习核对结果(self):
+        if self.busy or not self._commit_editor():
+            return
+        try:
+            from handwriting.review_actions import learn_reviewed
+            result = learn_reviewed(self.records, self.var_customer.get(), 路径.程序目录() / 'data')
+            self.log('学习核对结果：保存 %d 条、%d 张图片；跳过未核对 %d 条' %
+                     (result['rows'], result['images'], result['skipped']))
+            messagebox.showinfo('学习核对结果', '未修改，未确认的数据不学习，已经学习%d条记录数据' % result['rows'])
+        except Exception as exc:
+            self.log('学习核对结果失败：%s' % exc)
+            messagebox.showerror('学习核对结果失败', str(exc))
+
     def _commit_editor(self, event=None):
         if self._编辑框 is None or self._编辑位置 is None:
             return True
@@ -1770,7 +1801,9 @@ class App:
         if 字段 == '_state':
             旧值 = self._rec_state(r)[0]
             if 值 != 旧值:
+                r.pop('_bulk_review_state', None)
                 if 值 == '✓ 已确认':
+                    r['_review_excluded'] = False
                     r['_user_confirmed'] = True
                     r['_uncertain'] = False
                     r['_suspect'] = False
@@ -1797,6 +1830,12 @@ class App:
                 self._编辑框.focus_set()
                 return False
             旧值 = str(r.get(字段, '') or '')
+            if 值 != 旧值:
+                r.pop('_bulk_review_state', None)
+                r.setdefault('_user_changes', []).append({
+                    'field': 字段, 'before': 旧值, 'after': 值,
+                    'at': time.strftime('%Y-%m-%d %H:%M:%S')})
+                r['_review_excluded'] = False
             r[字段] = 值
             if 字段 == 'code':
                 r['customer_code'] = 值
@@ -1876,15 +1915,47 @@ class App:
             self.update_preview()
             self.set_status('已撤销全部修改')
 
+    def _标记选中状态(self, 状态):
+        if self.busy or not self._commit_editor():
+            return
+        from handwriting.review_actions import mark_all
+        selected = tuple(self.tree.selection())
+        indices = [self._row_to_idx(iid) for iid in selected]
+        rows = [self.records[i] for i in indices if 0 <= i < len(self.records)]
+        if not rows:
+            return
+        mark_all(rows, 状态)
+        self._redraw_records()
+        for iid in selected:
+            if self.tree.exists(iid):
+                self.tree.selection_add(iid)
+        self.update_preview()
+        self._刷打印按钮()
+        self.log('选中行状态设为%s：%d 条' % (状态, len(rows)))
+
     def _popup_menu(self, e):
+        if self.busy or not self._commit_editor():
+            return 'break'
         iid = self.tree.identify_row(e.y)
-        if iid:
+        if not iid:
+            return 'break'
+        if iid not in self.tree.selection():
             self.tree.selection_set(iid)
+        if hasattr(self, '右键菜单'):
+            try:
+                self.右键菜单.tk_popup(e.x_root, e.y_root)
+            finally:
+                self.右键菜单.grab_release()
+            return 'break'
         菜单 = tk.Menu(self.root, tearoff=False)
         菜单.add_command(label='修改这一行', command=self.open_editor_for_selection)
         菜单.add_command(label='删除这一行', command=self.delete_selected)
         菜单.add_separator()
         菜单.add_command(label='撤销全部修改', command=self.undo_edits)
+        状态菜单 = tk.Menu(菜单, tearoff=False)
+        for 状态 in ('✓ 已确认', '已识别', '? 拿不准', '! 可疑'):
+            状态菜单.add_command(label=状态, command=lambda value=状态: self._标记选中状态(value))
+        菜单.add_cascade(label='设置选中行状态', menu=状态菜单)
         菜单.tk_popup(e.x_root, e.y_root)
 
     def toggle_preview(self):
@@ -1901,12 +1972,20 @@ class App:
     def update_preview(self, rec=None):
         if not hasattr(self, 'canvas') or not self.preview_on:
             return
+        iid = None
         if rec is None:
             sel = self.tree.selection()
             if sel:
                 idx = self._row_to_idx(sel[0])
                 if 0 <= idx < len(self.records):
                     rec = self.records[idx]
+                    iid = sel[0]
+        else:
+            record_id = rec.get('_id')
+            if record_id is not None:
+                iid = str(record_id)
+            else:
+                iid = next((str(i) for i, row in enumerate(self.records) if row is rec), None)
         self.canvas.delete('all')
         if hasattr(self, 'canvas_orig'):
             self.canvas_orig.delete('all')
@@ -1917,22 +1996,24 @@ class App:
             self.lbl_preview.configure(text='点一行看它的标签')
             return
         rec = CP.format_record(rec, self.var_customer.get())
-        图, _预览警告 = LB.render_label(rec.get('category', ''), rec.get('customer_code', ''),
+        图 = LB.render_label_preview(rec.get('category', ''), rec.get('customer_code', ''),
                                       rec.get('weight', ''), rec.get('unit', ''), rec.get('remark', ''))
-        宽 = max(80, self.canvas.winfo_width())
-        高 = max(60, self.canvas.winfo_height())
+        宽 = self.canvas.winfo_width()
+        高 = self.canvas.winfo_height()
+        if 宽 <= 1 or 高 <= 1:
+            宽, 高 = self.canvas.winfo_reqwidth(), self.canvas.winfo_reqheight()
         # 1 位图的白色可能存为 1；直接交给 ImageTk 会显示成 RGB(1,1,1)。
         # 打印仍用原始黑白位图，界面明确转换 RGB 并等比例缩放。
-        比例 = min(宽 / 图.width, 高 / 图.height)
+        比例 = min(1, (宽 - 2) / 图.width, (高 - 2) / 图.height)
         图 = 图.convert('RGB').resize(
             (max(1, round(图.width * 比例)), max(1, round(图.height * 比例))),
             Image.Resampling.NEAREST)
         self._预览图 = ImageTk.PhotoImage(图, master=self.canvas)
-        self.canvas.create_image(宽 / 2, 高 / 2, image=self._预览图, anchor='center')
-        有改 = '，改过' if rec.get('_user_edited') else ''
-        self.lbl_preview.configure(text='%s  |  %s %s %s\n客户编码 %s%s' % (
-            rec.get('_src', ''), rec.get('category', ''), rec.get('weight', ''),
-            rec.get('unit', ''), rec.get('customer_code', ''), 有改))
+        self.canvas.create_image(1, 1, image=self._预览图, anchor='nw')
+        行值 = self.tree.item(iid, 'values') if iid is not None and self.tree.exists(iid) else ()
+        序号说明 = f'第{行值[0]}张  ' if 行值 else ''
+        品类字数 = len(str(rec.get('category') or ''))
+        self.lbl_preview.configure(text=f'{序号说明}品类{品类字数}个字')
         
         if hasattr(self, 'canvas_orig'):
             self.canvas_orig.delete('all')

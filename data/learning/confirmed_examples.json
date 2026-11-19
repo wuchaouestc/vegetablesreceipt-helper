@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "e20261107-174333",
+  "revision": "e20261107-233901",
   "examples": [
     {
       "id": "bafa4d669393-row-0001",
@@ -598,7 +598,7 @@
     },
     {
       "id": "batch-2026-1-id-101",
-      "image_sha256": "batch-2026-11-07T17:43:33",
+      "image_sha256": "batch-2026-11-07T23:39:01",
       "row_id": "id-101",
       "bbox": null,
       "heading_text": null,
@@ -620,7 +620,1900 @@
       "corrections": [],
       "customer": "农和",
       "reviewer": "人工核对",
-      "confirmed_at": "2026-11-07T17:43:33"
+      "confirmed_at": "2026-11-07T23:39:01"
+    },
+    {
+      "id": "449f247ff3da-id-2",
+      "image_sha256": "449f247ff3da0c69a5fdde2d4ba2e1e1_2.png",
+      "row_id": "id-2",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "红葱头",
+        "customer_code": "",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": "(C42)0.5斤"
+      },
+      "ai_values": {
+        "category": "红葱头",
+        "customer_code": "",
+        "weight": "0.5",
+        "unit": "斤",
+        "remark": "(C42)0.5斤"
+      },
+      "corrections": [],
+      "customer": "农和",
+      "reviewer": "人工核对",
+      "confirmed_at": "2026-11-07T17:55:43"
+    },
+    {
+      "id": "993a6772c00f-id-2",
+      "image_sha256": "993a6772c00fda78e6a20d5cf92e1dba_2.png",
+      "row_id": "id-2",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "去皮小洋葱头",
+        "customer_code": "",
+        "weight": "15",
+        "unit": "斤",
+        "remark": "(1115.1)"
+      },
+      "ai_values": {
+        "category": "去皮小洋葱头",
+        "customer_code": "",
+        "weight": "15",
+        "unit": "斤",
+        "remark": "(1115.1)"
+      },
+      "corrections": [],
+      "customer": "农和",
+      "reviewer": "人工核对",
+      "confirmed_at": "2026-11-07T19:18:26"
+    },
+    {
+      "id": "993a6772c00f-id-3",
+      "image_sha256": "993a6772c00fda78e6a20d5cf92e1dba_4.png",
+      "row_id": "id-3",
+      "bbox": null,
+      "heading_text": null,
+      "entry_text": null,
+      "values": {
+        "category": "去皮小洋葱头",
+        "customer_code": "",
+        "weight": "3",
+        "unit": "斤",
+        "remark": "(308.9)"
+      },
+      "ai_values": {
+        "category": "去皮小洋葱头",
+        "customer_code": "",
+        "weight": "3",
+        "unit": "斤",
+        "remark": "(308.9)"
+      },
+      "corrections": [],
+      "customer": "南波旺",
+      "reviewer": "人工核对",
+      "confirmed_at": "2026-11-07T19:56:38"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-0",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-1",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-2",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-3",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-4",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-5",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-6",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-7",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-8",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-8",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-9",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-9",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-10",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-10",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-9951ba27fa50-11",
+      "image_sha256": "9951ba27fa50af3d3ce9a8a70543d37e3b0a6b63cf478e70051bfe11d7391d9a",
+      "row_id": "printed-source-row-11",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\28edb2041dcd878493461f9a9ad2c8d6.png",
+      "values": {
+        "category": "蒜头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-0",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-1",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-2",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-3",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "去皮小红葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-4",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "干水生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-5",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-6",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-710ca775652d-7",
+      "image_sha256": "710ca775652d89bac4163a44d1af1071c45fe2718aa8a44c91d4e581b5655260",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\39dea8d0587cf279039baf0d10a165b0.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-26596fc971c2-0",
+      "image_sha256": "26596fc971c21b71f3683058a377a8150c7dfde851641d5b401a84233b242041",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\465256d8aa5257c588ab2f2b2bd6aca8.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-26596fc971c2-1",
+      "image_sha256": "26596fc971c21b71f3683058a377a8150c7dfde851641d5b401a84233b242041",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\465256d8aa5257c588ab2f2b2bd6aca8.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-0",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "大肉姜(生姜)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-1",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "干红葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-2",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "红葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-3",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "红葱头肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-4",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-5",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-6",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-7",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-8",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-8",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-9",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-9",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "老姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-10",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-10",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "马蹄肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-11",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-11",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "去皮生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-12",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-12",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "沙姜（去皮）",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-13",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-13",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-14",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-14",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-15",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-15",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-16",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-16",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-17",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-17",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-18",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-18",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-19",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-19",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-20",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-20",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-21",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-21",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-22",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-22",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-23",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-23",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-24",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-24",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-25",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-25",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-26",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-26",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-27",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-27",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "鲜沙姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-28",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-28",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "芋头仔/香芋仔",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-42f8e7cf9a0a-29",
+      "image_sha256": "42f8e7cf9a0ad061b75d578890922548e0c6bbc89489ac3c79682b8e8bcf6787",
+      "row_id": "printed-source-row-29",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\973ee4126b196ec54c45347ee9b57fde.png",
+      "values": {
+        "category": "芋头仔/香芋仔",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-0",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "大肉姜(生姜)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-1",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "大肉姜(生姜)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-2",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "甘蔗（竹蔗）",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-3",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "甘蔗（竹蔗）",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-4",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "干水黄姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-5",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "干水生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-6",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-7",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-8",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-8",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "马蹄",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-9",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-9",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "马蹄肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-10",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-10",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "马蹄肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-11",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-11",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "马蹄肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-12",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-12",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "去皮干红葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-13",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-13",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-14",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-14",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-15",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-15",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-16",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-16",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-17",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-17",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-18",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-18",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "手工现剥蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c3b1f9133b01-19",
+      "image_sha256": "c3b1f9133b0196a3d7ade74df01f7e3a961a73152a6dd9649e738a3a63d6ccf5",
+      "row_id": "printed-source-row-19",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\9acb16f965fd2011d5feb5db2bd225db.png",
+      "values": {
+        "category": "鲜沙姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-0",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "大肉姜(生姜)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-1",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "红葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-2",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-3",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "南姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-4",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "去皮姜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-5",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "去皮生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-6",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "生姜(去皮)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-7",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "包"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-8",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-8",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-9",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-9",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-10",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-10",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜米（蒜米先生）",
+        "unit": "包"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-11",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-11",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜米(蒜肉)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-12",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-12",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-c0b66c7108ef-13",
+      "image_sha256": "c0b66c7108ef2194dde60f029aeb621e23b2643ac23e1fedf39e43147938b700",
+      "row_id": "printed-source-row-13",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\449f247ff3da0c69a5fdde2d4ba2e1e1.png",
+      "values": {
+        "category": "蒜肉",
+        "unit": "包"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-0",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "去皮小洋葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-1",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "去皮干红葱头/圆",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-2",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "本地干红葱头/扁",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-3",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "本地去皮干红葱头/扁",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-4",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-5",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "去皮生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-6",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "干水生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-7",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "沙姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-8",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-8",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "去皮沙姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-9",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-9",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "子姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-d45fdd7c9417-10",
+      "image_sha256": "d45fdd7c94173c1e621e26861d5601c374c136d3839d021b28682b7b4199a91a",
+      "row_id": "printed-source-row-10",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\993a6772c00fda78e6a20d5cf92e1dba.png",
+      "values": {
+        "category": "小黄姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-0",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "蒜头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-1",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "手工蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-2",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "香茅",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-3",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "马蹄肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-4",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "鲜茅根",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-5",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "大肉姜(生姜)",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-78443af4c451-6",
+      "image_sha256": "78443af4c451c661136a0e351cbe9b170241580feb9ccad0149533b87fecf216",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\b0727124b79e043c7fe3dcbd885e8e0b.png",
+      "values": {
+        "category": "红葱头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-0",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "去皮红葱头 圆的",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-1",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "本地去皮干红葱头 扁的",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-2",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-3",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-3",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "去皮生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-4",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-4",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "沙姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-5",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-5",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "子姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-6",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-6",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "蒜头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-7",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-7",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "独头蒜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-8",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-8",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "去皮沙葛",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-9",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-9",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "去皮粉葛",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-10",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-10",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "鲜淮山",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-11",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-11",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "铁棍淮山",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-12",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-12",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "马蹄肉",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-bed18946e66e-13",
+      "image_sha256": "bed18946e66e2e6e8ddf0092555f035e5288f952ce0ee219693753a4c54a3da8",
+      "row_id": "printed-source-row-13",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\d628de69d4d538312867584dc473225f.png",
+      "values": {
+        "category": "竹蔗",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-3569693d6c81-0",
+      "image_sha256": "3569693d6c8116aa95e851016e5a2622f9e064a58fb7dcb7c6ded6cca0264d02",
+      "row_id": "printed-source-row-0",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\e92ab0f8325c7189388eaf6018477284.png",
+      "values": {
+        "category": "蒜米",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-3569693d6c81-1",
+      "image_sha256": "3569693d6c8116aa95e851016e5a2622f9e064a58fb7dcb7c6ded6cca0264d02",
+      "row_id": "printed-source-row-1",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\e92ab0f8325c7189388eaf6018477284.png",
+      "values": {
+        "category": "生姜",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
+    },
+    {
+      "id": "printed-unit-3569693d6c81-2",
+      "image_sha256": "3569693d6c8116aa95e851016e5a2622f9e064a58fb7dcb7c6ded6cca0264d02",
+      "row_id": "printed-source-row-2",
+      "customer": null,
+      "reviewer": "AI原图逐行核验（用户授权收录，非人工标注）",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "source": "verified_printed_image",
+      "image_path": "导入\\2026-10-18\\e92ab0f8325c7189388eaf6018477284.png",
+      "values": {
+        "category": "蒜头",
+        "unit": "斤"
+      },
+      "learning_scope": "category_unit_only"
     }
   ]
 }

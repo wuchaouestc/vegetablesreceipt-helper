@@ -186,7 +186,7 @@ class ModeTests(unittest.TestCase):
 
     def test_invalid_values_fall_back_to_defaults(self):
         config = resolve_mode({'手写预算请求数': 'abc', '手写标题置信阈值': '999'})
-        self.assertEqual(config.budget_requests, 8)
+        self.assertEqual(config.budget_requests, 15)
         self.assertEqual(config.heading_confidence, 90.0)
 
 

@@ -1,0 +1,20 @@
+{
+  "printed_images": 10,
+  "verified_category_unit_rows": 121,
+  "vocabulary_entries": 69,
+  "relations": 52,
+  "audit": [
+    {
+      "id": "uni-5da98a0d2728",
+      "removed_cross_semantic_aliases": [
+        "个"
+      ]
+    }
+  ],
+  "backup": "D:\\项目开发\\打单助手\\打单助手V6.x_源码\\清理归档\\非手写词典更新前_20261107_213150",
+  "limitations": [
+    "未进行新云端识别；使用原图核验与已有识别资料",
+    "不是人工标准答案，不用于冻结准确率",
+    "当前关系引擎按客户精确匹配，全局样本仅在空客户上下文命中；客户回退需代码支持"
+  ]
+}

@@ -54,8 +54,10 @@ def _存开关(开):
 
 # ---------- 侧边栏加一项 ----------
 _导航 = list(App.导航)
-if not any(item[0] == '周末' for item in _导航):
-    _位 = next((i for i, item in enumerate(_导航) if item[0] == '设置'), len(_导航))
+if not getattr(App, '显示周末模式菜单', True):
+    App.导航 = [item for item in _导航 if item[0] != '周末']
+elif not any(item[0] == '周末' for item in _导航):
+    _位 = next((i for i, item in enumerate(_导航) if item[0] in ('settings', '设置')), len(_导航))
     _导航.insert(_位, _导航项)
     App.导航 = _导航
 
@@ -352,7 +354,8 @@ App.__init__ = _App_init
 def 自检():
     """不建窗口的自检：补丁链是否挂好。"""
     断言 = [
-        ('导航项', any(item[0] == '周末' for item in App.导航)),
+        ('导航项', any(item[0] == '周末' for item in App.导航)
+         == getattr(App, '显示周末模式菜单', True)),
         ('页面构建', App._build_page_weekend is _build_page_weekend),
         ('打印分流', App.do_print is do_print),
     ]

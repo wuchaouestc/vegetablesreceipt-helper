@@ -1,14 +1,12 @@
 {
   "schema_version": 1,
-  "revision": "r20261107-133355",
+  "revision": "printed-20261107_213150",
   "entries": [
     {
       "id": "uni-5da98a0d2728",
       "field": "unit",
       "canonical": "斤",
-      "aliases": [
-        "个"
-      ],
+      "aliases": [],
       "scope": {
         "customers": []
       },
@@ -270,6 +268,592 @@
       },
       "source": "human_correction",
       "confirmed_at": "2026-11-07T13:33:55",
+      "enabled": true
+    },
+    {
+      "id": "rem-1d20c81429e1",
+      "field": "remark",
+      "canonical": "(C42)0.5斤",
+      "aliases": [],
+      "scope": {
+        "customers": [
+          "农和"
+        ]
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-07T17:55:43",
+      "enabled": true
+    },
+    {
+      "id": "cat-9e251fc350ee",
+      "field": "category",
+      "canonical": "红葱头",
+      "aliases": [],
+      "scope": {
+        "customers": [
+          "农和"
+        ]
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-07T17:55:43",
+      "enabled": true
+    },
+    {
+      "id": "cat-f609863257b6",
+      "field": "category",
+      "canonical": "去皮小洋葱头",
+      "aliases": [],
+      "scope": {
+        "customers": [
+          "农和"
+        ]
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-07T19:18:26",
+      "enabled": true
+    },
+    {
+      "id": "rem-a3144ac43527",
+      "field": "remark",
+      "canonical": "(1115.1)",
+      "aliases": [],
+      "scope": {
+        "customers": [
+          "农和"
+        ]
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-07T19:18:26",
+      "enabled": true
+    },
+    {
+      "id": "rem-0f909c9398e0",
+      "field": "remark",
+      "canonical": "(308.9)",
+      "aliases": [],
+      "scope": {
+        "customers": [
+          "南波旺"
+        ]
+      },
+      "source": "human_correction",
+      "confirmed_at": "2026-11-07T19:56:34",
+      "enabled": true
+    },
+    {
+      "id": "printed-b6bd001b3113bbd4",
+      "field": "category",
+      "canonical": "南姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-1ef3983b733ae0cf",
+      "field": "category",
+      "canonical": "去皮姜肉",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-f609863257b6d026",
+      "field": "category",
+      "canonical": "去皮小洋葱头",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-fc9f7718bfc299ab",
+      "field": "category",
+      "canonical": "去皮小红葱头",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-553a3cc0667e89de",
+      "field": "category",
+      "canonical": "去皮干红葱头",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-bde1d686ff43ad7d",
+      "field": "category",
+      "canonical": "去皮干红葱头/圆",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-1310d551e930ba22",
+      "field": "category",
+      "canonical": "去皮沙姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-40c5d93d358d1957",
+      "field": "category",
+      "canonical": "去皮沙葛",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-ae859434a634ddb5",
+      "field": "category",
+      "canonical": "去皮生姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-199106fe9cd5ac17",
+      "field": "category",
+      "canonical": "去皮粉葛",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-653a7e79db8f8d07",
+      "field": "category",
+      "canonical": "去皮红葱头 圆的",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-a077b3e40e82e4ee",
+      "field": "category",
+      "canonical": "大肉姜(生姜)",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-812b7e8e2af5df97",
+      "field": "category",
+      "canonical": "姜肉",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-99173a7efc95e227",
+      "field": "category",
+      "canonical": "子姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-22d044f5aa545d27",
+      "field": "category",
+      "canonical": "干水生姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-de12b6e51a8e240c",
+      "field": "category",
+      "canonical": "干水黄姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-7f0c7f50b5af9968",
+      "field": "category",
+      "canonical": "干红葱头",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-891acf9816290b94",
+      "field": "category",
+      "canonical": "手工现剥蒜肉",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-a0ac848b19309409",
+      "field": "category",
+      "canonical": "手工蒜米",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-c6d4b95696a6c458",
+      "field": "category",
+      "canonical": "本地去皮干红葱头 扁的",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-8e91350f5f205e57",
+      "field": "category",
+      "canonical": "本地去皮干红葱头/扁",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-a7339ae9939bf096",
+      "field": "category",
+      "canonical": "本地干红葱头/扁",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-100f57b693544df5",
+      "field": "category",
+      "canonical": "沙姜（去皮）",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-1c745fe5986d03b7",
+      "field": "category",
+      "canonical": "独头蒜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-999fd6df9791cd9c",
+      "field": "category",
+      "canonical": "甘蔗（竹蔗）",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-1c32b389d332b533",
+      "field": "category",
+      "canonical": "生姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-15974bf3a88c41a4",
+      "field": "category",
+      "canonical": "生姜(去皮)",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-4c9a414f266fcce2",
+      "field": "category",
+      "canonical": "竹蔗",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-9e251fc350ee3fe4",
+      "field": "category",
+      "canonical": "红葱头",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-daca2bfcaaf1c62e",
+      "field": "category",
+      "canonical": "红葱头肉",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-58056af9a4d5310d",
+      "field": "category",
+      "canonical": "老姜肉",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-40f78956f51bc118",
+      "field": "category",
+      "canonical": "芋头仔/香芋仔",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-226939931d1e9545",
+      "field": "category",
+      "canonical": "蒜米",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-499c67ef8603db4e",
+      "field": "category",
+      "canonical": "蒜米(蒜肉)",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-a80a2c50caf5eb2f",
+      "field": "category",
+      "canonical": "蒜米（蒜米先生）",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-6c291c4b49a486f8",
+      "field": "category",
+      "canonical": "蒜肉",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-12d557c5c4bdab58",
+      "field": "category",
+      "canonical": "铁棍淮山",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-df8ed63573bb2fa4",
+      "field": "category",
+      "canonical": "香茅",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-b63ceacb3bf61bdd",
+      "field": "category",
+      "canonical": "马蹄",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-2b1c2ceee7c319d9",
+      "field": "category",
+      "canonical": "鲜沙姜",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-ff6cae6d6470742c",
+      "field": "category",
+      "canonical": "鲜淮山",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-58270d50553ac25f",
+      "field": "category",
+      "canonical": "鲜茅根",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
+      "enabled": true
+    },
+    {
+      "id": "printed-f7c0909c543b24ac",
+      "field": "unit",
+      "canonical": "包",
+      "aliases": [],
+      "scope": {
+        "customers": []
+      },
+      "source": "verified_printed_image",
+      "confirmed_at": "2026-11-07T21:31:50.734346+08:00",
       "enabled": true
     }
   ]

@@ -184,39 +184,54 @@ def render_separator(name):
     draw = ImageDraw.Draw(img)
     text = str(name or '')
     font, w, h = fit_font(draw, text, 标签高 - 16, 标签宽 - 16)
-    draw.text(((标签宽 - w) // 2, (标签高 - h) // 2), text, font=font, fill=0)
+    left, top, _, _ = draw.textbbox((0, 0), text, font=font)
+    draw.text(((标签宽 - w) // 2 - left, (标签高 - h) // 2 - top),
+              text, font=font, fill=0)
     return img, {'类型': '分隔', '文本': text}
 
 
 def render_label(category, code, weight, unit, remark):
-    """渲染成 320x240 黑白位图，返回 (img, 调试信息 dict)"""
+    """以同一左对齐版式渲染预览和打印位图，返回图像及版式信息。"""
     img = Image.new('1', (标签宽, 标签高), 1)
     draw = ImageDraw.Draw(img)
+    margin = 6
+    available = img.width - 2 * margin
 
-    # 品类行（最上方，尽量大，长名自动缩字号不裁切）
-    品类 = str(category or '')
-    cat_font, cat_w, cat_h = fit_font(draw, 品类, 64, 标签宽 - 8)
-    draw.text(((标签宽 - cat_w) // 2, 2), 品类, font=cat_font, fill=0)
+    def line(text, size, top):
+        if not text:
+            return top
+        font, _, _ = fit_font(draw, text, size, available)
+        left, upper, _, lower = draw.textbbox((0, 0), text, font=font)
+        draw.text((margin - left, top - upper), text, font=font, fill=0)
+        return top + lower - upper + 5
 
-    # 客户编码（品类下方）
-    码 = str(code or '')
-    if 码:
-        code_font, code_w, code_h = fit_font(draw, 码, 36, 标签宽 - 8)
-        draw.text(((标签宽 - code_w) // 2, cat_h + 6), 码, font=code_font, fill=0)
-    else:
-        code_h = 0
+    top = line(str(category or ''), 51, 4)
+    top = line(str(code or ''), 36, top)
+    remark_text = ' '.join(str(part) for part in remark if part) if isinstance(remark, list) else str(remark or '')
+    top = line(remark_text, 40, top)
 
-    # 底部行：数字 + 斤 + 备注
-    元素, 总宽, 截断 = fit_bottom_line(draw, weight, unit or '斤', remark, 标签宽 - 8)
-    x = (标签宽 - 总宽) // 2
-    for 类型, 文本, font, w, h in 元素:
-        # Pillow 的文字坐标包含字体上留白；按实际墨迹底部对齐，避免大号重量被裁切。
-        left, top, right, bottom = draw.textbbox((0, 0), 文本, font=font)
-        draw.text((x - left, 标签高 - 4 - bottom), 文本, font=font, fill=0)
-        x += w
+    weight_text = '' if weight is None else str(weight)
+    unit_text = str(unit or '斤')
+    for size in range(74, 7, -1):
+        weight_font = load_font(size)
+        unit_font = load_font(max(8, round(size * 0.60)))
+        weight_w, weight_h = measure(draw, weight_text, weight_font)
+        unit_w, unit_h = measure(draw, unit_text, unit_font)
+        if weight_w + unit_w <= available and max(weight_h, unit_h) <= img.height - margin - top:
+            break
+    x = margin
+    for text, font in ((weight_text, weight_font), (unit_text, unit_font)):
+        left, _, right, bottom = draw.textbbox((0, 0), text, font=font)
+        draw.text((x - left, img.height - margin - bottom), text, font=font, fill=0)
+        x += right - left
+    return img, {'品类': str(category or ''), '编码': str(code or ''), '斤数': weight,
+                 '单位': unit, '备注': remark, '截断': False}
 
-    return img, {'品类': 品类, '编码': 码, '斤数': weight, '单位': unit,
-                 '备注': remark, '截断': 截断}
+
+def render_label_preview(category, code, weight, unit, remark):
+    """兼容识别页调用，直接使用打印的同一张位图。"""
+    img, _info = render_label(category, code, weight, unit, remark)
+    return img
 
 
 def to_escpos_raster(img, offset_x=0):
@@ -425,13 +440,13 @@ def print_separator(name, via=None):
     配置 = _打印配置()
     通道 = str(via or 配置['通道']).lower()
     if 通道 == 'driver':
-        return print_via_driver(name, '', '', '', '', 配置['名称'])
+        return print_via_driver(name, '', '', '', '', 配置['名称'], separator=True)
     job = build_separator_tspl(name)
     if 通道 == 'auto':
         if print_via_usb(job, 配置['vid'], 配置['pid']):
             return True
         USB错误 = 最后打印错误
-        if print_via_driver(name, '', '', '', '', 配置['名称']):
+        if print_via_driver(name, '', '', '', '', 配置['名称'], separator=True):
             return True
         return _打印失败('USB：%s；驱动：%s' % (USB错误, 最后打印错误))
     return print_via_usb(job, 配置['vid'], 配置['pid'])
@@ -507,7 +522,7 @@ def _driver_dib_bytes(img):
     return 头 + 调色板, 像素
 
 
-def print_via_driver(category, code, weight, unit, remark, printer_name=None):
+def print_via_driver(category, code, weight, unit, remark, printer_name=None, *, separator=False):
     """通过 Windows 打印机驱动，以 40×30mm 物理尺寸输出 1 位位图。"""
     global 最后打印错误
     最后打印错误 = ''
@@ -524,7 +539,8 @@ def print_via_driver(category, code, weight, unit, remark, printer_name=None):
             return _打印失败('没有配置 Windows 打印机，也找不到系统默认打印机')
         打印句柄 = win32print.OpenPrinter(名称)
         win32print.ClosePrinter(打印句柄)
-        img, _info = render_label(category, code, weight, unit, remark)
+        img, _info = (render_separator(category) if separator else
+                      render_label(category, code, weight, unit, remark))
         info, pixels = _driver_dib_bytes(img)
         dc = win32ui.CreateDC()
         dc.CreatePrinterDC(名称)

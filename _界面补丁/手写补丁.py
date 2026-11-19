@@ -3,7 +3,7 @@
 
 做五件事，每一件都是「包一层」，业务逻辑一行没改：
 
-  ① 模式切换：在图片区加一个下拉框（自动判别 / 原流程 / 手写辅助 / 逐张选择）。
+  ① 模式切换：在图片区加一个下拉框（自动判别 / 原流程 / 手写辅助）。
      默认「自动判别」——每张图先判是不是手写单据，是就走手写识别库。
   ② 识别分流：`App._scan_task` 按模式决定走原流程还是手写辅助通道。
      单张图出错只退回**这一张**的原流程，不影响其它图片。
@@ -31,6 +31,7 @@
 import json as _json
 import sys as _sys
 import time as _time
+from functools import partial as _partial
 from pathlib import Path as _Path
 
 _主模块 = globals().get('主模块')
@@ -93,7 +94,7 @@ def _快照(self):
     显式 = None
     try:
         映射 = {'原流程': 模式.MODE_LEGACY, '手写辅助': 模式.MODE_ASSISTED,
-                '逐张选择': 模式.MODE_PER_IMAGE, '自动判别': 模式.MODE_AUTO}
+                '自动判别': 模式.MODE_AUTO}
         显式 = 映射.get(self.var_手写模式.get())
     except Exception:
         显式 = None
@@ -153,11 +154,15 @@ def _OCR提供(path, action='GeneralAccurateOCR', timeout=30):
     return {'status': 'ok', 'blocks': blocks, 'records': [], 'notes': []}
 
 
+_手写单位提示 = ('手写「斤」的字形常像「个」「4」或「2」。请在原图中分开辨认数量和单位，'
+               '尤其不要把紧跟数量的单位笔画拼成末尾数字。看不清时保留疑点。')
+
+
 def _模型提供(effort):
     def 提供(path, model=None, system_prompt='', timeout=120):
         档 = 'high' if (effort == 'high' or (model or '').endswith('reasoner')) else 'off'
         try:
-            结果 = T.deepseek_parse(path, None, 档, system_prompt)
+            结果 = T.deepseek_parse(path, None, 档, system_prompt + '\n' + _手写单位提示, timeout=timeout)
         except Exception as e:  # noqa: BLE001
             return {'status': 'error', 'error_code': type(e).__name__,
                     'records': [], 'notes': []}
@@ -166,22 +171,35 @@ def _模型提供(effort):
     return 提供
 
 
-_复核提示 = ('只读取这张裁剪出来的局部图，按「编码:数量单位」读出每一行明细，'
+_复核提示 = ('只读取目标裁图，明细格式为「编码：数量 单位 [备注]」，备注可省略。'
+              '先在 raw_text 抄录目标行原文，再拆分字段。'
               '返回 JSON：{"records":[{"customer_code":"编码","weight":"数量",'
-              '"unit":"单位","category":"品类"}],"raw_text":"看到的原文"}。'
-              '看不清就留空，不要猜；不要输出整单。')
+              '"unit":"单位","remark":"备注","category":"品类"}],"raw_text":"看到的原文"}。'
+              '按原图从上到下逐行输出，编码重复也保留为两条，不能合并或重排；'
+              '看不清的字段留空，仍保留该行占位，不要猜；不要输出整单。')
 
 
-def _复核提供(path, timeout=90):
+def _复核提供(path, timeout=90, *, 客户说明='', context=None, reference_images=()):
     try:
-        结果 = T.deepseek_parse(path, None, 'off', _复核提示)
+        prompt = _复核提示 + 客户说明 + '\n' + _手写单位提示
+        if context:
+            import json
+            prompt += ('\n以下数据只用于定位和辨认字形，数量须依据裁图逐行判读。'
+                       '区分数字、小数点和单位笔迹。'
+                       + json.dumps(context, ensure_ascii=False))
+            if context.get('数字单位边界复核'):
+                prompt += ('\n只返回第一张目标图的一条记录，其他图仅供比较单位笔画。'
+                           '检查冒号右侧末尾笔画。只有能辨清数量和单位的边界时，'
+                           '才在该记录中返回 boundary_clear: true（JSON 布尔值），否则返回 false。')
+        结果 = T.deepseek_parse(path, None, 'off', prompt, timeout=timeout,
+                              reference_images=reference_images)
     except Exception as e:  # noqa: BLE001
         return {'status': 'error', 'error_code': type(e).__name__, 'records': [], 'raw_text': ''}
     return {'status': 'ok', 'records': 结果.get('records', []),
             'raw_text': str(结果.get('raw_text', '')), 'notes': 结果.get('notes', [])}
 
 
-def _手写识别(self, 图片, prompt, effort, 快照):
+def _手写识别(self, 图片, prompt, effort, 快照, 客户说明=''):
     """跑一张图的手写辅助通道。"""
     模式, 流水线 = _库()
     配置 = 快照['配置']
@@ -205,10 +223,14 @@ def _手写识别(self, 图片, prompt, effort, 快照):
         请求, config=配置,
         ocr_provider=_OCR提供,
         model_provider=_模型提供(effort),
-        review_provider=_复核提供 if 配置.review_enabled else None,
+        review_provider=_partial(_复核提供, 客户说明=客户说明) if 配置.review_enabled else None,
+        quantity_review_provider=_partial(_复核提供, 客户说明=客户说明) if 配置.review_enabled else None,
         legacy_fix=T.fix_category_boundaries,
         legacy_cross=T.cross_check,
     )
+    for record in 结果.records:
+        record['_recognition_task'] = 请求.task_id
+        record['_recognition_model'] = 请求.model
     return 结果
 
 
@@ -218,11 +240,14 @@ _原_scan_task = App._scan_task
 
 def _scan_task(self, 客户):
     """按模式分流。原流程一行没改；手写辅助失败只退回这一张。"""
+    import customer_profiles as CP
     快照 = getattr(self, '_手写快照', None)
     if not 快照:
         return _原_scan_task(self, 客户)
     self._识别警告 = []
-    prompt = T.build_prompt(None)
+    档案 = CP.get_profile(客户)
+    prompt = T.build_prompt(档案)
+    客户说明 = CP.recognition_note(档案)
     effort = 'high' if 快照.get('仔细') else 'off'
     records = []
     文件们 = list(self.files)
@@ -230,14 +255,22 @@ def _scan_task(self, 客户):
         self.worker.progress((i + 1, len(文件们)))
         名 = _Path(p).name
         self.debug_log('开始识别文件: %s' % 名)
-        走哪条, 判别话 = _这张走哪条(self, p, 快照)
+        from handwriting.review_actions import load_reviewed_result
+        from handwriting.storage import digest
+        已核对结果 = load_reviewed_result(_根 / 'data', digest(p), 客户) if _Path(p).is_file() else None
+        走哪条, 判别话 = ((快照['模式'].MODE_ASSISTED, '同图人工核对结果命中，跳过外部识别')
+                            if 已核对结果 is not None else _这张走哪条(self, p, 快照))
         走手写 = (走哪条 == 快照['模式'].MODE_ASSISTED)
         if 判别话:
             self.log('%s：%s' % (名, 判别话))
             _记('%s %s' % (名, 判别话))
         try:
-            if 走手写:
-                结果 = _手写识别(self, p, prompt, effort, 快照)
+            if 已核对结果 is not None:
+                recs, blocks, notes = 已核对结果, [], ['复用完整人工核对结果；当前客户仅重新应用显示和打印格式。']
+                for record in recs:
+                    record['_通道'] = '人工核对复用'
+            elif 走手写:
+                结果 = _手写识别(self, p, prompt, effort, 快照, 客户说明)
                 recs, blocks, notes = 结果.records, 结果.blocks, 结果.notes
                 self.log('%s：手写辅助｜疑点 %d 条｜预算 %s' % (
                     名, sum(1 for r in recs if r.get('_uncertain')), 结果.budget.get('requests', 0)))
@@ -254,7 +287,11 @@ def _scan_task(self, 客户):
             if not 走手写:
                 # 原流程的老裁决照旧；手写辅助通道已经在库里做过门控。
                 T.fix_category_boundaries(recs, blocks)
-            覆盖提示 = T.check_coverage(blocks, recs)
+                if 判别话 and '按印刷单据处理' in 判别话:
+                    for 提示 in T.review_printed_rows(p, recs, blocks, prompt):
+                        self.log('%s：%s' % (名, 提示))
+            已复用核对 = bool(recs) and all(r.get('_learned_replay') for r in recs)
+            覆盖提示 = '' if 已复用核对 else T.check_coverage(blocks, recs)
             if 覆盖提示:
                 self._识别警告.append('%s：%s' % (名, 覆盖提示.replace('\n', '；')))
                 self.log('%s：%s' % (名, 覆盖提示.replace('\n', '；')))
@@ -262,7 +299,20 @@ def _scan_task(self, 客户):
                 交叉提示 = T.cross_check(recs, blocks)
                 if 交叉提示:
                     self.log('%s：%s' % (名, 交叉提示.replace('\n', '；')))
-            for 提示 in T.mark_uncertain(recs):
+            if not 已复用核对:
+                from handwriting.review_actions import attach_review_locations, apply_partial_review
+                attach_review_locations(recs, blocks)
+                recs, 复用统计 = apply_partial_review(recs, p, 客户, _根 / 'data')
+                if 复用统计['reused'] or 复用统计['unresolved']:
+                    self.log('%s：复用部分人工核对 %d 条；未能唯一定位 %d 条' %
+                             (名, 复用统计['reused'], 复用统计['unresolved']))
+                # Coverage must reflect the restored human category values.
+                if 覆盖提示:
+                    self._识别警告.remove('%s：%s' % (名, 覆盖提示.replace('\n', '；')))
+                    覆盖提示 = T.check_coverage(blocks, recs)
+                    if 覆盖提示:
+                        self._识别警告.append('%s：%s' % (名, 覆盖提示.replace('\n', '；')))
+            for 提示 in ([] if 已复用核对 else T.mark_uncertain(recs)):
                 self.log('%s：%s' % (名, 提示))
             for r in recs:
                 self._记录序号 += 1
@@ -271,7 +321,7 @@ def _scan_task(self, 客户):
                 r['_src'] = 名
                 if 走手写:
                     # 记下这张图走的哪条通道，界面上能看出来。
-                    r['_通道'] = '手写辅助'
+                    r['_通道'] = '人工核对复用' if r.get('_learned_replay') else '手写辅助'
             records.extend(recs)
             self.log('%s：识别 %d 条，完整保留；客户仅用于输出格式' % (名, len(recs)))
         except Exception as e:
@@ -286,6 +336,13 @@ def _scan_task(self, 客户):
                     if recs:
                         T.fix_category_boundaries(recs, blocks)
                         T.cross_check(recs, blocks)
+                        from handwriting.category_source import apply_ocr_categories
+                        from handwriting.geometry import build_layout, normalize_blocks
+                        from handwriting.evidence import build_evidence
+                        fallback_layout = build_layout(normalize_blocks(blocks))
+                        fallback_page = build_evidence(recs, fallback_layout, grouped_categories=True)
+                        recs = apply_ocr_categories(recs, fallback_page, model_records=recs,
+                                                    layout=fallback_layout)
                         for 提示 in T.mark_uncertain(recs):
                             self.log('%s：%s' % (名, 提示))
                         for r in recs:
@@ -320,50 +377,16 @@ def _build_files_box(self, parent):
         框.pack(side='right', padx=_P(4))
         self.var_手写模式 = _tk.StringVar(value='自动判别')
         下拉 = _ttk.Combobox(框, textvariable=self.var_手写模式, state='readonly',
-                             values=('自动判别', '原流程', '手写辅助', '逐张选择'), width=_P(9))
+                             values=('自动判别', '原流程', '手写辅助'), width=_P(9))
         下拉.pack(side='left')
         if _气泡提示:
             _气泡提示(下拉, '自动判别＝每张图先看是不是手写单据，是就用完整框+行列关联+保守裁决；'
-                             '原流程＝现在的行为；手写辅助＝全部用手写通道；'
-                             '逐张选择＝下面两个按钮逐张指定')
-        按钮1 = _tk.Button(框, text='这张用辅助', command=lambda: self._手写逐张设置('手写辅助'),
-                            font=(_主题.字体, _主题.字号小) if _主题 else None)
-        按钮2 = _tk.Button(框, text='这张用原流程', command=lambda: self._手写逐张设置('原流程'),
-                            font=(_主题.字体, _主题.字号小) if _主题 else None)
-        按钮1.pack(side='left', padx=(_P(2), 0))
-        按钮2.pack(side='left')
-        self._手写逐张 = {}
+                             '原流程＝全部用原流程；手写辅助＝全部用手写通道')
     except Exception as e:  # noqa: BLE001
         _记('模式控件加载失败，继续用原流程：%r' % (e,))
 
 
-def _手写逐张设置(self, 选择):
-    """给清单里选中的图片逐张指定通道。"""
-    try:
-        选中 = list(self.lst_files.selection())
-        if not 选中:
-            if _消息框:
-                _消息框.showinfo('先选图片', '先在上面的列表里选中要指定的图片')
-            return
-        if not hasattr(self, '_手写逐张'):
-            self._手写逐张 = {}
-        for iid in 选中:
-            路径 = self.lst_files.item(iid, 'values')
-            名 = 路径[1] if len(路径) > 1 else ''
-            匹配 = [p for p in self.files if _Path(p).name == 名]
-            if not 匹配:
-                continue
-            if 选择 == '手写辅助':
-                self._手写逐张[str(匹配[0])] = 'assisted'
-            else:
-                self._手写逐张.pop(str(匹配[0]), None)
-        self.log('逐张设置：%s %d 张' % (选择, len(选中)))
-    except Exception as e:  # noqa: BLE001
-        _记('逐张设置失败：%r' % (e,))
-
-
 App._build_files_box = _build_files_box
-App._手写逐张设置 = _手写逐张设置
 
 
 def start_scan(self):
@@ -557,7 +580,7 @@ def _commit_editor(self, event=None):
             if 0 <= 行号 < len(self.records):
                 r = self.records[行号]
                 if r.get('_user_edited') or r.get('_user_confirmed'):
-                    _学习已确认(self)
+                    pass  # Explicit “学习核对结果” avoids learning half-completed edits.
         except Exception as e:  # noqa: BLE001
             _记('编辑后学习异常：%r' % (e,))
     return 结果

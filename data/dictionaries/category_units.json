@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "source": "human_confirmed_examples",
+  "entries": [
+    {
+      "customer": "",
+      "category": "南姜",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮姜肉",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮小洋葱头",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮小红葱头",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮干红葱头",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮干红葱头/圆",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮干葱头",
+      "units": {
+        "斤": 4
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮沙姜",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮沙葛",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮生姜",
+      "units": {
+        "斤": 4
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮粉葛",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "去皮红葱头圆的",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "大肉姜(生姜)",
+      "units": {
+        "斤": 5
+      }
+    },
+    {
+      "customer": "",
+      "category": "姜肉",
+      "units": {
+        "斤": 18
+      }
+    },
+    {
+      "customer": "",
+      "category": "子姜",
+      "units": {
+        "斤": 2
+      }
+    },
+    {
+      "customer": "",
+      "category": "小黄姜",
+      "units": {
+        "斤": 2
+      }
+    },
+    {
+      "customer": "",
+      "category": "干水生姜",
+      "units": {
+        "斤": 3
+      }
+    },
+    {
+      "customer": "",
+      "category": "干水黄姜",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "干红葱头",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "手工现剥蒜肉",
+      "units": {
+        "斤": 13
+      }
+    },
+    {
+      "customer": "",
+      "category": "手工蒜米",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "本地去皮干红葱头/扁",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "本地去皮干红葱头扁的",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "本地干红葱头/扁",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "沙姜",
+      "units": {
+        "斤": 4
+      }
+    },
+    {
+      "customer": "",
+      "category": "沙姜(去皮)",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "独头蒜",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "独蒜",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "甘蔗(竹蔗)",
+      "units": {
+        "斤": 2
+      }
+    },
+    {
+      "customer": "",
+      "category": "生姜",
+      "units": {
+        "斤": 7
+      }
+    },
+    {
+      "customer": "",
+      "category": "生姜(去皮)",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "竹蔗",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "红葱头",
+      "units": {
+        "斤": 3
+      }
+    },
+    {
+      "customer": "",
+      "category": "红葱头肉",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "老姜肉",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "芋头仔/香芋仔",
+      "units": {
+        "斤": 2
+      }
+    },
+    {
+      "customer": "",
+      "category": "蒜头",
+      "units": {
+        "斤": 5
+      }
+    },
+    {
+      "customer": "",
+      "category": "蒜米",
+      "units": {
+        "斤": 9,
+        "包": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "蒜米(蒜米先生)",
+      "units": {
+        "包": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "蒜米(蒜肉)",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "蒜肉",
+      "units": {
+        "斤": 7,
+        "包": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "铁棍淮山",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "香茅",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "马蹄",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "马蹄肉",
+      "units": {
+        "斤": 8
+      }
+    },
+    {
+      "customer": "",
+      "category": "鲜沙姜",
+      "units": {
+        "斤": 2
+      }
+    },
+    {
+      "customer": "",
+      "category": "鲜淮山",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "",
+      "category": "鲜茅根",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "农和",
+      "category": "去皮小洋葱头",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "农和",
+      "category": "生姜",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "农和",
+      "category": "红葱头",
+      "units": {
+        "斤": 1
+      }
+    },
+    {
+      "customer": "南波旺",
+      "category": "去皮小洋葱头",
+      "units": {
+        "斤": 1
+      }
+    }
+  ]
+}

@@ -670,6 +670,50 @@ def format_record(record, customer):
     return apply_rules([record], customer)[0][0]
 
 
+def recognition_note(profile):
+    """Return the saved customer note as document interpretation guidance."""
+    note = profile.get('extra_note') if isinstance(profile, dict) else None
+    if not isinstance(note, str) or not note.strip():
+        return ''
+    return ('\n\n客户专属说明（用于理解版式和字段，仍以当前图片证据和输出要求为准）：\n'
+            + note)
+
+
+def recognition_context(profile):
+    """Compile structured customer semantics and the saved customer note."""
+    if not isinstance(profile, dict):
+        return ''
+    context = ['客户识别上下文（辅助解释版式，原图证据优先）：']
+    if is_handwritten(profile):
+        context.append('这是手写单据格式线索：先逐栏定位顶部品类标题，再把下方编码、数量、单位归属于该标题；不得跨栏借用标题。'
+                       '编码后的冒号是分隔符，不是小数点；单位笔画不能拼入数量。重复编码按位置分别保留。')
+        if profile.get('folder') == '农和':
+            context.append('常见品类包括生姜、姜肉、蒜米、沙姜、竹蔗、毛根、子姜、蒜头，作为模糊标题的候选，不是固定白名单。'
+                           '先核对本图标题集合，不凭常识把蒜米猜成老姜或姜米；其他清楚的新标题仍保留。')
+    else:
+        context.append('这是印刷单据格式线索：结合列标题区分客户编码、数量、单位、规格和备注；合计列不能替代客户明细数量。')
+    context.append('客户编码必须完整识别，保留前导零、字母及标点；显示或打印时是否保留编码由程序处理。')
+    if not profile.get('show_code', True):
+        context.append('此客户标签不打印编码，但识别阶段仍完整提取图上编码。')
+    if profile.get('skip_items') or profile.get('skip_contains'):
+        context.append('此客户有打印排除规则，由程序在输出阶段执行；识别阶段不要据此删行。')
+    if profile.get('category_alias'):
+        context.append('此客户有品类归一规则；先保留图上品类原文，交由程序转换，避免丢失去皮等业务含义。')
+    return '\n'.join(context) + recognition_note(profile)
+
+
+def customer_hint(customer, profile):
+    parts = ['打客户编码' if profile.get('show_code', True) else '不打客户编码']
+    if is_handwritten(profile):
+        parts.append('手写单（建议勾「仔细模式」）')
+    skipped = profile.get('skip_items') or []
+    if skipped:
+        parts.append('整条跳过：' + '、'.join(skipped))
+    if profile.get('skip_contains'):
+        parts.append('跳过含：' + '、'.join(profile['skip_contains']))
+    return '【%s】\n%s。' % (customer or '未选择', '；'.join(parts))
+
+
 def list_customers():
     """返回所有客户名（用于界面下拉框）"""
     return list(PROFILES.keys())

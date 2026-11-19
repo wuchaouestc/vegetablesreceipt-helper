@@ -143,13 +143,14 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(updated[0]['weight'], '4.5')
         self.assertTrue(any('小数点' in reason for reason in updated[0]['_review_reasons']))
 
-    def test_different_digits_in_quantity_is_corrected(self):
+    def test_different_digits_in_quantity_requires_review(self):
         blocks = normalize_blocks([block('185:0.5斤', 244, 1282, 408, 1370, confidence=97)])
         layout = build_layout(blocks)
         records = [{'category': '鱼腥草', 'customer_code': '185', 'weight': '2.5', 'unit': '斤'}]
         page = build_evidence(records, layout, min_heading_confidence=90)
         updated = apply_evidence(records, page)
-        self.assertEqual(updated[0]['weight'], '0.5')
+        self.assertEqual(updated[0]['weight'], '2.5')
+        self.assertTrue(updated[0]['_uncertain'])
 
     def test_unit_confusion_never_overwrites_model_value(self):
         blocks = normalize_blocks([block('29:2个', 0, 306, 174, 377, confidence=99)])
