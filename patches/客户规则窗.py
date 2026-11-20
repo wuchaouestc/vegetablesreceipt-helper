@@ -24,7 +24,7 @@ import json
 import tkinter as tk
 from tkinter import messagebox, ttk
 
-import customer_profiles as CP
+from app import customer_profiles as CP
 
 主模块 = globals().get('主模块')
 

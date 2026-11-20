@@ -34,13 +34,13 @@ from pathlib import Path
 import time
 
 import 路径
-import customer_profiles as CP
+from app import customer_profiles as CP
 
 HERE = 路径.程序目录()
 
 def _debug_log(msg):
     try:
-        import app_settings as 设置
+        from app import app_settings as 设置
         if 设置.取('系统.运行模式') == 'debug':
             log_dir = HERE / 'log'
             log_dir.mkdir(exist_ok=True)
@@ -531,7 +531,7 @@ def do_print(records, dry=False, customer=None, sender=None):
     每家客户的单据之间夹一张名牌，分单时一眼就知道分界在哪。
     sender 可注入假发送器，测试时不碰真打印机。
     """
-    import label_bitmap as LB
+    from core import label_bitmap as LB
 
     def 发(job_bytes):
         if sender is not None:
@@ -1395,7 +1395,7 @@ def collect_records(only=None):
 
     返回 (保留记录, 跳过记录)
     """
-    import customer_profiles as CP
+    from app import customer_profiles as CP
     from pathlib import Path
     保留 = []
     跳过 = []

@@ -8,9 +8,9 @@ from .storage import digest, read_json, write_json, fingerprint
 
 def collect(root, manifest):
     root = Path(root)
-    files = ['ttsb2.py', '打单助手.py', 'app_settings.py', 'customer_profiles.py',
-             'build.py', 'requirements.txt', '_界面补丁/布局.py', '_界面补丁/识别补丁.py',
-             '_界面补丁/结构补丁.py']
+    files = ['core/ttsb2.py', '打单助手.py', 'app/app_settings.py', 'app/customer_profiles.py',
+             'build.py', 'requirements.txt', 'patches/布局.py', 'patches/识别补丁.py',
+             'patches/结构补丁.py']
     cached = []
     for entry in manifest['entries']:
         source = Path(manifest['root']) / entry['path']
@@ -25,7 +25,7 @@ def collect(root, manifest):
                                 'provenance': 'legacy_cache_no_interface_version_or_request_id'})
         cached.append({'image_sha256': entry['sha256'], 'sources': sources})
     # Reproduce only local decision risks with synthetic records, not a claim about real samples.
-    import ttsb2
+    from core import ttsb2
     record = {'category': '生姜', 'customer_code': '001', 'weight': '2.5', 'unit': '斤', 'remark': ''}
     unrelated = [{'text': '生姜', 'x': 0, 'y': 0}, {'text': '001', 'x': 900, 'y': 300},
                  {'text': '2.5斤', 'x': 900, 'y': 900}]

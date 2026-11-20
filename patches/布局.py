@@ -280,7 +280,7 @@ def debug_log(self, msg):
         _原_debug_log(self, msg)
     if self._日志文本.winfo_manager():
         # 如果面板展开了，并且在debug模式，就把debug信息也写到界面面板里
-        import app_settings as 设置
+        from app import app_settings as 设置
         if 设置.取('系统.运行模式') == 'debug':
             def 写入():
                 try:

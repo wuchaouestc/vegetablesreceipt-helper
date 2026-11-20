@@ -17,7 +17,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-import app_settings as 设置
+from app import app_settings as 设置
 import 路径
 
 最后打印错误 = ''

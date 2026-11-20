@@ -204,7 +204,7 @@ def 重新载入():
 def 客户上限():
     """最多几个客户。数字从 settings.json 来，读不到就按 15。"""
     try:
-        import app_settings
+        from app import app_settings
         return int(app_settings.取('客户.上限', 15))
     except Exception:
         return 15

@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
-import customer_profiles as CP
-import ttsb2
+from app import customer_profiles as CP
+from core import ttsb2
 
 
 class CustomerContextTests(unittest.TestCase):

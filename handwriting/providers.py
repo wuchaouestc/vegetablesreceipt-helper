@@ -18,7 +18,7 @@ from pathlib import Path
 
 
 def _key(name):
-    from ttsb2 import 取密钥
+    from core.ttsb2 import 取密钥
     return 取密钥(name)
 
 

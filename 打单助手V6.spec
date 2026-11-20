@@ -15,9 +15,9 @@ a = Analysis(
     pathex=[],
     binaries=dnd_binaries,
     datas=[
-        ("_界面补丁", "_界面补丁"),
+        ("patches", "patches"),
         ("handwriting/review_page.html", "handwriting"),
-    ] + [(str(p), "_ppstructure") for p in Path("_ppstructure").iterdir()
+    ] + [(str(p), "field_service") for p in Path("field_service").iterdir()
          if p.is_file() and p.suffix in (".py", ".bat", ".txt")] + dnd_datas + ssl_datas,
     hiddenimports=[
         "PIL.Image",

@@ -48,7 +48,7 @@ def main():
     if not args.live:
         print('Prepared offline inventory; --live required for external calls.')
         return
-    import ttsb2
+    from core import ttsb2
     runner = ExperimentRunner(output, Budget(30, 900))
     results_file = output / 'results.json'
     completed = read_json(results_file) if results_file.exists() else []

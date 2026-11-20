@@ -47,7 +47,7 @@ def main():
         if not args.live:
             parser.error("实际外部识别必须显式传 --live；这可能产生接口费用")
         from .pipeline import RecognitionRequest, recognize as execute
-        import ttsb2
+        from core import ttsb2
         request = RecognitionRequest(str(args.image), action=args.action, model=args.model, prompt=ttsb2.build_prompt(None))
         result = execute(request, output_dir=args.output.parent / (args.output.stem + "_artifacts"))
         write_json(args.output, asdict(result))

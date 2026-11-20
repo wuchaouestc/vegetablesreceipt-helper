@@ -1,6 +1,6 @@
 # ===== 虚拟环境 =====
 .venv/
-_ppstructure/.venv/
+field_service/.venv/
 
 # ===== Python 缓存 =====
 __pycache__/
@@ -29,7 +29,7 @@ output/
 导入/
 
 # ===== 结构服务模型缓存 =====
-_ppstructure/cache/
+field_service/cache/
 
 # ===== 备份/临时文件 =====
 *.bak

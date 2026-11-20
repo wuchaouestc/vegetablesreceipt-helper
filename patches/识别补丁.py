@@ -27,7 +27,7 @@ def _找根():
     for p in (globals().get('HERE'), globals().get('路径')):
         if p:
             try:
-                return _Path(str(p)).parent if _Path(str(p)).name == '_界面补丁' else _Path(str(p))
+                return _Path(str(p)).parent if _Path(str(p)).name in ('patches', '_界面补丁') else _Path(str(p))
             except Exception:
                 pass
     try:

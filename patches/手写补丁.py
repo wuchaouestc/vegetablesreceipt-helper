@@ -240,7 +240,7 @@ _原_scan_task = App._scan_task
 
 def _scan_task(self, 客户):
     """按模式分流。原流程一行没改；手写辅助失败只退回这一张。"""
-    import customer_profiles as CP
+    from app import customer_profiles as CP
     快照 = getattr(self, '_手写快照', None)
     if not 快照:
         return _原_scan_task(self, 客户)

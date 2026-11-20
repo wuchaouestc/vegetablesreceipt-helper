@@ -4,10 +4,10 @@
 流程：拖入单据图片 → 腾讯云 OCR → DeepSeek 识别成结构化清单 → 核对 → 打印标签。
 
 本文件是主程序的主体：窗口、三个页面（识单 / 历史 / 设置）、
-后台线程（Worker）、打印调度。业务规则在 ttsb2 / customer_profiles 里，
-标签排版在 label_bitmap 里，数据落盘在 打单记录 / 打印历史 / 标签余量 / 导入落地 里。
+后台线程（Worker）、打印调度。业务规则在 core.ttsb2 / app.customer_profiles 里，
+标签排版在 core.label_bitmap 里，数据落盘在 app.打单记录 / 打印历史 / 标签余量 / 导入落地 里。
 
-启动时会把 _界面补丁 下的 布局.py / 识别补丁.py / 结构补丁.py 挂进来
+启动时会把 patches 下的 布局.py / 识别补丁.py / 结构补丁.py 挂进来
 （见 加载.py），它们通过 monkey-patch 覆盖本类里的布局/识别/结构方法。
 """
 
@@ -29,14 +29,14 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-import customer_profiles as CP
-import label_bitmap as LB
-import ttsb2 as T
-import app_settings as 设置
-import 标签余量 as LY
-import 打单记录 as DR
-import 打印历史 as PH
-import 导入落地 as 落地
+from app import customer_profiles as CP
+from core import label_bitmap as LB
+from core import ttsb2 as T
+from app import app_settings as 设置
+from app import 标签余量 as LY
+from app import 打单记录 as DR
+from app import 打印历史 as PH
+from app import 导入落地 as 落地
 
 try:
     from PIL import Image, ImageTk

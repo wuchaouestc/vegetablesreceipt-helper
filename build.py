@@ -111,7 +111,7 @@ def ensure_runtime_mode(path):
         return
     if "运行模式" in system:
         return
-    from app_settings import 默认设置
+    from app.app_settings import 默认设置
     system["运行模式"] = 默认设置["系统"]["运行模式"]
     shutil.copy2(path, path.with_name(path.name + ".before-runtime-mode.bak"))
     temporary = path.with_name(path.name + ".release.tmp")

@@ -32,13 +32,13 @@ def _有PIL(解释器):
 def _起结构服务(根, 资源根):
     if os.environ.get("打单助手_不起结构服务") == "1" or _服务在():
         return
-    服务文件 = 资源根 / "_ppstructure" / "serve.py"
+    服务文件 = 资源根 / "field_service" / "serve.py"
     if not 服务文件.is_file():
         return
-    候选 = [资源根 / "_ppstructure" / ".venv" / "Scripts" / "python.exe"]
+    候选 = [资源根 / "field_service" / ".venv" / "Scripts" / "python.exe"]
     # 源码目录下的 dist 发布版共用本机 Paddle 环境，不把数 GB 依赖打进 EXE。
     if 根.parent.name == "dist":
-        候选.append(根.parent.parent / "_ppstructure" / ".venv" / "Scripts" / "python.exe")
+        候选.append(根.parent.parent / "field_service" / ".venv" / "Scripts" / "python.exe")
     解释器 = next((p for p in 候选 if p.is_file() and _有PIL(p)), 候选[0])
     if not (解释器.is_file() and _有PIL(解释器)):
         解释器 = shutil.which("python") or shutil.which("python3")
@@ -49,7 +49,7 @@ def _起结构服务(根, 资源根):
         标志 = 0x08000000 if os.name == "nt" else 0
         subprocess.Popen(
             [str(解释器), str(服务文件)],
-            cwd=str(资源根 / "_ppstructure"),
+            cwd=str(资源根 / "field_service"),
             stdout=日志,
             stderr=日志,
             creationflags=标志,
@@ -71,7 +71,7 @@ def _执行补丁(路径, 空间):
 
 
 def _可选补丁(根, 资源根, 文件名, 空间):
-    路径 = 资源根 / "_界面补丁" / 文件名
+    路径 = 资源根 / "patches" / 文件名
     if not 路径.is_file():
         return
     try:
@@ -94,7 +94,7 @@ def 运行(base, 模块=None, 资源根=None):
 
     _起结构服务(根, 资源根)
 
-    布局 = 资源根 / "_界面补丁" / "布局.py"
+    布局 = 资源根 / "patches" / "布局.py"
     if not 布局.is_file():
         raise RuntimeError("找不到界面补丁：%s" % 布局)
     _执行补丁(布局, 模块.__dict__)

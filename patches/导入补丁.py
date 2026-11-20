@@ -21,7 +21,7 @@ import datetime as _dt
 import time as _time
 from pathlib import Path as _Path
 
-import 导入落地 as _D
+from app import 导入落地 as _D
 
 _根 = _Path(str(globals().get("HERE") or "."))
 _日志 = _根 / "导入诊断.log"

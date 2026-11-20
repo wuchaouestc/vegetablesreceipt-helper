@@ -20,8 +20,8 @@ def 运行():
 
     import 打单助手 as 主程序
 
-    资源根 = 根 / "_internal" if (根 / "_internal" / "_界面补丁").is_dir() else 根
-    加载文件 = 资源根 / "_界面补丁" / "加载.py"
+    资源根 = 根 / "_internal" if (根 / "_internal" / "patches").is_dir() else 根
+    加载文件 = 资源根 / "patches" / "加载.py"
     if not 加载文件.is_file():
         raise RuntimeError("找不到界面补丁加载器：%s" % 加载文件)
     空间 = {
