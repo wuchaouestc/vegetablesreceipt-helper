@@ -45,6 +45,7 @@ except Exception:
     _HAS_PIL = False
 
 import 路径
+import 版本
 HERE = 路径.程序目录()
 
 IMG_EXT = ('.png', '.jpg', '.jpeg', '.bmp', '.webp', '.tif', '.tiff')
@@ -330,7 +331,7 @@ class App:
         self._build_ui()
         self._注册拖拽()
         self.root.after(100, self.worker._pump)
-        self.root.title('打单助手 v6.1')
+        self.root.title(版本.版本串)
 
     # ---------- 样式 ----------
     def _init_style(self):
@@ -1022,7 +1023,7 @@ class App:
         return 结果
 
     def _搭_关于卡(self, parent):
-        体 = self._设置卡片('关于', '关于', '打单助手 V6.1')
+        体 = self._设置卡片('关于', '关于', 版本.版本串)
         for 文字 in ('流程：图片导入 → OCR → 结构化识别 → 人工核对 → 标签打印',
                      '配置与业务数据保存在程序目录，迁移时请使用备份功能。',
                      '打印历史用于本次运行内补打；长期查账请打开打单记录。'):

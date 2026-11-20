@@ -785,7 +785,7 @@ _原_App_init = App.__init__
 def _App_init(self, root):
     _原_App_init(self, root)
     try:
-        self.root.title('打单助手 v6.1')
+        self.root.title(版本.版本串)
     except Exception:
         pass
 App.__init__ = _App_init

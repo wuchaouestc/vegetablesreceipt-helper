@@ -19,6 +19,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from app import app_settings as 设置
 import 路径
+import 版本
 
 最后打印错误 = ''
 
@@ -599,7 +600,7 @@ def print_via_driver(category, code, weight, unit, remark, printer_name=None, *,
         dpi_y = gdi32.GetDeviceCaps(hdc, 90)
         宽 = max(1, round(40 / 25.4 * dpi_x))
         高 = max(1, round(30 / 25.4 * dpi_y))
-        dc.StartDoc('打单助手V6 40x30mm')
+        dc.StartDoc('%s 40x30mm' % 版本.版本串)
         文档开始 = True
         dc.StartPage()
         页开始 = True

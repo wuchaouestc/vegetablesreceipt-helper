@@ -11,14 +11,14 @@
 
 用法
 ----
-    .venv/Scripts/python.exe tools/打包源码.py            # 默认 V6.2
-    .venv/Scripts/python.exe tools/打包源码.py V6.3       # 指定版本号
+    .venv/Scripts/python.exe tools/打包源码.py            # 版本号默认取 版本.py
+    .venv/Scripts/python.exe tools/打包源码.py V6.4       # 临时指定其他版本号
 
 产物：项目根目录下 `打单助手<版本>_源码.zip`
 
 包内结构（顶层是一个同名文件夹，避免解压时文件散落一地）：
 
-    打单助手V6.2_源码/
+    打单助手V<版本>_源码/
     ├── 启动器.py / 打单助手.py / 路径.py / config.py / ...
     ├── app/ core/ handwriting/ patches/ field_service/（不含 .venv）
     ├── data/          词典、示例库、标注、评测产物
@@ -42,7 +42,11 @@ import zipfile
 from pathlib import Path
 
 根 = Path(__file__).resolve().parents[1]
-版本 = sys.argv[1] if len(sys.argv) > 1 else 'V6.2'
+if str(根) not in sys.path:
+    sys.path.insert(0, str(根))
+from 版本 import 软件版本 as _软件版本  # noqa: E402  版本号唯一来源
+
+版本 = sys.argv[1] if len(sys.argv) > 1 else 'V' + _软件版本
 包名 = '打单助手%s_源码' % 版本
 输出 = 根 / ('%s.zip' % 包名)
 

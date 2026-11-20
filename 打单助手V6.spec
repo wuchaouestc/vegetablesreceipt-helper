@@ -76,6 +76,7 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon="图标.ico",
+    version="版本信息.txt",
 )
 coll = COLLECT(
     exe,

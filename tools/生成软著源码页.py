@@ -16,7 +16,7 @@
     .venv/Scripts/python.exe tools/生成软著源码页.py
 
 约定：
-    · 页眉固定为「打单助手软件 V6.0」+ 第 N 页，每页 50 行代码。
+    · 页眉固定为「打单助手软件 V<版本>」+ 第 N 页，每页 50 行代码。
     · 文件之间插入 3 行分隔注释（含文件路径），便于审查时定位。
     · 收集顺序固定：契约层 → 基础设施层 → 业务领域层 → 子系统 → 服务 → 测试，
       保证多次运行结果一致（可复现是登记材料的基本要求）。
@@ -26,11 +26,15 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-软件名称 = "打单助手软件 V6.0"
 每页行数 = 50
 前后页数 = 30
 
 根 = Path(__file__).resolve().parents[1]
+if str(根) not in sys.path:
+    sys.path.insert(0, str(根))
+from 版本 import 软件版本  # noqa: E402  版本号唯一来源
+
+软件名称 = "打单助手软件 V%s" % 软件版本
 输出目录 = 根 / "docs" / "软件著作权材料" / "源程序页"
 
 # 固定收集顺序：先契约层（入口与路径），再核心能力，最后子系统与测试。
