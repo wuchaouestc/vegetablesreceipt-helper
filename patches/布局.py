@@ -24,10 +24,82 @@ if not App.显示周末模式菜单:
     App.导航 = [item for item in App.导航 if item[0] != '周末']
 
 
+# 窗口铺满方式：
+#   'zoomed'     —— 最大化（保留标题栏与任务栏，推荐）
+#   'fullscreen' —— 真全屏（隐藏标题栏与任务栏，Esc 退出）
+App.窗口模式 = 'zoomed'
+
+
+def _屏幕尺寸(self):
+    """当前显示器分辨率（物理像素）。异常时退回 1920x1080。"""
+    try:
+        宽 = int(self.root.winfo_screenwidth())
+        高 = int(self.root.winfo_screenheight())
+        if 宽 >= 800 and 高 >= 600:
+            return 宽, 高
+    except Exception:
+        pass
+    return 1920, 1080
+
+
+def _铺满屏幕(self):
+    """按当前显示器分辨率铺满窗口。
+
+    原来这里写死 `geometry('2160x1426')`：只有 2560 宽以上的屏幕才装得下，
+    1920x1080 的笔记本上窗口比屏幕更大，右侧和底部被推到屏幕外，
+    表现就是「启动后没有全屏」。改成读实际分辨率后铺满。
+    """
+    屏宽, 屏高 = _屏幕尺寸(self)
+
+    # 最小尺寸不能超过屏幕，否则窗口会被强制撑出屏幕
+    try:
+        self.root.minsize(min(960, 屏宽), min(640, 屏高))
+    except Exception:
+        pass
+
+    if getattr(App, '窗口模式', 'zoomed') == 'fullscreen':
+        try:
+            self.root.attributes('-fullscreen', True)
+            # add='+' 不覆盖已有 Esc 绑定
+            self.root.bind('<Escape>', lambda _e: self.root.attributes('-fullscreen', False), add='+')
+        except Exception:
+            pass
+    else:
+        # 先按分辨率设一次几何：即便 state('zoomed') 在某些 Tk 版本上不生效，
+        # 窗口也已经是铺满的。留 16px 宽、96px 高给边框与任务栏。
+        宽 = max(960, 屏宽 - 16)
+        高 = max(640, 屏高 - 96)
+        try:
+            self.root.geometry('%dx%d+%d+%d' % (宽, 高, 8, 8))
+        except Exception:
+            pass
+        try:
+            self.root.state('zoomed')
+        except Exception:
+            pass
+
+    # 记录一次实际尺寸，方便在客户机上核对是否真的铺满（写进每日程序日志）
+    try:
+        import time as _时间
+        from core import 日志 as _日志
+
+        def _记尺寸():
+            try:
+                _日志.写日志(
+                    '程序_%s.log' % _时间.strftime('%Y%m%d'),
+                    '[界面] 显示器 %dx%d → 窗口 %dx%d'
+                    % (屏宽, 屏高, self.root.winfo_width(), self.root.winfo_height()))
+            except Exception:
+                pass
+
+        self.root.after(900, _记尺寸)
+    except Exception:
+        pass
+
+
 def _build_ui(self):
     self._当前页 = None
-    self.root.minsize(960, 640)
-    self.root.geometry('2160x1426')
+    _铺满屏幕(self)
     self._build_sidebar()
     self._主区 = tk.Frame(self.root, bg=主题.底色)
     self._主区.pack(side='left', fill='both', expand=True)
