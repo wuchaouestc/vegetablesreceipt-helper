@@ -32,6 +32,11 @@ OPTIONAL_RELEASE_FILES = ("config_local.py",)
 SEED_DATA_DIRS = ("data/dictionaries", "data/learning", "data/evaluations")
 # 空目录也要在发布里建出来，让用户第一次核对时标注有地方落盘。
 SEED_EMPTY_DIRS = ("data/annotations",)
+# 目录重构后废弃的发布子目录（相对 dist 根）：命中即删除。
+# sync_program_files 用的是「合并复制」，只会新增不会清理，
+# 这些旧目录若不显式删除，会与 patches/、field_service/ 并存，
+# 导致发布包里同时有两套补丁与两套结构服务代码，排查时极易误读。
+OBSOLETE_RELEASE_DIRS = ("_internal/_界面补丁", "_internal/_ppstructure")
 
 
 def run(command):
@@ -62,6 +67,10 @@ def sync_program_files(staging_dir, dist_dir=DIST_DIR):
         return []
 
     shutil.copytree(staging_dir, dist_dir, dirs_exist_ok=True, ignore=ignore_user_data)
+    for 相对 in OBSOLETE_RELEASE_DIRS:
+        残留 = dist_dir / 相对
+        if 残留.is_dir():
+            shutil.rmtree(残留, ignore_errors=True)
 
 
 def copy_release_files(source_dir=ROOT, dist_dir=DIST_DIR):
