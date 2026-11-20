@@ -10,6 +10,11 @@ import time
 import urllib.request
 from pathlib import Path
 
+try:
+    from core import 日志 as _日志模块
+except Exception:  # 加载器必须能在缺少新模块时退回原行为
+    _日志模块 = None
+
 
 _服务 = "http://127.0.0.1:18765"
 
@@ -45,7 +50,10 @@ def _起结构服务(根, 资源根):
     if not 解释器:
         return
     try:
-        日志 = open(根 / "结构服务启动.log", "a", encoding="utf-8")
+        服务日志 = (_日志模块.日志文件("结构服务启动.log", 根=根)
+                    if _日志模块 is not None else 根 / "log" / "结构服务启动.log")
+        服务日志.parent.mkdir(parents=True, exist_ok=True)
+        日志 = open(服务日志, "a", encoding="utf-8")
         标志 = 0x08000000 if os.name == "nt" else 0
         subprocess.Popen(
             [str(解释器), str(服务文件)],
@@ -78,8 +86,12 @@ def _可选补丁(根, 资源根, 文件名, 空间):
         _执行补丁(路径, 空间)
     except Exception as 错误:
         try:
-            with (根 / "补丁加载诊断.log").open("a", encoding="utf-8") as 文件:
-                文件.write("%s: %r\n" % (文件名, 错误))
+            if _日志模块 is not None:
+                _日志模块.写日志("补丁加载诊断.log", "%s: %r" % (文件名, 错误), 根=根)
+            else:
+                (根 / "log").mkdir(parents=True, exist_ok=True)
+                with (根 / "log" / "补丁加载诊断.log").open("a", encoding="utf-8") as 文件:
+                    文件.write("%s: %r\n" % (文件名, 错误))
         except Exception:
             pass
 

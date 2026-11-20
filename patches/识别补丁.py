@@ -37,13 +37,22 @@ def _找根():
 
 
 _根 = _找根()
-_诊断 = _根 / '识别诊断.log'
+_诊断 = _根 / 'log' / '识别诊断.log'   # 仅当统一日志模块不可用时兜底（仍落 log/）
 _改单 = _根 / '改单统计.jsonl'
+
+try:
+    from core import 日志 as _日志模块
+except Exception:  # 补丁必须能在缺少新模块时退回原行为
+    _日志模块 = None
 
 
 def _记(内容):
     """追加一行诊断。写文件失败不影响任何流程。"""
     try:
+        if _日志模块 is not None:
+            _日志模块.写日志('识别诊断.log', 内容)
+            return
+        _诊断.parent.mkdir(parents=True, exist_ok=True)
         with _诊断.open('a', encoding='utf-8') as f:
             f.write('%s\t%s\n' % (_time.strftime('%m-%d %H:%M:%S'), 内容))
     except Exception:

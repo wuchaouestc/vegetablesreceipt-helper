@@ -30,6 +30,8 @@ a = Analysis(
         "win32con",
         # 阶段 3/4 的独立手写识别库（界面补丁按需导入，要显式收进包里）
         "handwriting",
+        "core",
+        "core.日志",
         "handwriting.budget",
         "handwriting.compare",
         "handwriting.detect",

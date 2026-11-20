@@ -36,7 +36,11 @@ def 运行():
 def 报告(错误):
     文本 = "".join(traceback.format_exception(*错误))
     try:
-        (程序目录() / "启动失败.log").write_text(文本, encoding="utf-8")
+        # 这里刻意不依赖 路径 / core.日志：本函数在"程序起不来"时执行，
+        # 那些模块恰恰可能没导入成功。只用启动器自身的 程序目录() 兜底。
+        日志目录 = 程序目录() / "log"
+        日志目录.mkdir(parents=True, exist_ok=True)
+        (日志目录 / "启动失败.log").write_text(文本, encoding="utf-8")
     except Exception:
         pass
     try:

@@ -40,7 +40,7 @@ os.environ.setdefault("PADDLE_PDX_ENABLE_MKLDNN_BYDEFAULT", "0")
 
 BASE = Path(__file__).resolve().parent
 CACHE = BASE / "cache"
-LOG = BASE / "服务.log"
+LOG = BASE / "log" / "服务.log"
 LOCK = threading.Lock()
 START = time.time()
 
@@ -71,6 +71,7 @@ _field_backend = None
 
 def log(msg):
     try:
+        LOG.parent.mkdir(parents=True, exist_ok=True)
         if LOG.exists() and LOG.stat().st_size > 5 * 1024 * 1024:
             LOG.replace(LOG.with_suffix(".log.1"))
         with LOG.open("a", encoding="utf-8") as f:

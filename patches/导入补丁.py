@@ -24,14 +24,23 @@ from pathlib import Path as _Path
 from app import 导入落地 as _D
 
 _根 = _Path(str(globals().get("HERE") or "."))
-_日志 = _根 / "导入诊断.log"
+_日志路径 = _根 / "log" / "导入诊断.log"   # 仅当统一日志模块不可用时兜底（仍落 log/）
+
+try:
+    from core import 日志 as _日志模块
+except Exception:  # 补丁必须能在缺少新模块时退回原行为
+    _日志模块 = None
 
 
 def _记(msg):
     try:
-        if _日志.exists() and _日志.stat().st_size > 2 * 1024 * 1024:
-            _日志.replace(_日志.with_suffix(".log.1"))
-        with _日志.open("a", encoding="utf-8") as f:
+        if _日志模块 is not None:
+            _日志模块.写日志("导入诊断.log", msg)
+            return
+        _日志路径.parent.mkdir(parents=True, exist_ok=True)
+        if _日志路径.exists() and _日志路径.stat().st_size > 2 * 1024 * 1024:
+            _日志路径.replace(_日志路径.with_suffix(".log.1"))
+        with _日志路径.open("a", encoding="utf-8") as f:
             f.write("%s\t%s\n" % (_time.strftime("%m-%d %H:%M:%S"), msg))
     except Exception:  # noqa: BLE001
         pass

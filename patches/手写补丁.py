@@ -36,7 +36,12 @@ from pathlib import Path as _Path
 
 _主模块 = globals().get('主模块')
 _根 = _Path(str(globals().get("HERE") or "."))
-_诊断 = _根 / "手写诊断.log"
+_诊断 = _根 / "log" / "手写诊断.log"   # 仅当统一日志模块不可用时兜底（仍落 log/）
+
+try:
+    from core import 日志 as _日志模块
+except Exception:  # 补丁必须能在缺少新模块时退回原行为
+    _日志模块 = None
 
 _tk = getattr(_主模块, 'tk', None)
 _ttk = getattr(_主模块, 'ttk', None)
@@ -49,6 +54,10 @@ _气泡提示 = getattr(_主模块, '气泡提示', None)
 def _记(内容):
     """追加一行诊断。写文件失败不影响任何流程。"""
     try:
+        if _日志模块 is not None:
+            _日志模块.写日志('手写诊断.log', 内容)
+            return
+        _诊断.parent.mkdir(parents=True, exist_ok=True)
         with _诊断.open('a', encoding='utf-8') as f:
             f.write('%s\t%s\n' % (_time.strftime('%m-%d %H:%M:%S'), 内容))
     except Exception:

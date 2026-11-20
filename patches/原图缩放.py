@@ -238,9 +238,19 @@ def _build_checklist(self, parent):
 App._build_checklist = _build_checklist
 
 
-# 自检日志
+# 自检日志（统一走日志模块；兜底也必须锚定程序目录，不能用相对路径）
 try:
-    with open('结构诊断.log', 'a', encoding='utf-8') as f:
-        f.write('原图缩略图缩放补丁已加载\n')
+    from pathlib import Path as _诊断_Path
+    try:
+        from core import 日志 as _日志模块
+    except Exception:  # 补丁必须能在缺少新模块时退回原行为
+        _日志模块 = None
+    if _日志模块 is not None:
+        _日志模块.写日志('结构诊断.log', '原图缩略图缩放补丁已加载')
+    else:
+        _兜底 = _诊断_Path(str(globals().get('HERE') or '.')).resolve() / 'log' / '结构诊断.log'
+        _兜底.parent.mkdir(parents=True, exist_ok=True)
+        with _兜底.open('a', encoding='utf-8') as f:
+            f.write('原图缩略图缩放补丁已加载\n')
 except Exception:
     pass

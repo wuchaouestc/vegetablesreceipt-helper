@@ -684,8 +684,7 @@ except Exception as 错误:
     except Exception:
         pass
     try:
-        import 路径 as _路径
-        with (_路径.程序目录() / '补丁加载诊断.log').open('a', encoding='utf-8') as _f:
-            _f.write('客户规则窗.py: %r\n' % (错误,))
+        from core import 日志 as _日志模块
+        _日志模块.写日志('补丁加载诊断.log', '客户规则窗.py: %r' % (错误,))
     except Exception:
         pass

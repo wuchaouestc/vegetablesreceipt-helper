@@ -19,11 +19,20 @@ import traceback as _traceback
 from pathlib import Path as _Path
 
 _根 = _Path(str(globals().get("HERE") or "."))
-_错误档 = _根 / "界面错误.log"
+_错误档 = _根 / "log" / "界面错误.log"   # 仅当统一日志模块不可用时兜底（仍落 log/）
+
+try:
+    from core import 日志 as _日志模块
+except Exception:  # 补丁必须能在缺少新模块时退回原行为
+    _日志模块 = None
 
 
 def _记错误(来源, 文本):
     try:
+        if _日志模块 is not None:
+            _日志模块.写日志("界面错误.log", "[%s]\n%s" % (来源, 文本))
+            return
+        _错误档.parent.mkdir(parents=True, exist_ok=True)
         with _错误档.open("a", encoding="utf-8") as f:
             f.write("%s\t[%s]\n%s\n\n" % (_time.strftime("%m-%d %H:%M:%S"), 来源, 文本))
     except Exception:  # noqa: BLE001
@@ -56,7 +65,7 @@ def _pump(self):
         except Exception:  # noqa: BLE001
             _记错误("界面回调 %s" % kind, _traceback.format_exc())
             try:
-                self.on_log("⚠ 界面更新出错（%s），详情已写进 界面错误.log" % kind)
+                self.on_log("⚠ 界面更新出错（%s），详情已写进 log/界面错误.log" % kind)
             except Exception:  # noqa: BLE001
                 pass
     try:
@@ -100,7 +109,7 @@ def _看门狗(self):
                 except Exception:  # noqa: BLE001
                     pass
                 try:
-                    self.set_status("识别线程已结束但界面没收到结果，详情见 界面错误.log")
+                    self.set_status("识别线程已结束但界面没收到结果，详情见 log/界面错误.log")
                 except Exception:  # noqa: BLE001
                     pass
         else:

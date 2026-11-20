@@ -48,6 +48,9 @@ def sync_program_files(staging_dir, dist_dir=DIST_DIR):
     protected = {
         "settings.json", "customers.json", "config.py", "启动V6.bat", "标签余量.json",
         "打单记录", "导入", "备份", "ocr_cache", "程序.log", "结构服务启动.log",
+        # 日志目录：全部日志（含诊断日志与每日程序日志）都在这里，
+        # 更新软件时不能被新版构建产物覆盖，否则用户排查线索丢失。
+        "log",
         # 越用越智能的积累数据：人工核对标注、词典别名、已确认示例都在这下面，
         # 更新软件时**绝不能被新版覆盖**，否则用户核对的数据就白攒了。
         "data",

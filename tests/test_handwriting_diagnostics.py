@@ -15,7 +15,9 @@ class DiagnosticsTests(unittest.TestCase):
                     '_uncertain': True}]
         before = copy.deepcopy(records)
         with tempfile.TemporaryDirectory() as folder:
-            with patch('handwriting.storage.data_root', return_value=Path(folder) / 'data'):
+            日志目录 = Path(folder) / 'log'
+            日志目录.mkdir(parents=True, exist_ok=True)
+            with patch('core.日志.日志目录', return_value=日志目录):
                 trace(SimpleNamespace(task_id='task'), 'model_raw', records=records)
             text = next((Path(folder) / 'log').glob('*.log')).read_text(encoding='utf-8')
             payload = json.loads(text.split('[手写阶段] ', 1)[1])
@@ -25,12 +27,14 @@ class DiagnosticsTests(unittest.TestCase):
         self.assertEqual(records, before)
 
     def test_io_failure_cannot_break_recognition(self):
-        with patch('handwriting.storage.data_root', side_effect=OSError('unavailable')):
+        with patch('core.日志.日志目录', side_effect=OSError('unavailable')):
             trace(SimpleNamespace(task_id='task'), 'start', records=[None])
 
     def test_actual_model_and_review_regions_are_preserved(self):
         with tempfile.TemporaryDirectory() as folder:
-            with patch('handwriting.storage.data_root', return_value=Path(folder) / 'data'):
+            日志目录 = Path(folder) / 'log'
+            日志目录.mkdir(parents=True, exist_ok=True)
+            with patch('core.日志.日志目录', return_value=日志目录):
                 for index in (0, 1):
                     trace(SimpleNamespace(task_id='task', model='deepseek-reasoner'), 'review_raw',
                           records=[{'category': '老姜', 'unit': '斤'}],

@@ -34,16 +34,25 @@ from pathlib import Path as _Path
 
 # ---------------------------------------------------------------- 路径/日志
 _根 = _Path(str(globals().get("HERE") or "."))
-_诊断 = _根 / "结构诊断.log"
+_诊断 = _根 / "log" / "结构诊断.log"   # 仅当统一日志模块不可用时兜底（仍落 log/）
 _卡片夹 = _根 / "结构卡"
 _线程 = _threading.local()
 _缓存 = {}
 _缓存锁 = _threading.Lock()
 _状态 = {"连续失败": 0, "暂停到": 0.0, "注入": 0, "跳过": 0}
 
+try:
+    from core import 日志 as _日志模块
+except Exception:  # 补丁必须能在缺少新模块时退回原行为
+    _日志模块 = None
+
 
 def _记(内容):
     try:
+        if _日志模块 is not None:
+            _日志模块.写日志("结构诊断.log", 内容)
+            return
+        _诊断.parent.mkdir(parents=True, exist_ok=True)
         if _诊断.exists() and _诊断.stat().st_size > 3 * 1024 * 1024:
             _诊断.replace(_诊断.with_suffix(".log.1"))
         with _诊断.open("a", encoding="utf-8") as f:

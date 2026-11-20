@@ -60,6 +60,9 @@ copy config_local.example.py config_local.py
 
 ## 注意
 
-- 仓库为公开仓库：`config_local.py`（真实密钥）、`build/`、`dist/`、`导入/`、`*.log` 均在 `.gitignore` 中。
+- **所有日志统一写在 `log/`**（源码运行即项目根 `log/`，发布版即 exe 同级 `log/`），
+  由 `core/日志.py` 唯一出口负责：自动建目录、统一时间戳、单文件 5 MB 轮转、写失败不影响业务。
+  新增日志请用 `日志.写日志("名字.log", 内容)`，**不要**再自己拼路径——根目录不允许出现日志文件。
+- 仓库为公开仓库：`config_local.py`（真实密钥）、`build/`、`dist/`、`导入/`、`log/`、`*.log` 均在 `.gitignore` 中。
 - 发布给外部前删掉发布目录里的 `config_local.py`，让对方用 `config_local.example.py` 自填密钥。
-- `data/` 是「越用越智能」的积累数据，构建时存在即不覆盖。
+- `data/` 是「越用越智能」的积累数据，构建时存在即不覆盖；`log/` 同样受构建保护。

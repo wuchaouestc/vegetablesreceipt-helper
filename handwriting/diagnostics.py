@@ -59,9 +59,8 @@ def trace(request, stage, records=None, **metadata):
                                for candidate in (row.get('_evidence') or {}).get('candidates', {}).get(field, []))]
                 for field in ('weight', 'unit')
             }
-        from .storage import data_root
-        directory = data_root().parent / 'log'
-        directory.mkdir(parents=True, exist_ok=True)
+        from core import 日志
+        directory = 日志.日志目录()
         if records is not None:
             from .storage import write_json
             # Local diagnostic artifact; never store HTTP headers, credentials or images.

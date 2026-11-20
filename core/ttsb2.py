@@ -34,6 +34,7 @@ from pathlib import Path
 import time
 
 import 路径
+from . import 日志 as _日志
 from app import customer_profiles as CP
 
 HERE = 路径.程序目录()
@@ -42,11 +43,7 @@ def _debug_log(msg):
     try:
         from app import app_settings as 设置
         if 设置.取('系统.运行模式') == 'debug':
-            log_dir = HERE / 'log'
-            log_dir.mkdir(exist_ok=True)
-            log_file = log_dir / ('程序_%s.log' % time.strftime('%Y%m%d'))
-            with log_file.open('a', encoding='utf-8') as f:
-                f.write('%s\t[DEBUG] [TTSB2] %s\n' % (time.strftime('%H:%M:%S'), msg))
+            _日志.写日志('程序_%s.log' % time.strftime('%Y%m%d'), '[DEBUG] [TTSB2] ' + str(msg))
     except Exception:
         pass
 
@@ -103,8 +100,7 @@ def _img_hash(path):
 def _记(话):
     """写 OCR 诊断日志（失败也不影响流程）。"""
     try:
-        with (HERE / '识别诊断.log').open('a', encoding='utf-8') as f:
-            f.write('%s\t%s\n' % (__import__('time').strftime('%m-%d %H:%M:%S'), 话))
+        _日志.写日志('识别诊断.log', 话)
     except Exception:
         pass
 
