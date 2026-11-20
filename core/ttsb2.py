@@ -429,7 +429,9 @@ def check_coverage(blocks, records):
     for 候选 in category_candidates_by_position(blocks):
         if 候选 not in 已提取 and not any(候选 in c for c in 已提取):
             # 别把「备注/分组」这类词误判成品类
-            if 候选 not in 表头词 and not re.search(r'[：:＝=]', 候选):
+            if (候选 not in 表头词 and re.search(r'[\u4e00-\u9fff]', 候选)
+                    and not any(词 in 候选 for 词 in ('下单量', '采购单位', '客户编码', '下单单位'))
+                    and not re.search(r'[：:＝=]', 候选)):
                 漏.add(候选)
     if 漏:
         return '⚠️ 下面这些品类可能被漏读了，请核对：%s' % '、'.join(sorted(漏))
@@ -1207,6 +1209,12 @@ def review_printed_rows(image_path, records, blocks, prompt):
     from tempfile import TemporaryDirectory
     from handwriting.geometry import normalize_blocks, v_overlap_ratio
     from handwriting.review import crop_region
+    from .printed_review import review_columns
+
+    column_notes = review_columns(image_path, records, blocks, prompt,
+                                  deepseek_parse, _接受, _文本键)
+    if column_notes is not None:
+        return column_notes
 
     cells = normalize_blocks(blocks)
     headers = [(category, detail) for category in cells for detail in cells
