@@ -39,3 +39,6 @@ field_service/cache/
 
 # ===== 本地真实密钥（不要提交）=====
 config_local.py
+
+# ===== 软著材料派生产物（由 tools/生成软著源码页.py 生成）=====
+docs/软件著作权材料/源程序页/

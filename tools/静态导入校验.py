@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 项目顶层 = {"app", "core", "handwriting", "路径", "config", "打单助手", "field_service"}
-扫描目录 = ["app", "core", "handwriting", "patches", "tests", "field_service"]
+扫描目录 = ["app", "core", "handwriting", "patches", "tests", "field_service", "tools"]
 根下文件 = ["打单助手.py", "启动器.py", "路径.py", "config.py", "build.py"]
 
 缓存 = {}
